@@ -16,9 +16,9 @@ public class BingoCard
     {
         foreach (BingoSpace bs in tileList)
         {
-            if (bs.position == pos)
+            if (bs.GetPosition() == pos)
             {
-                return bs;
+                return bs.GetTile();
             }
         }
         return null;
@@ -36,11 +36,11 @@ public class BingoCard
     }
 
 
-    public BingoProperty? GetPropertyByName(string name)
+    public BingoProperty GetPropertyByName(string name)
     {
         foreach (BingoProperty bingoProperty in properties)
         {
-            if (bingoProperty.name == name)
+            if (bingoProperty.GetName() == name)
             {
                 return bingoProperty;
             }

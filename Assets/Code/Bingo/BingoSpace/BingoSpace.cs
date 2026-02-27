@@ -39,6 +39,9 @@ public class BingoSpace
     // TODO: TERMINAR
     public void Mark()
     {
+        card.OnMark(this, position);
+        state = MarkState.Marked;
+
     }
 
     public bool IsMarkable()
