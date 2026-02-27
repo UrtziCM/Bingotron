@@ -12,13 +12,23 @@ public class BingoSpace
 {
     private BingoTile tile;
     private BingoSticker number;
-    private Vector2 pos;
+    private Vector2 position;
     private MarkState state;
     private BingoCard card;
+
 
     public BingoTile GetTile() 
     {
         return tile;
+    }
+    public Vector2 GetPosition()
+    {
+        return position;
+    }
+
+    public BingoCard GetCard()
+    {
+        return card;
     }
 
     public BingoSticker GetNumber()
@@ -40,4 +50,6 @@ public class BingoSpace
     {
         return state == MarkState.Marked;
     }
+
+
 }
