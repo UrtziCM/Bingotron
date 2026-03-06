@@ -1,6 +1,5 @@
-using UnityEditor.Timeline;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
  enum MarkState
 {
@@ -15,6 +14,8 @@ public class BingoSpace
     private Vector2 position;
     private MarkState state;
     private BingoCard card;
+    private List<string> tags;
+
 
 
     public BingoTile GetTile() 
@@ -39,7 +40,6 @@ public class BingoSpace
     // TODO: TERMINAR
     public void Mark()
     {
-        card.OnMark(this, position);
         state = MarkState.Marked;
 
     }

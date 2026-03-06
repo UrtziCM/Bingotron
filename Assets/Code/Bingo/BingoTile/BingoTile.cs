@@ -1,6 +1,8 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class BingoTile
+[CreateAssetMenu(fileName = "ERROR_THIS-SHOULD-NOT-BE-POSSIBLE", menuName = "BingoTiles/BingoTile (Not-Instanceable)")]
+public abstract class BingoTile : ScriptableObject
 {
     private Vector2 pos;
     private BingoSpace space;
