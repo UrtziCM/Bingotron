@@ -7,7 +7,8 @@ using UnityEngine;
     Markable,
     Marked,
 }
-public class BingoSpace
+
+public class BingoSpace : MonoBehaviour
 {
     private BingoTile tile;
     private BingoSticker number;
@@ -16,7 +17,10 @@ public class BingoSpace
     private BingoCard card;
     private List<string> tags;
 
-
+    public BingoSpace(Vector2 position)
+    {
+        this.position = position;
+    }
 
     public BingoTile GetTile() 
     {

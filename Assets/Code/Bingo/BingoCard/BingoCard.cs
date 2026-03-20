@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Tilemaps;
 
-public class BingoCard
+public class BingoCard : Service
 {
 
     private List<BingoSpace> tileList;
