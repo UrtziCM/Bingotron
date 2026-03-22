@@ -1,50 +1,49 @@
+using System.Linq;
 using UnityEngine;
 
 public class Camera : MonoBehaviour
 {
     [SerializeField] private Transform[] lookPositions;
-    private int lookingPos;
+    private int lookingPos = 0;
 
     private Transform target;
     private Transform look;
 
     [SerializeField] float animationTime;
     float t = 0;
-    private bool notChanging;
+    private bool notChanging = true;
 
     [SerializeField] AnimationCurve curve;
 
     private void Start()
     {
-        target = lookPositions[1];
+        target = lookPositions[0];
+        look = lookPositions[0];
+        transform.LookAt(look);
     }
     private void Update()
-    {
-        Resolve();
-    }
-    private void Resolve()
     {
         if (notChanging)
         {
             if (Input.GetKeyDown(KeyCode.W))
             {
-                look = target;
-                if (lookingPos > 0)
-                    lookingPos -= 1;
-                lookAt(lookPositions[lookingPos]);
+                lookAt(true);
             }
             if (Input.GetKeyDown(KeyCode.S))
             {
-                look = target;
-                if (lookingPos < lookPositions.Length - 1)
-                    lookingPos += 1;
-                lookAt(lookPositions[lookingPos]);
+                lookAt(false);
             }
-            return;
         }
 
+        Resolve();
+    }
+    private void Resolve()
+    {
+        if (notChanging) return;
+
         t += Time.deltaTime;
-        Vector3 posToMove = Vector3.Lerp(look.position, target.position, t / animationTime);
+
+        Vector3 posToMove = Vector3.Lerp(look.position, target.position, curve.Evaluate(t/animationTime));
         transform.LookAt(posToMove);
 
         if (t >= animationTime)
@@ -53,9 +52,17 @@ public class Camera : MonoBehaviour
             t = 0;
         }
     }
-    private void lookAt(Transform pos)
+    private void lookAt(bool up)
     {
-        target = pos;
+        if (up)
+            if (lookingPos > 0) lookingPos -= 1;
+            else return;
+        else
+            if (lookingPos < lookPositions.Length - 1) lookingPos += 1;
+            else return;
+
+        look = target;
+        target = lookPositions[lookingPos];
         notChanging = false;
     }
 }
