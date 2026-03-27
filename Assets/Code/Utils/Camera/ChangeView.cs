@@ -1,7 +1,7 @@
 using System.Linq;
 using UnityEngine;
 
-public class Camera : MonoBehaviour
+public class ChangeView : MonoBehaviour
 {
     [SerializeField] private Transform[] lookPositions;
     private int lookingPos = 0;
