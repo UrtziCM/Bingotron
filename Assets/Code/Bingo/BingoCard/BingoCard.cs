@@ -5,9 +5,12 @@ using UnityEngine.Tilemaps;
 
 public class BingoCard : Service
 {
+    readonly Vector2 Center = Vector2.one * 2;
+    readonly Vector2 First  = Vector2.one * 0;
+    readonly Vector2 Last   = Vector2.one * 4;
 
-    private List<BingoSpace> tileList;
-    private List<BingoProperty> properties;
+    private List<BingoSpace> tileList = new();
+    private List<BingoProperty> properties = new();
 
     private int height;
     private int width;
@@ -15,7 +18,6 @@ public class BingoCard : Service
     public Action<BingoSpace, Vector2> OnMark;
     public Action<BingoSpace[]> OnLine;
     public Action<BingoSpace[]> OnBingo;
-
 
     public BingoSpace GetSpaceAt(int x, int y)
     {
@@ -31,6 +33,14 @@ public class BingoCard : Service
             }
         }
         return null;
+    }
+
+    public bool IsMarkable(Vector2 pos)
+    {
+        BingoSticker sticker = GetSpaceAt(pos).GetNumber();
+        if (IsSpaceMarked(pos))
+            return false;
+        return sticker.IsMarkable();
     }
 
     public void MarkSpace(Vector2 pos)
@@ -149,5 +159,10 @@ public class BingoCard : Service
 
         }
         return null;
+    }
+
+    public void AddBingoSpace(BingoSpace bs)
+    {
+        tileList.Add(bs);
     }
 }

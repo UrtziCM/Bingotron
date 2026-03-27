@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6212640922524678775}
   - component: {fileID: 758255822591343512}
   - component: {fileID: 5895730235373187046}
+  - component: {fileID: 6997397208356113997}
   m_Layer: 0
   m_Name: BingoSpace
   m_TagString: Untagged
@@ -108,6 +109,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6997397208356113997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4201791494942311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0999b7fa48e81f449a3e0bbf567a6f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionInGrid: {x: 4, y: 1}
 --- !u!1 &246452381770739630
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,6 +134,7 @@ GameObject:
   - component: {fileID: 8363001388511415108}
   - component: {fileID: 5041810908461756149}
   - component: {fileID: 8162577002167480718}
+  - component: {fileID: 7353006349964560367}
   m_Layer: 0
   m_Name: BingoSpace
   m_TagString: Untagged
@@ -216,6 +231,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7353006349964560367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246452381770739630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0999b7fa48e81f449a3e0bbf567a6f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionInGrid: {x: 1, y: 2}
 --- !u!1 &733027157971255072
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,6 +256,7 @@ GameObject:
   - component: {fileID: 775310830493508944}
   - component: {fileID: 261720181661850439}
   - component: {fileID: 4896248206102324294}
+  - component: {fileID: 17327826012494663}
   m_Layer: 0
   m_Name: BingoSpace
   m_TagString: Untagged
@@ -324,6 +353,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &17327826012494663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733027157971255072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0999b7fa48e81f449a3e0bbf567a6f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionInGrid: {x: 4, y: 3}
 --- !u!1 &809678678839508035
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,6 +448,7 @@ GameObject:
   - component: {fileID: 9135080377628669504}
   - component: {fileID: 8550865171812741664}
   - component: {fileID: 917545626261647747}
+  - component: {fileID: 4749478645027498621}
   m_Layer: 0
   m_Name: BingoSpace
   m_TagString: Untagged
@@ -502,6 +545,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4749478645027498621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813923435667656571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0999b7fa48e81f449a3e0bbf567a6f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionInGrid: {x: 3, y: 2}
 --- !u!1 &2177268924562664985
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,6 +570,7 @@ GameObject:
   - component: {fileID: 1802451450686390292}
   - component: {fileID: 4157373509980546870}
   - component: {fileID: 4090503613544466481}
+  - component: {fileID: 1058643042222889037}
   m_Layer: 0
   m_Name: BingoSpace
   m_TagString: Untagged
@@ -610,6 +667,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1058643042222889037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2177268924562664985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0999b7fa48e81f449a3e0bbf567a6f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionInGrid: {x: 2, y: 2}
 --- !u!1 &2395526131276959364
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,6 +692,7 @@ GameObject:
   - component: {fileID: 7384715793931742278}
   - component: {fileID: 6092164953921575471}
   - component: {fileID: 5758080692804893894}
+  - component: {fileID: 3252029921884686818}
   m_Layer: 0
   m_Name: BingoSpace
   m_TagString: Untagged
@@ -718,6 +789,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3252029921884686818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2395526131276959364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0999b7fa48e81f449a3e0bbf567a6f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionInGrid: {x: 2, y: 4}
 --- !u!1 &2755766441974742238
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,6 +814,7 @@ GameObject:
   - component: {fileID: 7964929034893353858}
   - component: {fileID: 2203089309906713347}
   - component: {fileID: 3114874079872821486}
+  - component: {fileID: 1714111001766557958}
   m_Layer: 0
   m_Name: BingoSpace
   m_TagString: Untagged
@@ -826,6 +911,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1714111001766557958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2755766441974742238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0999b7fa48e81f449a3e0bbf567a6f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionInGrid: {x: 3, y: 1}
 --- !u!1 &3155413826992273560
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,6 +1045,7 @@ GameObject:
   - component: {fileID: 8403415789895678268}
   - component: {fileID: 3982971753877684609}
   - component: {fileID: 2280892742115666700}
+  - component: {fileID: 9183614984065145802}
   m_Layer: 0
   m_Name: BingoSpace
   m_TagString: Untagged
@@ -1043,6 +1142,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &9183614984065145802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3260413595347443724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0999b7fa48e81f449a3e0bbf567a6f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionInGrid: {x: 1, y: 0}
 --- !u!1 &4077624068972357628
 GameObject:
   m_ObjectHideFlags: 0
@@ -1055,6 +1167,7 @@ GameObject:
   - component: {fileID: 8669251748187146170}
   - component: {fileID: 9200547828858365191}
   - component: {fileID: 8404172456741456811}
+  - component: {fileID: 6710665806651157012}
   m_Layer: 0
   m_Name: BingoSpace
   m_TagString: Untagged
@@ -1151,6 +1264,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6710665806651157012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4077624068972357628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0999b7fa48e81f449a3e0bbf567a6f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionInGrid: {x: 1, y: 1}
 --- !u!1 &4361360822391438911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1163,6 +1289,7 @@ GameObject:
   - component: {fileID: 2619355615003300671}
   - component: {fileID: 3328033028309607322}
   - component: {fileID: 9154149570618297853}
+  - component: {fileID: 5973941346389697390}
   m_Layer: 0
   m_Name: BingoSpace
   m_TagString: Untagged
@@ -1259,6 +1386,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5973941346389697390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4361360822391438911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0999b7fa48e81f449a3e0bbf567a6f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionInGrid: {x: 4, y: 4}
 --- !u!1 &4572298334992603726
 GameObject:
   m_ObjectHideFlags: 0
@@ -1271,6 +1411,7 @@ GameObject:
   - component: {fileID: 5840729890245352166}
   - component: {fileID: 5610322698110886080}
   - component: {fileID: 5376766125104720978}
+  - component: {fileID: 2202208693791655424}
   m_Layer: 0
   m_Name: BingoSpace
   m_TagString: Untagged
@@ -1367,6 +1508,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2202208693791655424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4572298334992603726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0999b7fa48e81f449a3e0bbf567a6f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionInGrid: {x: 0, y: 4}
 --- !u!1 &4612799305800775006
 GameObject:
   m_ObjectHideFlags: 0
@@ -1379,6 +1533,7 @@ GameObject:
   - component: {fileID: 6514126061866421172}
   - component: {fileID: 6845780972695829197}
   - component: {fileID: 4880366873236032568}
+  - component: {fileID: 4726473360307552662}
   m_Layer: 0
   m_Name: BingoSpace
   m_TagString: Untagged
@@ -1475,6 +1630,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4726473360307552662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4612799305800775006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0999b7fa48e81f449a3e0bbf567a6f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionInGrid: {x: 4, y: 2}
 --- !u!1 &4975434529717964081
 GameObject:
   m_ObjectHideFlags: 0
@@ -1487,6 +1655,7 @@ GameObject:
   - component: {fileID: 5781427343922199162}
   - component: {fileID: 1437899618578642242}
   - component: {fileID: 4194291354288407893}
+  - component: {fileID: 499819988069731340}
   m_Layer: 0
   m_Name: BingoSpace
   m_TagString: Untagged
@@ -1583,6 +1752,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &499819988069731340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4975434529717964081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0999b7fa48e81f449a3e0bbf567a6f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionInGrid: {x: 0, y: 1}
 --- !u!1 &5505736934909438764
 GameObject:
   m_ObjectHideFlags: 0
@@ -1595,6 +1777,7 @@ GameObject:
   - component: {fileID: 7923979312058067114}
   - component: {fileID: 7489878277270831750}
   - component: {fileID: 9154200080584372619}
+  - component: {fileID: 5049204955580938648}
   m_Layer: 0
   m_Name: BingoSpace
   m_TagString: Untagged
@@ -1691,6 +1874,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5049204955580938648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5505736934909438764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0999b7fa48e81f449a3e0bbf567a6f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionInGrid: {x: 0, y: 3}
 --- !u!1 &5744263950231539784
 GameObject:
   m_ObjectHideFlags: 0
@@ -1703,6 +1899,7 @@ GameObject:
   - component: {fileID: 3109179599495324451}
   - component: {fileID: 126042834054496344}
   - component: {fileID: 3873851253071877328}
+  - component: {fileID: 6009336495551815651}
   m_Layer: 0
   m_Name: BingoSpace
   m_TagString: Untagged
@@ -1799,6 +1996,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6009336495551815651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5744263950231539784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0999b7fa48e81f449a3e0bbf567a6f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionInGrid: {x: 4, y: 0}
 --- !u!1 &5987394417732663866
 GameObject:
   m_ObjectHideFlags: 0
@@ -1811,6 +2021,7 @@ GameObject:
   - component: {fileID: 1975848716440185805}
   - component: {fileID: 7474668327672680893}
   - component: {fileID: 1412020096227527478}
+  - component: {fileID: 2056650579715948400}
   m_Layer: 0
   m_Name: BingoSpace
   m_TagString: Untagged
@@ -1907,6 +2118,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2056650579715948400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5987394417732663866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0999b7fa48e81f449a3e0bbf567a6f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionInGrid: {x: 3, y: 0}
 --- !u!1 &6772119036008355321
 GameObject:
   m_ObjectHideFlags: 0
@@ -1919,6 +2143,7 @@ GameObject:
   - component: {fileID: 8390352862602877331}
   - component: {fileID: 7380601395197101919}
   - component: {fileID: 1536534258586710588}
+  - component: {fileID: 4033542462795136481}
   m_Layer: 0
   m_Name: BingoSpace
   m_TagString: Untagged
@@ -2015,6 +2240,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4033542462795136481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6772119036008355321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0999b7fa48e81f449a3e0bbf567a6f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionInGrid: {x: 3, y: 3}
 --- !u!1 &7165144814211576179
 GameObject:
   m_ObjectHideFlags: 0
@@ -2027,6 +2265,7 @@ GameObject:
   - component: {fileID: 6568780160018257791}
   - component: {fileID: 7434455830070749085}
   - component: {fileID: 4463282276453549371}
+  - component: {fileID: 7617912241677171598}
   m_Layer: 0
   m_Name: BingoSpace
   m_TagString: Untagged
@@ -2123,6 +2362,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7617912241677171598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7165144814211576179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0999b7fa48e81f449a3e0bbf567a6f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionInGrid: {x: 2, y: 1}
 --- !u!1 &7175598026927678236
 GameObject:
   m_ObjectHideFlags: 0
@@ -2135,6 +2387,7 @@ GameObject:
   - component: {fileID: 5580722917215171357}
   - component: {fileID: 3936418812258365361}
   - component: {fileID: 7446192303686996638}
+  - component: {fileID: 8915674457072876619}
   m_Layer: 0
   m_Name: BingoSpace
   m_TagString: Untagged
@@ -2231,6 +2484,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8915674457072876619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7175598026927678236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0999b7fa48e81f449a3e0bbf567a6f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionInGrid: {x: 1, y: 4}
 --- !u!1 &7200021775370157493
 GameObject:
   m_ObjectHideFlags: 0
@@ -2243,6 +2509,7 @@ GameObject:
   - component: {fileID: 2523177594824531751}
   - component: {fileID: 6486261986233409580}
   - component: {fileID: 3138160816093665875}
+  - component: {fileID: 4465012633968862159}
   m_Layer: 0
   m_Name: BingoSpace
   m_TagString: Untagged
@@ -2339,6 +2606,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4465012633968862159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7200021775370157493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0999b7fa48e81f449a3e0bbf567a6f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionInGrid: {x: 2, y: 3}
 --- !u!1 &7351283974293922391
 GameObject:
   m_ObjectHideFlags: 0
@@ -2351,6 +2631,7 @@ GameObject:
   - component: {fileID: 9100933425938287167}
   - component: {fileID: 7188598308305644813}
   - component: {fileID: 127980530695621032}
+  - component: {fileID: 5121107303582866419}
   m_Layer: 0
   m_Name: BingoSpace
   m_TagString: Untagged
@@ -2447,6 +2728,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5121107303582866419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7351283974293922391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0999b7fa48e81f449a3e0bbf567a6f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionInGrid: {x: 2, y: 0}
 --- !u!1 &7481385888125758783
 GameObject:
   m_ObjectHideFlags: 0
@@ -2581,6 +2875,7 @@ GameObject:
   - component: {fileID: 7234489925488370636}
   - component: {fileID: 5062447968651928597}
   - component: {fileID: 6144469420352957701}
+  - component: {fileID: 3515083067409862897}
   m_Layer: 0
   m_Name: BingoSpace
   m_TagString: Untagged
@@ -2677,6 +2972,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3515083067409862897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8311480681400073429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0999b7fa48e81f449a3e0bbf567a6f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionInGrid: {x: 0, y: 2}
 --- !u!1 &8313954384602628403
 GameObject:
   m_ObjectHideFlags: 0
@@ -2689,6 +2997,7 @@ GameObject:
   - component: {fileID: 2605092305926695688}
   - component: {fileID: 431432846818172510}
   - component: {fileID: 8547634783070370876}
+  - component: {fileID: 3780057300225063966}
   m_Layer: 0
   m_Name: BingoSpace
   m_TagString: Untagged
@@ -2785,6 +3094,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3780057300225063966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8313954384602628403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0999b7fa48e81f449a3e0bbf567a6f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionInGrid: {x: 3, y: 4}
 --- !u!1 &8624450790144615446
 GameObject:
   m_ObjectHideFlags: 0
@@ -2797,6 +3119,7 @@ GameObject:
   - component: {fileID: 2925358207120456795}
   - component: {fileID: 5212580349847120882}
   - component: {fileID: 2055936004909630409}
+  - component: {fileID: 1904531051541582591}
   m_Layer: 0
   m_Name: BingoSpace
   m_TagString: Untagged
@@ -2893,3 +3216,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1904531051541582591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8624450790144615446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0999b7fa48e81f449a3e0bbf567a6f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionInGrid: {x: 1, y: 3}

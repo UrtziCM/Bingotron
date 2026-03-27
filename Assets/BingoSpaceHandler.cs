@@ -1,24 +1,27 @@
-using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 public class BingoSpaceHandler : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField]
     private BingoSpace bingoSpace;
     public Vector2 positionInGrid;
-
+    private BingoCard card;
     public BingoSticker sticker => bingoSpace.GetNumber();
     public BingoTile tile => bingoSpace.GetTile();
 
     void Start()
     {
-        BingoSpace bingoSpace = new(positionInGrid);
-        
+        card = transform.GetComponentInParent<BingoCard>();
+        card.AddBingoSpace(bingoSpace);
     }
 
     // Update is called once per frame
-    void Update()
+    private void OnMouseDown()
     {
-        
+        if (card.IsMarkable(positionInGrid))
+        {
+            card.MarkSpace(positionInGrid);
+        }
     }
+
 }
