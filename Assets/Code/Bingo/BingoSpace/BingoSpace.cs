@@ -8,7 +8,8 @@ using UnityEngine;
     Marked,
 }
 
-public class BingoSpace : MonoBehaviour
+[CreateAssetMenu(fileName = "BaseBingoSpace", menuName = "Bingo/Spaces/BaseSpace")]
+public class BingoSpace : ScriptableObject
 {
     private BingoTile tile;
     private BingoSticker number;
