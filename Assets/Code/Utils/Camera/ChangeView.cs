@@ -65,4 +65,16 @@ public class ChangeView : MonoBehaviour
         target = lookPositions[lookingPos];
         notChanging = false;
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.magenta;
+
+        foreach (Transform t in lookPositions)
+        {
+            Gizmos.DrawLine(transform.position, t.position);
+
+            Gizmos.DrawSphere(t.position, .25f);
+        }
+    }
 }
