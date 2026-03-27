@@ -6,6 +6,7 @@ public abstract class BingoTile : ScriptableObject
 {
     internal Vector2 pos;
     internal BingoSpace space;
+    internal int value;
 
     public BingoSpace GetSpace()
     {
