@@ -1,14 +1,16 @@
 using UnityEngine;
 
-public abstract class BingoProperty
+public class BingoProperty
 {
     private int id;
     private string name;
+    private int value;
 
-    public BingoProperty(int id, string name) 
+    public BingoProperty(int id, string name, int value) 
     {
         this.id = id;
         this.name = name;
+        this.value = value;
     }
 
 
@@ -19,6 +21,14 @@ public abstract class BingoProperty
     public string GetName()
     {
         return name;
+    }
+    public void SetValue(int value)
+    {
+        this.value = value;
+    }
+    public int GetValue()
+    {
+        return value;
     }
     public bool CompareName(string name)
     {
