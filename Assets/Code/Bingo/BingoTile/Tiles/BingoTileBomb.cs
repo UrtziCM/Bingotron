@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "BingoTileBomb", menuName = "BingoTiles/BingoTileBomb")]
+[CreateAssetMenu(fileName = "BingoTileBomb", menuName = "Bingo/Tiles/BingoTileBomb")]
 public class BingoTileBomb : BingoTile, IMarkable, IFlamable
 {
     public void Mark()
     {
-        BingoCard bc = GetSpace().GetCard();
+        BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
         Vector2 thisTilePos = GetSpace().GetPosition();
         bc.MarkSpace(thisTilePos + Vector2.up);
         bc.MarkSpace(thisTilePos + Vector2.down);
