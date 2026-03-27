@@ -168,20 +168,13 @@ public class BingoCard : Service
         return null;
     }
 
+    public int GetValueFromProperty(string name)
+    {
+        return GetPropertyByName(name).GetValue();
+    }
+
     public void AddBingoSpace(BingoSpace bs)
     {
         tileList.Add(bs);
-    }
-
-    public int GetValueFromProperties(string name)
-    {
-        foreach(BingoProperty p in properties)
-        {
-            if(p.GetName() == name)
-            {
-                return p.GetValue();
-            }
-        }
-        return 0;
     }
 }
