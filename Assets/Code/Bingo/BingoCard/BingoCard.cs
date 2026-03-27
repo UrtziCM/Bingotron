@@ -172,4 +172,16 @@ public class BingoCard : Service
     {
         tileList.Add(bs);
     }
+
+    public int GetValueFromProperties(string name)
+    {
+        foreach(BingoProperty p in properties)
+        {
+            if(p.GetName() == name)
+            {
+                return p.GetValue();
+            }
+        }
+        return 0;
+    }
 }
