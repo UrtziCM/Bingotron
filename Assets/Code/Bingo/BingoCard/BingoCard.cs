@@ -19,6 +19,10 @@ public class BingoCard : Service
     public Action<BingoSpace[]> OnLine;
     public Action<BingoSpace[]> OnBingo;
 
+    private void Start()
+    {
+        ServiceLocator.AddService(this);
+    }
     public BingoSpace GetSpaceAt(int x, int y)
     {
         return GetSpaceAt(new Vector2(x, y));
