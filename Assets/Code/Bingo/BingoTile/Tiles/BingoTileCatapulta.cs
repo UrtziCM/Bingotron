@@ -27,7 +27,6 @@ public class BingoTileCatapulta : BingoTile, IMarkable, IFlamable
 
     public void Spread()
     {
-        //hay que implementar la funcion de esparcir el fuego
-        throw new System.NotImplementedException();
+        ExtraMethods.Spread(this);
     }
 }

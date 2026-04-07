@@ -8,10 +8,22 @@ public class BingoTileBomb : BingoTile, IMarkable, IFlamable
     {
         BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
         Vector2 thisTilePos = GetSpace().GetPosition();
-        bc.MarkSpace(thisTilePos + Vector2.up);
-        bc.MarkSpace(thisTilePos + Vector2.down);
-        bc.MarkSpace(thisTilePos + Vector2.left);
-        bc.MarkSpace(thisTilePos + Vector2.right);
+
+        Vector2[] directions =
+        {
+            Vector2.up,
+            Vector2.down,
+            Vector2.left,
+            Vector2.right
+        };
+
+        foreach (Vector2 direction in directions)
+        {
+            Vector2 pos = thisTilePos + direction;
+
+            if (bc.IsMarkable(pos))
+                bc.MarkSpace(pos);
+        }
     }
 
     public void OnFlame()
@@ -22,7 +34,6 @@ public class BingoTileBomb : BingoTile, IMarkable, IFlamable
     public void PreFlame(){}
     public void Spread()
     {
-        //hay que implementar la funcion de esparcir el fuego
-        throw new System.NotImplementedException();
+        ExtraMethods.Spread(this);
     }
 }
