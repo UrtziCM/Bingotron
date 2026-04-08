@@ -7,9 +7,14 @@ public class BingoTileCatapulta : BingoTile, IMarkable, IFlammable
     {
         BingoCard bc = GetSpace().GetCard();
         Vector2 thisTilePos = GetSpace().GetPosition();
-        
+        ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
+
         if (bc.IsMarkable(thisTilePos + 2 * Vector2.right))
+        {
             bc.MarkSpace(thisTilePos + 2 * Vector2.right);
+        }
+        
+        sm.AddScore(value + bc.GetSpaceAt(thisTilePos).GetNumber().value);
     }
 
     public void OnFlame()
