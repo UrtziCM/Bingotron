@@ -93,7 +93,10 @@ public class BingoCard : Service
         }
 
         OnMark?.Invoke(GetSpaceAt(pos), pos);
-
+        if (HasBingo())
+        {
+            OnBingo?.Invoke(tileList.ToArray());
+        }
     }
 
     public BingoSpace[] GetLine(int line)
