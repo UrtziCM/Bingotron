@@ -51,11 +51,6 @@ public class BingoCard : Service
         ServiceLocator.AddService(this);
 
         CreateProperties();
-
-        foreach (BingoSpaceHandler spaceHandler in transform.GetComponentsInChildren<BingoSpaceHandler>())
-        {
-            AddBingoSpace(spaceHandler.GetSpace());
-        }
     }
 
     private void CreateProperties()
