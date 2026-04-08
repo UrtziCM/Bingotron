@@ -3,8 +3,12 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Tilemaps;
 
+
+
 public class BingoCard : Service
 {
+    public static readonly string MONEY_PROPERTY = "money";
+    
     readonly Vector2 Center = Vector2.one * 2;
     readonly Vector2 First  = Vector2.one * 0;
     readonly Vector2 Last   = Vector2.one * 4;
@@ -28,7 +32,7 @@ public class BingoCard : Service
     private void Setup()
     {
         ServiceLocator.AddService(this);
-        properties.Add(new BingoProperty(0, "money", 10));
+        properties.Add(new BingoProperty(0, MONEY_PROPERTY, 10));
         foreach (BingoSpace space in transform.GetComponentsInChildren<BingoSpace>())
         {
             AddBingoSpace(space);
