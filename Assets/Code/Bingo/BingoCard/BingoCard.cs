@@ -2,8 +2,6 @@ using System;
 using UnityEngine;
 using System.Collections.Generic;
 
-
-
 public class BingoCard : Service
 {
     public static readonly string MONEY_PROPERTY = "money";
@@ -36,6 +34,11 @@ public class BingoCard : Service
                 yield return GetSpaceAt(x, y);
             }
         }
+    }
+
+    public BingoSpace GetRandomBingoSpace()
+    {
+        return GetSpaceAt(UnityEngine.Random.Range(0, width), UnityEngine.Random.Range(0, height));
     }
 
     private void Start()
