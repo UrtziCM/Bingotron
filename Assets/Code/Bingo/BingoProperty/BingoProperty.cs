@@ -2,21 +2,20 @@ using UnityEngine;
 
 public class BingoProperty
 {
-    private int id;
+    private int baseValue;
     private string name;
     private int value;
 
-    public BingoProperty(int id, string name, int value) 
+    public BingoProperty(string name, int value, int baseValue = int.MinValue) 
     {
-        this.id = id;
         this.name = name;
         this.value = value;
+        this.baseValue = (baseValue != int.MinValue) ? baseValue:value;
     }
 
-
-    public int GetID()
+    public void Reset()
     {
-        return id;
+        value = baseValue;
     }
     public string GetName()
     {
@@ -33,10 +32,6 @@ public class BingoProperty
     public bool CompareName(string name)
     {
         return name == this.name;
-    }
-    public bool CompareID(int id)
-    {
-        return id == this.id;
     }
 
 }

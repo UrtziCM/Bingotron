@@ -12,7 +12,7 @@ public class BingoCard : Service
     public static readonly string CHARGE_PROPERTY = "charge";
     public static readonly string GAMBLER_ADDEDPROBABILITY_PROPERTY = "gambler";
     public static readonly string MANA_COUNT_PROPERTY = "mana";
-    public static readonly string FIRE_PROBABILITY_PROPERTY = "mana";
+    public static readonly string FIRE_PROBABILITY_PROPERTY = "fire_probabilty";
 
     readonly Vector2 Center = Vector2.one * 2;
     readonly Vector2 First  = Vector2.one * 0;
@@ -37,11 +37,23 @@ public class BingoCard : Service
     private void Setup()
     {
         ServiceLocator.AddService(this);
-        properties.Add(new BingoProperty(0, MONEY_PROPERTY, 10));
+
+        CreateProperties();
+
         foreach (BingoSpace space in transform.GetComponentsInChildren<BingoSpace>())
         {
             AddBingoSpace(space);
         }
+    }
+
+    private void CreateProperties()
+    {
+        properties.Add(new BingoProperty(MONEY_PROPERTY, 10));
+        properties.Add(new BingoProperty(MUSIC_ADDEDVALUE_PROPERTY, 0));
+        properties.Add(new BingoProperty(CHARGE_PROPERTY, 0));
+        properties.Add(new BingoProperty(GAMBLER_ADDEDPROBABILITY_PROPERTY, 0));
+        properties.Add(new BingoProperty(MANA_COUNT_PROPERTY, 0));
+        properties.Add(new BingoProperty(FIRE_PROBABILITY_PROPERTY, 0));
     }
 
     public BingoSpace GetSpaceAt(int x, int y)
@@ -81,7 +93,10 @@ public class BingoCard : Service
         }
 
         OnMark?.Invoke(GetSpaceAt(pos), pos);
-
+        if (HasBingo())
+        {
+            OnBingo?.Invoke(tileList.ToArray());
+        }
     }
 
     public BingoSpace[] GetLine(int line)
@@ -178,7 +193,7 @@ public class BingoCard : Service
     {
         foreach (BingoProperty bingoProperty in properties)
         {
-            if (bingoProperty.GetName() == name)
+            if (bingoProperty.CompareName(name))
             {
                 return bingoProperty;
             }
