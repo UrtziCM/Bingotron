@@ -7,9 +7,9 @@ public class BingoTileCatapulta : BingoTile, IMarkable, IFlamable
     {
         BingoCard bc = GetSpace().GetCard();
         Vector2 thisTilePos = GetSpace().GetPosition();
-
-        bc?.MarkSpace(thisTilePos + 2 * Vector2.right); //Ni idea de lo que estoy haciendo, si esta mal por favor ayuda - Unax
-
+        
+        if (bc.IsMarkable(thisTilePos + 2 * Vector2.right))
+            bc.MarkSpace(thisTilePos + 2 * Vector2.right);
     }
 
     public void OnFlame()

@@ -54,7 +54,7 @@ public class BingoCard : Service
     public bool IsMarkable(Vector2 pos)
     {
         BingoSticker sticker = GetSpaceAt(pos).GetNumber();
-        if (IsSpaceMarked(pos))
+        if (IsSpaceMarked(pos) && sticker != null)
             return false;
         return sticker.IsMarkable();
     }
