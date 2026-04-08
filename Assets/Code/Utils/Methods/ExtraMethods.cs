@@ -22,7 +22,7 @@ public static class ExtraMethods
         {
             Vector2 pos = thisTilePos + direction;
 
-            if (bc.IsMarkable(pos))
+            if (bc.GetSpaceAt(pos) == null)
                 continue;
             
             if(bc.GetSpaceAt(pos).GetTile() is IFlammable tile)
