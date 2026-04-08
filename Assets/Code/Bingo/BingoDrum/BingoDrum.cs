@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class BingoDrum : Service
 {
-    private const int totalNumbers = 90;
+    private const int TOTAL_NUMBERS = 90;
     public List<BingoBall> balls = new();
     public Queue<BingoBall> drumQueue = new();
+    public List<BingoBall> droppedBalls = new();
     public BingoBall currentBingoBall;
+    void Start()
+    {
+        Init();
+        ServiceLocator.AddService<BingoDrum>(this);
+    }
 
     private void Init()
     {
-        for (int i = 0; i < totalNumbers; i++)
+        for (int i = 0; i < TOTAL_NUMBERS; i++)
         {
             var ball = new BingoBall();
             ball.number = i;
@@ -31,12 +37,6 @@ public class BingoDrum : Service
         }
     }
 
-    void Start()
-    {
-        Init();
-        ServiceLocator.AddService<BingoDrum>(this);
-    }
-
     public BingoBall PeekNextBall()
     {
         return drumQueue.Peek();
@@ -45,7 +45,9 @@ public class BingoDrum : Service
     public BingoBall GetNextBall()
     {
         currentBingoBall = drumQueue.Dequeue();
+        droppedBalls.Add(currentBingoBall);
         return currentBingoBall;
+        
     }
 
     private BingoBall GetBallByNumber(int number)
