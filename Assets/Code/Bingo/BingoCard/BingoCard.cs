@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.Tilemaps;
 
 
 
@@ -21,17 +20,30 @@ public class BingoCard : Service
     private List<BingoSpace> tileList = new();
     private List<BingoProperty> properties = new();
 
-    private int height;
-    private int width;
+    private int height = 5;
+    private int width = 5;
 
     public Action<BingoSpace, Vector2> OnMark;
     public Action<BingoSpace[]> OnLine;
     public Action<BingoSpace[]> OnBingo;
 
+    public IEnumerable<BingoSpace> AllTiles()
+    {
+        for (int y = 0; y < height; y++)
+        {
+            for(int x = 0; x < width; x++)
+            {
+                yield return GetSpaceAt(x, y);
+            }
+        }
+    }
 
     private void Start()
     {
         Setup();
+        foreach (BingoSpace space in AllTiles()) {
+            Debug.Log(space.GetPosition());
+        }
     }
 
     private void Setup()
@@ -40,9 +52,9 @@ public class BingoCard : Service
 
         CreateProperties();
 
-        foreach (BingoSpace space in transform.GetComponentsInChildren<BingoSpace>())
+        foreach (BingoSpaceHandler spaceHandler in transform.GetComponentsInChildren<BingoSpaceHandler>())
         {
-            AddBingoSpace(space);
+            AddBingoSpace(spaceHandler.GetSpace());
         }
     }
 

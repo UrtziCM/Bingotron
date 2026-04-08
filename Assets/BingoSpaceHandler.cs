@@ -1,8 +1,8 @@
+using System;
 using UnityEngine;
 
 public class BingoSpaceHandler : MonoBehaviour
 {
-    [SerializeField]
     private BingoSpace bingoSpace;
     public Vector2 positionInGrid;
     private BingoCard card;
@@ -11,6 +11,7 @@ public class BingoSpaceHandler : MonoBehaviour
 
     void Start()
     {
+        bingoSpace = new(positionInGrid);
         card = transform.GetComponentInParent<BingoCard>();
         card.AddBingoSpace(bingoSpace);
     }
@@ -24,4 +25,8 @@ public class BingoSpaceHandler : MonoBehaviour
         }
     }
 
+    public BingoSpace GetSpace()
+    {
+        return bingoSpace;
+    }
 }

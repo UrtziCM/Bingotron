@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ServiceLocator
+public class ServiceLocator : MonoBehaviour 
 {
-    private static List<Service> services;
+    private static List<Service> services = new();
 
     public static bool HasService<T>() where T : Service
     {
