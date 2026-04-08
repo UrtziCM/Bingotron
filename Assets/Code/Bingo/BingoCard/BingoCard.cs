@@ -19,13 +19,22 @@ public class BingoCard : Service
     public Action<BingoSpace[]> OnLine;
     public Action<BingoSpace[]> OnBingo;
 
-   
 
     private void Start()
     {
-        ServiceLocator.AddService(this);
-        properties.Add(new BingoProperty(0,"money",10));
+        Setup();
     }
+
+    private void Setup()
+    {
+        ServiceLocator.AddService(this);
+        properties.Add(new BingoProperty(0, "money", 10));
+        foreach (BingoSpace space in transform.GetComponentsInChildren<BingoSpace>())
+        {
+            AddBingoSpace(space);
+        }
+    }
+
     public BingoSpace GetSpaceAt(int x, int y)
     {
         return GetSpaceAt(new Vector2(x, y));
