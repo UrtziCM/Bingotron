@@ -38,6 +38,6 @@ public class BingoTileBomb : BingoTile, IMarkable, IFlammable
     public void PreFlame(){}
     public void Spread()
     {
-        ExtraMethods.Spread(this);
+        Utils.Spread(this);
     }
 }

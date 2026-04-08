@@ -32,6 +32,6 @@ public class BingoTileCatapult : BingoTile, IMarkable, IFlammable
 
     public void Spread()
     {
-        ExtraMethods.Spread(this);
+        Utils.Spread(this);
     }
 }

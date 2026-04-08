@@ -27,7 +27,7 @@ public class BingoTileWheat : BingoTile, IMarkable, IFlammable, IPermeable
 
     public void Spread()
     {
-        ExtraMethods.Spread(this);
+        Utils.Spread(this);
     }
 
     public void Wet()

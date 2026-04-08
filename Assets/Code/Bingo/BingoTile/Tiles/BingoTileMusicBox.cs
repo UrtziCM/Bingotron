@@ -15,7 +15,7 @@ public class BingoTileMusicBox : BingoTile, IMarkable, IFlammable, IMusicable
             Vector2 thisTilePos = GetSpace().GetPosition();
             ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
 
-            sm.AddScore(value + bc.GetSpaceAt(thisTilePos).GetNumber().value + bc.GetValueFromProperty(BingoCard.MUSIC_ADDEDVALUE_PROPERTY));
+            sm.AddScore(value + bc.GetSpaceAt(thisTilePos).GetNumber().value + (int)bc.GetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY));
         }
     }
     public void PlayNote()
@@ -23,9 +23,9 @@ public class BingoTileMusicBox : BingoTile, IMarkable, IFlammable, IMusicable
         BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
         Vector2 thisTilePos = GetSpace().GetPosition();
 
-        int nextMusicValue = bc.GetValueFromProperty(BingoCard.MUSIC_ADDEDVALUE_PROPERTY) + 1;
+        int nextMusicValue = (int)bc.GetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY) + 1;
 
-        bc.GetPropertyByName(BingoCard.MUSIC_ADDEDVALUE_PROPERTY).SetValue(nextMusicValue);
+        bc.SetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY,nextMusicValue);
 
         ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
         sm.AddScore(value + bc.GetSpaceAt(thisTilePos).GetNumber().value + nextMusicValue);
@@ -48,6 +48,6 @@ public class BingoTileMusicBox : BingoTile, IMarkable, IFlammable, IMusicable
 
     public void Spread()
     {
-        ExtraMethods.Spread(this);
+        Utils.Spread(this);
     }
 }

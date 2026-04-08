@@ -7,7 +7,7 @@ public class BingoTileElectricGuitar : BingoTile, IMarkable, IMusicable, ICharge
     {
         BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
 
-        Discharge(bc.GetValueFromProperty(BingoCard.CHARGE_PROPERTY));
+        Discharge((int)bc.GetPropertyValue(BingoCard.CHARGE_PROPERTY));
     }
     public void Discharge(int charge)
     {
@@ -21,9 +21,9 @@ public class BingoTileElectricGuitar : BingoTile, IMarkable, IMusicable, ICharge
         BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
         Vector2 thisTilePos = GetSpace().GetPosition();
 
-        int nextMusicValue = bc.GetValueFromProperty(BingoCard.MUSIC_ADDEDVALUE_PROPERTY) + 1;
+        int nextMusicValue = (int)bc.GetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY) + 1;
 
-        bc.GetPropertyByName(BingoCard.MUSIC_ADDEDVALUE_PROPERTY).SetValue(nextMusicValue);
+        bc.SetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY, nextMusicValue);
 
         ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
         sm.AddScore(value + bc.GetSpaceAt(thisTilePos).GetNumber().value + nextMusicValue);

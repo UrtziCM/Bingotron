@@ -9,7 +9,7 @@ public class BingoTileStonks : BingoTile, IMarkable
         Vector2 thisTilePos = GetSpace().GetPosition();
         ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
 
-        this.value = bc.GetValueFromProperty(BingoCard.MONEY_PROPERTY);
+        this.value = (int)bc.GetPropertyValue(BingoCard.MONEY_PROPERTY);
 
         sm.AddScore(value + bc.GetSpaceAt(thisTilePos).GetNumber().value);
     }

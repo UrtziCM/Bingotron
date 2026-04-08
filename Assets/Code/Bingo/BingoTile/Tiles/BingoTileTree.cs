@@ -26,6 +26,6 @@ public class BingoTileTree : BingoTile, IMarkable, IFlammable
 
     public void Spread()
     {
-        ExtraMethods.Spread(this);
+        Utils.Spread(this);
     }
 }

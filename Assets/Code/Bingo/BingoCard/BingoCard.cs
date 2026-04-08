@@ -218,7 +218,7 @@ public class BingoCard : Service
     }
 
 
-    public BingoProperty GetPropertyByName(string name)
+    public BingoProperty GetProperty(string name)
     {
         foreach (BingoProperty bingoProperty in properties)
         {
@@ -231,9 +231,15 @@ public class BingoCard : Service
         return null;
     }
 
-    public int GetValueFromProperty(string name)
+    public float GetPropertyValue(string name)
     {
-        return GetPropertyByName(name).GetValue();
+        return GetProperty(name).GetValue();
+    }
+
+    public void SetPropertyValue(string name, float value)
+    {
+        BingoProperty property = GetProperty(name);
+        property.SetValue(value);
     }
 
     public void AddBingoSpace(BingoSpace bs)

@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class BingoProperty
 {
-    private int baseValue;
+    private float baseValue;
     private string name;
-    private int value;
+    private float value;
 
-    public BingoProperty(string name, int value, int baseValue = int.MinValue) 
+    public BingoProperty(string name, float value, float baseValue = float.MinValue) 
     {
         this.name = name;
         this.value = value;
-        this.baseValue = (baseValue != int.MinValue) ? baseValue:value;
+        this.baseValue = (baseValue != float.MinValue) ? baseValue:value;
     }
 
     public void Reset()
@@ -21,11 +21,11 @@ public class BingoProperty
     {
         return name;
     }
-    public void SetValue(int value)
+    public void SetValue(float value)
     {
         this.value = value;
     }
-    public int GetValue()
+    public float GetValue()
     {
         return value;
     }

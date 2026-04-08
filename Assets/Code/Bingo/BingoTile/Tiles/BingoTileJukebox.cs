@@ -13,11 +13,11 @@ public class BingoTileJukebox : BingoTile, IMarkable, IGamble, IMusicable
     {
         BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
 
-        float addedProb = bc.GetValueFromProperty(BingoCard.GAMBLER_ADDEDPROBABILITY_PROPERTY);
+        float addedProb = (int)bc.GetPropertyValue(BingoCard.GAMBLER_ADDEDPROBABILITY_PROPERTY);
 
         if (Random.Range(0.0f, 1.0f) < BaseProbability + addedProb)
         {
-            bc.GetPropertyByName(BingoCard.GAMBLER_ADDEDPROBABILITY_PROPERTY).SetValue(addedProb + 0.01f);
+            bc.SetPropertyValue(BingoCard.GAMBLER_ADDEDPROBABILITY_PROPERTY, addedProb + 0.01f);
             return true;
         }
         else 
@@ -29,18 +29,18 @@ public class BingoTileJukebox : BingoTile, IMarkable, IGamble, IMusicable
         BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
         Vector2 thisTilePos = GetSpace().GetPosition();
 
-        int nextMusicValue = bc.GetValueFromProperty(BingoCard.MUSIC_ADDEDVALUE_PROPERTY) + 1;
+        int nextMusicValue = (int)bc.GetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY) + 1;
 
-        bc.GetPropertyByName(BingoCard.MUSIC_ADDEDVALUE_PROPERTY).SetValue(nextMusicValue);
+        bc.SetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY, nextMusicValue);
 
         ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
         sm.AddScore(value + bc.GetSpaceAt(thisTilePos).GetNumber().value + nextMusicValue);
 
         while (Gamble()) // && cuando se pasa de tirada
         {
-            nextMusicValue = bc.GetValueFromProperty(BingoCard.MUSIC_ADDEDVALUE_PROPERTY) + 1;
+            nextMusicValue = (int)bc.GetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY) + 1;
 
-            bc.GetPropertyByName(BingoCard.MUSIC_ADDEDVALUE_PROPERTY).SetValue(nextMusicValue);
+            bc.SetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY, nextMusicValue);
 
             sm.AddScore(value + bc.GetSpaceAt(thisTilePos).GetNumber().value + nextMusicValue);
         }

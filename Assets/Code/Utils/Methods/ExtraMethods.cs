@@ -1,26 +1,32 @@
 using UnityEngine;
 
-public static class ExtraMethods 
+public static class Utils 
 {
+    public static readonly Vector2 Top = Vector2.up;
+    public static readonly Vector2 Bottom = Vector2.down;
+    public static readonly Vector2 Left = Vector2.left;
+    public static readonly Vector2 Right = Vector2.right;
+
+    public static readonly Vector2 TopRight = Vector2.up + Vector2.right;
+    public static readonly Vector2 TopLeft = Vector2.up + Vector2.left;
+    public static readonly Vector2 BottomRight = Vector2.down + Vector2.right;
+    public static readonly Vector2 BottomLeft = Vector2.down + Vector2.left;
+
+    public static readonly Vector2[] TouchingPositions = {Top, Bottom, Left, Right};
+    public static readonly Vector2[] SurroundingPositions = { Top, Bottom, Left, Right, TopRight, TopLeft, BottomRight, BottomLeft };
+
+
     public static void Spread(BingoTile bingoTile)
     {
         BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
         Vector2 thisTilePos = bingoTile.GetSpace().GetPosition();
 
-        float prob = bc.GetValueFromProperty(BingoCard.FIRE_PROBABILITY_PROPERTY);
+        float prob = bc.GetPropertyValue(BingoCard.FIRE_PROBABILITY_PROPERTY);
 
         if (Random.Range(0.0f, 1.0f) > prob)
             return;
 
-        Vector2[] directions =
-        {
-            Vector2.up,
-            Vector2.down,
-            Vector2.left,
-            Vector2.right
-        };
-
-        foreach (Vector2 direction in directions)
+        foreach (Vector2 direction in TouchingPositions)
         {
             Vector2 pos = thisTilePos + direction;
 
