@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -21,11 +20,11 @@ public class BingoCard : Service
     private int height = 5;
     private int width = 5;
 
-    public Action<BingoSpace, Vector2> OnMark;
-    public Action<BingoSpace[]> OnLine;
-    public Action<BingoSpace[]> OnBingo;
+    public System.Action<BingoSpace, Vector2> OnMark;
+    public System.Action<BingoSpace[]> OnLine;
+    public System.Action<BingoSpace[]> OnBingo;
 
-    public IEnumerable<BingoSpace> AllTiles()
+    public IEnumerable<BingoSpace> AllSpaces()
     {
         for (int y = 0; y < height; y++)
         {
@@ -38,15 +37,12 @@ public class BingoCard : Service
 
     public BingoSpace GetRandomBingoSpace()
     {
-        return GetSpaceAt(UnityEngine.Random.Range(0, width), UnityEngine.Random.Range(0, height));
+        return GetSpaceAt(Random.Range(0, width), Random.Range(0, height));
     }
 
     private void Start()
     {
         Setup();
-        foreach (BingoSpace space in AllTiles()) {
-            Debug.Log(space.GetPosition());
-        }
     }
 
     private void Setup()
@@ -63,13 +59,36 @@ public class BingoCard : Service
         properties.Add(new BingoProperty(CHARGE_PROPERTY, 0));
         properties.Add(new BingoProperty(GAMBLER_ADDEDPROBABILITY_PROPERTY, 0));
         properties.Add(new BingoProperty(MANA_COUNT_PROPERTY, 0));
-        properties.Add(new BingoProperty(FIRE_PROBABILITY_PROPERTY, 0));
+        properties.Add(new BingoProperty(FIRE_PROBABILITY_PROPERTY, 0, 50));
     }
 
     public BingoSpace GetSpaceAt(int x, int y)
     {
         return GetSpaceAt(new Vector2(x, y));
     }
+
+    public BingoSpace[] GetAllSpacesOfType<T>()
+    {
+        List<BingoSpace> spaces = new List<BingoSpace>();
+        foreach (BingoSpace space in AllSpaces())
+        {
+            if (space.GetTile() is T)
+                spaces.Add(space);
+        }
+        return spaces.ToArray();
+    }
+
+    
+    public BingoSpace GetRandomSpaceOfType<T>()
+    {
+        BingoSpace[] spacesOfType = GetAllSpacesOfType<T>();
+        if (spacesOfType.Length < 0)
+            return null;
+
+        return spacesOfType[UnityEngine.Random.Range(0, spacesOfType.Length)];
+
+    }
+
     public BingoSpace GetSpaceAt(Vector2 pos)
     {
         foreach (BingoSpace bs in tileList)

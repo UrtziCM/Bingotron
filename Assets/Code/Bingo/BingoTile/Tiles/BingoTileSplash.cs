@@ -12,7 +12,7 @@ public class BingoTileSplash : BingoTile, IMarkable
 
         List<IPermeable> permeableList = new List<IPermeable>();
 
-        foreach (BingoSpace bt in bc.AllTiles())
+        foreach (BingoSpace bt in bc.AllSpaces())
         {
             if (bt.GetTile() is IPermeable tile)
                 permeableList.Add(tile);
