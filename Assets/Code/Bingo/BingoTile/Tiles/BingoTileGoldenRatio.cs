@@ -14,7 +14,7 @@ public class BingoTileGoldenRatio : BingoTile, IMarkable
         ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
         foreach (int num in fibonacciNumbers)
         {
-            if (bc.GetSpaceAt(thisTilePos).GetNumber().value == num)
+            if (bc.GetSpaceAt(thisTilePos).GetNumber() == num) //falta comprobar si el numero de la casilla coincide con los numeros
             {
                 int AddMoney = bc.GetValueFromProperty("money") + 5;
                 bc.GetPropertyByName("money").SetValue(AddMoney);
