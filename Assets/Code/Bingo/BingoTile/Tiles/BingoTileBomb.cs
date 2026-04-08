@@ -7,6 +7,8 @@ public class BingoTileBomb : BingoTile, IMarkable, IFlammable
     public void Mark()
     {
         BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
+        ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
+
         Vector2 thisTilePos = GetSpace().GetPosition();
 
         Vector2[] directions =
@@ -24,6 +26,8 @@ public class BingoTileBomb : BingoTile, IMarkable, IFlammable
             if (bc.IsMarkable(pos))
                 bc.MarkSpace(pos);
         }
+
+        sm.AddScore(value + bc.GetSpaceAt(thisTilePos).GetNumber().value);
     }
 
     public void OnFlame()
