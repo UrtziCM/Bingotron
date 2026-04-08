@@ -10,15 +10,7 @@ public class BingoTileVolcano : BingoTile, IMarkable
         Vector2 thisTilePos = GetSpace().GetPosition();
         ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
 
-        List<IFlammable> permeableList = new List<IFlammable>();
-
-        foreach (BingoSpace bt in bc.AllTiles())
-        {
-            if (bt.GetTile() is IFlammable tile)
-                permeableList.Add(tile);
-        }
-
-        permeableList[Random.Range(0, permeableList.Count)].OnFlame();
+        (bc.GetRandomSpaceOfType<IFlammable>() as IFlammable)?.OnFlame();
 
         sm.AddScore(value + bc.GetSpaceAt(thisTilePos).GetNumber().value);
     }
