@@ -60,7 +60,8 @@ public class BingoCard : Service
         BingoSticker sticker = GetSpaceAt(pos).GetNumber();
         if (IsSpaceMarked(pos) && sticker != null)
             return false;
-        return sticker.IsMarkable();
+        BingoDrum bingoDrum = (ServiceLocator.GetService<BingoDrum>() as BingoDrum);
+        return sticker.IsMarkable(bingoDrum.currentBingoBall);
     }
 
     public void MarkSpace(Vector2 pos)

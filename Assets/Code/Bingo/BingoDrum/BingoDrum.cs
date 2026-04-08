@@ -7,6 +7,7 @@ public class BingoDrum : Service
     private const int totalNumbers = 90;
     public List<BingoBall> balls = new();
     public Queue<BingoBall> drumQueue = new();
+    public BingoBall currentBingoBall;
 
     private void Init()
     {
@@ -43,7 +44,8 @@ public class BingoDrum : Service
 
     public BingoBall GetNextBall()
     {
-        return drumQueue.Dequeue();
+        currentBingoBall = drumQueue.Dequeue();
+        return currentBingoBall;
     }
 
     private BingoBall GetBallByNumber(int number)

@@ -5,7 +5,7 @@ public abstract class BingoSticker : ScriptableObject
     private BingoSpace space;
     public int value;
 
-    public virtual bool IsMarkable()
+    public virtual bool IsMarkable(BingoBall ball)
     {
         return false;
     }
