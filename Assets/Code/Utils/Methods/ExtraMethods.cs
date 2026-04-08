@@ -25,7 +25,7 @@ public static class ExtraMethods
             if (bc.IsMarkable(pos))
                 continue;
             
-            if(bc.GetSpaceAt(pos).GetTile() is IFlamable tile)
+            if(bc.GetSpaceAt(pos).GetTile() is IFlammable tile)
                 tile.OnFlame();
         }
     }

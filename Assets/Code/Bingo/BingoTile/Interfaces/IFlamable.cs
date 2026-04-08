@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public interface IFlamable
+public interface IFlammable
 {
     public void PreFlame();
     public void OnFlame();
