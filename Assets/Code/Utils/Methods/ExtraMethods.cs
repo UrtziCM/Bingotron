@@ -2,10 +2,12 @@ using UnityEngine;
 
 public static class ExtraMethods 
 {
-    public static void Spread(BingoTile bingoTile, float prob = 50.0f)
+    public static void Spread(BingoTile bingoTile)
     {
         BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
         Vector2 thisTilePos = bingoTile.GetSpace().GetPosition();
+
+        float prob = bc.GetValueFromProperty("fire_probabilty");
 
         if (Random.Range(0.0f, 100.0f) > prob)
             return;
