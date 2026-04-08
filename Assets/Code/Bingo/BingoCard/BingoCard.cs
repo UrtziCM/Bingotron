@@ -8,7 +8,12 @@ using UnityEngine.Tilemaps;
 public class BingoCard : Service
 {
     public static readonly string MONEY_PROPERTY = "money";
-    
+    public static readonly string MUSIC_ADDEDVALUE_PROPERTY = "music";
+    public static readonly string CHARGE_PROPERTY = "charge";
+    public static readonly string GAMBLER_ADDEDPROBABILITY_PROPERTY = "gambler";
+    public static readonly string MANA_COUNT_PROPERTY = "mana";
+    public static readonly string FIRE_PROBABILITY_PROPERTY = "mana";
+
     readonly Vector2 Center = Vector2.one * 2;
     readonly Vector2 First  = Vector2.one * 0;
     readonly Vector2 Last   = Vector2.one * 4;
