@@ -11,7 +11,7 @@ public class BingoTileLawnmower : BingoTile, IMarkable, IChargeable
         Vector2 thisTilePos = GetSpace().GetPosition();
         ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
 
-        Discharge(bc.GetValueFromProperty("charge"));
+        Discharge(bc.GetValueFromProperty(BingoCard.CHARGE_PROPERTY));
 
         sm.AddScore(value + bc.GetSpaceAt(thisTilePos).GetNumber().value);
     }

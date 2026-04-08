@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "BingoTileMusicBox", menuName = "BingoTiles/BingoTileMusicBox")]
+[CreateAssetMenu(fileName = "BingoTileMusicBox", menuName = "Bingo/Tiles/BingoTileMusicBox")]
 public class BingoTileMusicBox : BingoTile, IMarkable, IFlammable, IMusicable
 {
     private bool burnt = false;
@@ -15,7 +15,7 @@ public class BingoTileMusicBox : BingoTile, IMarkable, IFlammable, IMusicable
             Vector2 thisTilePos = GetSpace().GetPosition();
             ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
 
-            sm.AddScore(value + bc.GetSpaceAt(thisTilePos).GetNumber().value + bc.GetValueFromProperty("music"));
+            sm.AddScore(value + bc.GetSpaceAt(thisTilePos).GetNumber().value + bc.GetValueFromProperty(BingoCard.MUSIC_ADDEDVALUE_PROPERTY));
         }
     }
     public void PlayNote()
@@ -23,9 +23,9 @@ public class BingoTileMusicBox : BingoTile, IMarkable, IFlammable, IMusicable
         BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
         Vector2 thisTilePos = GetSpace().GetPosition();
 
-        int nextMusicValue = bc.GetValueFromProperty("music") + 1;
+        int nextMusicValue = bc.GetValueFromProperty(BingoCard.MUSIC_ADDEDVALUE_PROPERTY) + 1;
 
-        bc.GetPropertyByName("music").SetValue(nextMusicValue);
+        bc.GetPropertyByName(BingoCard.MUSIC_ADDEDVALUE_PROPERTY).SetValue(nextMusicValue);
 
         ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
         sm.AddScore(value + bc.GetSpaceAt(thisTilePos).GetNumber().value + nextMusicValue);

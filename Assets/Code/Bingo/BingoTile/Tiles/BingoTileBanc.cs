@@ -1,7 +1,7 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "BingoTileBanco", menuName = "BingoTiles/BingoTileBanco ")]
-public class BingoTileBanco : BingoTile, IMarkable
+[CreateAssetMenu(fileName = "BingoTileBank", menuName = "Bingo/Tiles/BingoTileBank")]
+public class BingoTileBank : BingoTile, IMarkable
 {
     public void Mark()
     {
@@ -9,7 +9,7 @@ public class BingoTileBanco : BingoTile, IMarkable
         Vector2 thisTilePos = GetSpace().GetPosition();
         ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
 
-        float moneyValue = bc.GetValueFromProperty("money") /3;
+        float moneyValue = bc.GetValueFromProperty(BingoCard.MONEY_PROPERTY) /3;
         
         this.value = (int)moneyValue;
     

@@ -1,13 +1,13 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "BingoTileElectricGuitar", menuName = "BingoTiles/BingoTileElectricGuitar")]
+[CreateAssetMenu(fileName = "BingoTileElectricGuitar", menuName = "Bingo/Tiles/BingoTileElectricGuitar")]
 public class BingoTileElectricGuitar : BingoTile, IMarkable, IMusicable, IChargeable
 {
     public void Mark()
     {
         BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
 
-        Discharge(bc.GetValueFromProperty("charge"));
+        Discharge(bc.GetValueFromProperty(BingoCard.CHARGE_PROPERTY));
     }
     public void Discharge(int charge)
     {
@@ -21,9 +21,9 @@ public class BingoTileElectricGuitar : BingoTile, IMarkable, IMusicable, ICharge
         BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
         Vector2 thisTilePos = GetSpace().GetPosition();
 
-        int nextMusicValue = bc.GetValueFromProperty("music") + 1;
+        int nextMusicValue = bc.GetValueFromProperty(BingoCard.MUSIC_ADDEDVALUE_PROPERTY) + 1;
 
-        bc.GetPropertyByName("music").SetValue(nextMusicValue);
+        bc.GetPropertyByName(BingoCard.MUSIC_ADDEDVALUE_PROPERTY).SetValue(nextMusicValue);
 
         ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
         sm.AddScore(value + bc.GetSpaceAt(thisTilePos).GetNumber().value + nextMusicValue);

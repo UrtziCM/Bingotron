@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "BingoTileIceberg", menuName = "BingoTiles/BingoTileIceberg ")]
+[CreateAssetMenu(fileName = "BingoTileIceberg", menuName = "Bingo/Tiles/BingoTileIceberg ")]
 public class BingoTileIceberg : BingoTile, IMarkable
 {
     public void Mark()

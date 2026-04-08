@@ -7,9 +7,9 @@ public static class ExtraMethods
         BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
         Vector2 thisTilePos = bingoTile.GetSpace().GetPosition();
 
-        float prob = bc.GetValueFromProperty("fire_probabilty");
+        float prob = bc.GetValueFromProperty(BingoCard.FIRE_PROBABILITY_PROPERTY);
 
-        if (Random.Range(0.0f, 100.0f) > prob)
+        if (Random.Range(0.0f, 1.0f) > prob)
             return;
 
         Vector2[] directions =

@@ -16,8 +16,8 @@ public class BingoTileGoldenRatio : BingoTile, IMarkable
         {
             //if (bc.GetSpaceAt(thisTilePos).GetNumber() == num) //falta comprobar si el numero de la casilla coincide con los numeros
             {
-                int AddMoney = bc.GetValueFromProperty("money") + 5;
-                bc.GetPropertyByName("money").SetValue(AddMoney);
+                int AddMoney = bc.GetValueFromProperty(BingoCard.MONEY_PROPERTY) + 5;
+                bc.GetPropertyByName(BingoCard.MONEY_PROPERTY).SetValue(AddMoney);
                 break;
             }
         }
