@@ -37,4 +37,19 @@ public static class Utils
                 tile.OnFlame();
         }
     }
+
+    public static bool Gamble(float baseProb)
+    {
+        BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
+
+        float addedProb = bc.GetPropertyValue(BingoCard.GAMBLER_ADDEDPROBABILITY_PROPERTY);
+
+        if (Random.Range(0.0f, 1.0f) < baseProb + addedProb)
+        {
+            bc.SetPropertyValue(BingoCard.GAMBLER_ADDEDPROBABILITY_PROPERTY, addedProb + 0.01f);
+            return true;
+        }
+        else
+            return false;
+    }
 }

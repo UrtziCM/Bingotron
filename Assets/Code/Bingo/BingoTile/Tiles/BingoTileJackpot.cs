@@ -11,14 +11,13 @@ public class BingoTileJackpot : BingoTile, IMarkable, IGamble
         Vector2 thisTilePos = GetSpace().GetPosition();
         ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
 
-        sm.AddScore(Gamble() ? sm.Score : value + bc.GetSpaceAt(thisTilePos).GetNumber().value);
+        sm.AddScore(value + bc.GetSpaceAt(thisTilePos).GetNumber().value);
 
-        bc.GetProperty(BingoCard.GAMBLER_ADDEDPROBABILITY_PROPERTY).SetValue(bc.GetPropertyValue(BingoCard.GAMBLER_ADDEDPROBABILITY_PROPERTY) + 0.01f);
+        if(Gamble())
+            sm.AddScore(sm.Score);
     }
     public bool Gamble()
     {
-        BingoCard bc = GetSpace().GetCard();
-
-        return Random.Range(0, 1) > BaseProbability + bc.GetPropertyValue(BingoCard.GAMBLER_ADDEDPROBABILITY_PROPERTY);
+        return Utils.Gamble(BaseProbability);
     }
 }

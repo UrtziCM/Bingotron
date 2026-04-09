@@ -11,17 +11,7 @@ public class BingoTileJukebox : BingoTile, IMarkable, IGamble, IMusicable
     }
     public bool Gamble()
     {
-        BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
-
-        float addedProb = (int)bc.GetPropertyValue(BingoCard.GAMBLER_ADDEDPROBABILITY_PROPERTY);
-
-        if (Random.Range(0.0f, 1.0f) < BaseProbability + addedProb)
-        {
-            bc.SetPropertyValue(BingoCard.GAMBLER_ADDEDPROBABILITY_PROPERTY, addedProb + 0.01f);
-            return true;
-        }
-        else 
-            return false;
+        return Utils.Gamble(BaseProbability);
     }
 
     public void PlayNote()
