@@ -52,4 +52,11 @@ public static class Utils
         else
             return false;
     }
+
+    public static void PlayNote()
+    {
+        BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
+
+        bc.SetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY, bc.GetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY) + 1);
+    }
 }
