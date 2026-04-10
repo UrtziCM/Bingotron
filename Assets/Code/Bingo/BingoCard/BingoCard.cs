@@ -17,8 +17,8 @@ public class BingoCard : Service
     private List<BingoSpace> tileList = new();
     private List<BingoProperty> properties = new();
 
-    private int height = 5;
-    private int width = 5;
+    public int height = 5;
+    public int width = 5;
 
     public System.Action<BingoSpace, Vector2> OnMark;
     public System.Action<BingoSpace[]> OnLine;
