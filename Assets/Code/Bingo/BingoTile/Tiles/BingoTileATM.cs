@@ -10,12 +10,11 @@ public class BingoTileATM : BingoTile, IMarkable, IChargeable, IGamble
     public void Mark()
     {
         BingoCard bc = GetSpace().GetCard();
-        Vector2 thisTilePos = GetSpace().GetPosition();
         ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
 
         Discharge((int)bc.GetPropertyValue(BingoCard.CHARGE_PROPERTY));
 
-        sm.AddScore((Gamble() ? value : specialValue) + bc.GetSpaceAt(thisTilePos).GetNumber().value);
+        sm.AddScore((Gamble() ? value : specialValue) + GetSpace().GetNumber().value);
     }
     public void Discharge(int charge)
     {

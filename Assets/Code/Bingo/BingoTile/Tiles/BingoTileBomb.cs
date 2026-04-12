@@ -9,7 +9,6 @@ public class BingoTileBomb : BingoTile, IMarkable, IFlammable
         BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
         ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
 
-        Vector2 thisTilePos = GetSpace().GetPosition();
 
         Vector2[] directions =
         {
@@ -21,13 +20,13 @@ public class BingoTileBomb : BingoTile, IMarkable, IFlammable
 
         foreach (Vector2 direction in directions)
         {
-            Vector2 pos = thisTilePos + direction;
+            Vector2 tagetPos = pos + direction;
 
-            if (bc.IsMarkable(pos))
-                bc.MarkSpace(pos);
+            if (bc.IsMarkable(tagetPos))
+                bc.MarkSpace(tagetPos);
         }
 
-        sm.AddScore(value + bc.GetSpaceAt(thisTilePos).GetNumber().value);
+        sm.AddScore(value + GetSpace().GetNumber().value);
     }
 
     public void OnFlame()

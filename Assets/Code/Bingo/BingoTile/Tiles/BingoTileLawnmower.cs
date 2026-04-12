@@ -8,12 +8,11 @@ public class BingoTileLawnmower : BingoTile, IMarkable, IChargeable
     public void Mark()
     {
         BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
-        Vector2 thisTilePos = GetSpace().GetPosition();
         ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
 
         Discharge((int)bc.GetPropertyValue(BingoCard.CHARGE_PROPERTY));
 
-        sm.AddScore(value + bc.GetSpaceAt(thisTilePos).GetNumber().value);
+        sm.AddScore(value + GetSpace().GetNumber().value);
     }
     public void Discharge(int charge)
     {
@@ -26,8 +25,7 @@ public class BingoTileLawnmower : BingoTile, IMarkable, IChargeable
                 break;
 
             if(bc.IsMarkable(nextTilePos))
-                if (bc.GetSpaceAt(nextTilePos).GetTile() is IMarkable tile)
-                    tile.Mark();
+                (bc.GetSpaceAt(nextTilePos) as IMarkable).Mark();
 
             charge--;
             nextTilePos += direction;

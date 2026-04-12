@@ -18,9 +18,8 @@ public class BingoTileWizard : BingoTile, IMarkable, ICasteable, IGamble
 
         Cast((int)bc.GetPropertyValue(BingoCard.MANA_COUNT_PROPERTY));
 
-        Vector2 thisTilePos = GetSpace().GetPosition();
         ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
-        sm.AddScore(value + bc.GetSpaceAt(thisTilePos).GetNumber().value);
+        sm.AddScore(value + GetSpace().GetNumber().value);
     }
     public void Cast(int mana)
     {

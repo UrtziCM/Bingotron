@@ -8,7 +8,7 @@ public class BingoTileMusicBox : BingoTile, IMarkable, IFlammable, IMusicable
         BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
         ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
 
-        sm.AddScore(value + bc.GetSpaceAt(pos).GetNumber().value + (int)bc.GetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY));
+        sm.AddScore(value + GetSpace().GetNumber().value + (int)bc.GetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY));
     }
     public void PlayNote()
     {

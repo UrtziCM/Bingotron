@@ -5,10 +5,7 @@ public class BingoTileCanal : BingoTile, IMarkable
 {
     public void Mark()
     {
-        BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
         ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
-
-        Vector2 thisTilePos = GetSpace().GetPosition();
 
         Vector2[] directions =
         {
@@ -20,12 +17,12 @@ public class BingoTileCanal : BingoTile, IMarkable
 
         foreach (Vector2 direction in directions)
         {
-            Vector2 pos = thisTilePos + direction;
+            Vector2 targetPos = pos + direction;
 
-            if(bc.GetSpaceAt(pos).GetTile() is IPermeable tile)
+            if(GetSpace().GetTile() is IPermeable tile)
                 tile.Wet();
         }
 
-        sm.AddScore(value + bc.GetSpaceAt(thisTilePos).GetNumber().value);
+        sm.AddScore(value + GetSpace().GetNumber().value);
     }
 }

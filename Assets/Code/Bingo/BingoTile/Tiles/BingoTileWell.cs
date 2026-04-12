@@ -9,11 +9,9 @@ public class BingoTileWell : BingoTile, IMarkable, IGamble, IPermeable
 
     public void Mark()
     {
-        BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
-        Vector2 thisTilePos = GetSpace().GetPosition();
         ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
 
-        sm.AddScore(value + bc.GetSpaceAt(thisTilePos).GetNumber().value);
+        sm.AddScore(value + GetSpace().GetNumber().value);
     }
 
     public void Wet()

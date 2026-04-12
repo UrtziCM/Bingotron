@@ -7,12 +7,10 @@ public class BingoTileStrawLoft : BingoTile, IMarkable, IFlammable, IGamble
 
     public void Mark()
     {
-        BingoCard bc = GetSpace().GetCard();
-        Vector2 thisTilePos = GetSpace().GetPosition();
         ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
 
         if (Gamble())
-            sm.AddScore(value + bc.GetSpaceAt(thisTilePos).GetNumber().value + 10);
+            sm.AddScore(value + GetSpace().GetNumber().value + 10);
     }
 
     public void OnFlame()

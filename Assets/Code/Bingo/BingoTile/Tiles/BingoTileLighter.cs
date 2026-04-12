@@ -5,12 +5,11 @@ public class BingoTileLighter : BingoTile, IMarkable, IFlammable
 {
     public void Mark()
     {
-        BingoCard bc = GetSpace().GetCard();
         ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
 
         OnFlame();
 
-        sm.AddScore(value + bc.GetSpaceAt(pos).GetNumber().value);
+        sm.AddScore(value + GetSpace().GetNumber().value);
     }
 
     public void OnFlame()
