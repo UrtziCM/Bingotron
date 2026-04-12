@@ -13,7 +13,8 @@ public class BingoTileGoldenRatio : BingoTile, IMarkable
         BingoSticker sticker = GetSpace().GetNumber();
         ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
 
-        if (!sticker is BingoStickerNumeric) return;
+        if (!(sticker is BingoStickerNumeric)) 
+            return;
 
         if(fibonacciNumbers.Contains((sticker as BingoStickerNumeric).Number))
         {
