@@ -24,10 +24,9 @@ public class BingoTileTsunami : BingoTile, IMarkable, IPermeable
 
         foreach (BingoSpace bingoSpace in spaces)
         {
-            if (bingoSpace.GetTile() is IPermeable tile)
+            if (bingoSpace.GetTile() is IPermeable tile && !(bingoSpace.GetTile() is BingoTileTsunami))
             {
-                if (bingoSpace.GetTile() is not BingoTileTsunami)
-                    tile.Wet();
+                tile.Wet();
             }
         }
     }
