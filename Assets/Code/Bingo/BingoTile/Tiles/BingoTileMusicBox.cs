@@ -3,18 +3,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "BingoTileMusicBox", menuName = "Bingo/Tiles/MusicBox")]
 public class BingoTileMusicBox : BingoTile, IMarkable, IFlammable, IMusicable
 {
-    private bool burnt = false;
-
     public void Mark()
     {
         BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
-        Vector2 thisTilePos = GetSpace().GetPosition();
         ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
 
-        if (burnt)
-            PlayNote();
-
-        sm.AddScore(value + bc.GetSpaceAt(thisTilePos).GetNumber().value + (int)bc.GetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY));
+        sm.AddScore(value + bc.GetSpaceAt(pos).GetNumber().value + (int)bc.GetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY));
     }
     public void PlayNote()
     {
@@ -23,9 +17,8 @@ public class BingoTileMusicBox : BingoTile, IMarkable, IFlammable, IMusicable
 
     public void OnFlame()
     {
-        burnt = true;
-        Mark();
         PlayNote();
+        Mark();
     }
 
     public void PostFlame()
