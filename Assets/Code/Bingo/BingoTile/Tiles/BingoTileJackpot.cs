@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "BingoTileJackpot", menuName = "Bingo/Tiles/BingoTileJackpot")]
+[CreateAssetMenu(fileName = "BingoTileJackpot", menuName = "Bingo/Tiles/Jackpot")]
 public class BingoTileJackpot : BingoTile, IMarkable, IGamble
 {
     public float BaseProbability => 0.5f;

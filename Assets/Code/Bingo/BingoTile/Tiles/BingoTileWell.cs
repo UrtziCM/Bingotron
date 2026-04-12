@@ -2,7 +2,7 @@ using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
 
-[CreateAssetMenu(fileName = "BingoTileWell", menuName = "Bingo/Tiles/BingoTileWell")]
+[CreateAssetMenu(fileName = "BingoTileWell", menuName = "Bingo/Tiles/Well")]
 public class BingoTileWell : BingoTile, IMarkable, IGamble, IPermeable
 {
     public float BaseProbability => 0.2f;

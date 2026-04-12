@@ -2,7 +2,7 @@ using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
 
-[CreateAssetMenu(fileName = "BingoTileFireStorm", menuName = "Bingo/Tiles/BingoTileFireStorm")]
+[CreateAssetMenu(fileName = "BingoTileFireStorm", menuName = "Bingo/Tiles/FireStorm")]
 public class BingoTileFireStorm : BingoTile, IMarkable, ICasteable
 {
     public void Mark()

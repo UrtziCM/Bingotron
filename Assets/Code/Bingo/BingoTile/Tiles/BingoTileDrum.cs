@@ -1,7 +1,7 @@
 using UnityEngine;
 using static UnityEngine.ParticleSystem;
 
-[CreateAssetMenu(fileName = "BingoTileDrum", menuName = "Bingo/Tiles/BingoTileDrum")]
+[CreateAssetMenu(fileName = "BingoTileDrum", menuName = "Bingo/Tiles/Drum")]
 public class BingoTileDrum : BingoTile, IMarkable, IMusicable
 {
     public void Mark()

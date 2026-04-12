@@ -1,7 +1,7 @@
 using NUnit.Framework;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "BingoTileWizard", menuName = "Bingo/Tiles/BingoTileWizard")]
+[CreateAssetMenu(fileName = "BingoTileWizard", menuName = "Bingo/Tiles/Wizard")]
 public class BingoTileWizard : BingoTile, IMarkable, ICasteable, IGamble
 {
     public float BaseProbability => 0.2f;

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "BingoTileMusicBox", menuName = "Bingo/Tiles/BingoTileMusicBox")]
+[CreateAssetMenu(fileName = "BingoTileMusicBox", menuName = "Bingo/Tiles/MusicBox")]
 public class BingoTileMusicBox : BingoTile, IMarkable, IFlammable, IMusicable
 {
     private bool burnt = false;

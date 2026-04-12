@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ERROR_THIS-SHOULD-NOT-BE-POSSIBLE", menuName = "Bingo/Tiles/BingoTile (Not-Instanceable)")]
+[CreateAssetMenu(fileName = "ERROR_THIS-SHOULD-NOT-BE-POSSIBLE", menuName = "Bingo/Tiles/BingoTile (Not-Instanceable)", order = -1)]
 public abstract class BingoTile : ScriptableObject
 {
     internal Vector2 pos;

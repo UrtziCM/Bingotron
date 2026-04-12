@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "BingoTileLawnmower", menuName = "Bingo/Tiles/BingoTileLawnmower")]
+[CreateAssetMenu(fileName = "BingoTileLawnmower", menuName = "Bingo/Tiles/Lawnmower")]
 public class BingoTileLawnmower : BingoTile, IMarkable, IChargeable
 {
     [SerializeField] private Vector2 direction;

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "BingoTileBomb", menuName = "Bingo/Tiles/BingoTileBomb")]
+[CreateAssetMenu(fileName = "BingoTileBomb", menuName = "Bingo/Tiles/Bomb")]
 public class BingoTileBomb : BingoTile, IMarkable, IFlammable
 {
     public void Mark()

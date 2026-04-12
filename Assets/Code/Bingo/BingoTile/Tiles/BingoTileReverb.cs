@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "BingoTileReverb", menuName = "Bingo/Tiles/BingoTileReverb")]
+[CreateAssetMenu(fileName = "BingoTileReverb", menuName = "Bingo/Tiles/Reverb")]
 public class BingoTileReverb : BingoTile, IMarkable, IMusicable
 {
     string musicProperty = BingoCard.MUSIC_ADDEDVALUE_PROPERTY;
