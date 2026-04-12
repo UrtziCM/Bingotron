@@ -46,6 +46,8 @@ public class BingoDrum : Service
     {
         currentBingoBall = drumQueue.Dequeue();
         droppedBalls.Add(currentBingoBall);
+        (ServiceLocator.GetService<BingoCard>() as BingoCard).OnBallRolled.Invoke(currentBingoBall);
+
         return currentBingoBall;
         
     }

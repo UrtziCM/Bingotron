@@ -24,6 +24,10 @@ public class BingoCard : Service
     public System.Action<BingoSpace[]> OnLine;
     public System.Action<BingoSpace[]> OnBingo;
 
+    public System.Action<BingoBall> OnBallRolled;
+
+
+
     public IEnumerable<BingoSpace> AllSpaces()
     {
         for (int y = 0; y < height; y++)
@@ -50,6 +54,8 @@ public class BingoCard : Service
         ServiceLocator.AddService(this);
 
         CreateProperties();
+
+        OnBallRolled += ball => BallRolled(ball);
     }
 
     private void CreateProperties()
@@ -245,5 +251,16 @@ public class BingoCard : Service
     public void AddBingoSpace(BingoSpace bs)
     {
         tileList.Add(bs);
+    }
+
+    public void BallRolled(BingoBall ball)
+    {
+        foreach (BingoSpace bs in tileList)
+        {
+            if (bs is IRoller roller)
+            {
+                roller.OnRoll(ball);
+            }
+        }
     }
 }
