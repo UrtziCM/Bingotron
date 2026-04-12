@@ -5,15 +5,17 @@ using System.Collections.Generic;
 [CreateAssetMenu(fileName = "BingoTileFireStorm", menuName = "Bingo/Tiles/FireStorm")]
 public class BingoTileFireStorm : BingoTile, IMarkable, ICasteable
 {
+    public int LowManaCost => 10;
+    public int MidManaCost => 0;
+    public int HighManaCost => 0;
     public void Mark()
     {
         BingoCard bc = GetSpace().GetCard();
-        Vector2 thisTilePos = GetSpace().GetPosition();
         ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
 
         Cast((int)bc.GetPropertyValue(BingoCard.MANA_COUNT_PROPERTY));
 
-        sm.AddScore( value + bc.GetSpaceAt(thisTilePos).GetNumber().value);
+        sm.AddScore(value + GetSpace().GetNumber().value);
     }
     public void Cast(int mana)
     {
@@ -21,7 +23,7 @@ public class BingoTileFireStorm : BingoTile, IMarkable, ICasteable
 
         List<BingoSpace> allSpaces = new List<BingoSpace>(bc.GetAllSpacesOfType<BingoSpace>());
 
-        while (mana >= 10 && allSpaces.Count > 0)
+        while (mana >= LowManaCost && allSpaces.Count > 0)
         {
             int i = Random.Range(0, allSpaces.Count);
 
@@ -30,7 +32,7 @@ public class BingoTileFireStorm : BingoTile, IMarkable, ICasteable
 
             allSpaces.RemoveAt(i);
 
-            mana--;
+            mana -= LowManaCost;
             bc.SetPropertyValue(BingoCard.MANA_COUNT_PROPERTY, mana);
         }
     }
