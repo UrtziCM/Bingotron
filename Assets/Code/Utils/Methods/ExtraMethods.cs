@@ -75,7 +75,7 @@ public static class Utils
         return bs;
     }
 
-    public static BingoSpace GetRandomUnmarkedTyped<T>() where T : BingoTile
+    public static BingoSpace GetRandomUnmarkedTyped<T>() 
     {
         BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
         BingoSpace bs;
@@ -89,7 +89,7 @@ public static class Utils
         return bs;
     }
 
-    public static List<BingoTile> GetTilesOfType<T>() where T : BingoTile
+    public static List<BingoTile> GetTilesOfType<T>() 
     {
         List<BingoTile> tileList = new List<BingoTile>();
         foreach (BingoSpace bs in bingoCard.GetAllSpacesOfType<T>())
