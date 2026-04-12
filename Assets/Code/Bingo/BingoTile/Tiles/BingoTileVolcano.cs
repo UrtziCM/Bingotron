@@ -10,7 +10,7 @@ public class BingoTileVolcano : BingoTile, IMarkable
         Vector2 thisTilePos = GetSpace().GetPosition();
         ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
 
-        (bc.GetRandomSpaceOfType<IFlammable>() as IFlammable)?.OnFlame();
+        (Utils.GetRandomUnmarkedTyped<IFlammable>().GetTile() as IFlammable)?.OnFlame();
 
         sm.AddScore(value + bc.GetSpaceAt(thisTilePos).GetNumber().value);
     }
