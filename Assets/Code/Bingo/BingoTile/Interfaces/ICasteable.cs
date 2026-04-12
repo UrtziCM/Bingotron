@@ -2,5 +2,5 @@ using UnityEngine;
 
 public interface ICasteable
 {
-    public void Cast();
+    public void Cast(int mana);
 }
