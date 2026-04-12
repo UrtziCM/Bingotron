@@ -253,7 +253,7 @@ public class BingoCard : Service
         tileList.Add(bs);
     }
 
-    public void BallRolled(BingoBall ball)
+    private void BallRolled(BingoBall ball)
     {
         foreach (BingoSpace bs in tileList)
         {
