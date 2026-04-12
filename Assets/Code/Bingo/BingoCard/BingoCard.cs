@@ -83,12 +83,12 @@ public class BingoCard : Service
         }
         return spaces.ToArray();
     }
-
+    
     
     public BingoSpace GetRandomSpaceOfType<T>()
     {
         BingoSpace[] spacesOfType = GetAllSpacesOfType<T>();
-        if (spacesOfType.Length < 0)
+        if (spacesOfType.Length <= 0)
             return null;
 
         return spacesOfType[UnityEngine.Random.Range(0, spacesOfType.Length)];
@@ -262,5 +262,10 @@ public class BingoCard : Service
                 roller.OnRoll(ball);
             }
         }
+    }
+
+    public List<BingoSpace> GetTiles()
+    {
+        return tileList;
     }
 }
