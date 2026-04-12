@@ -7,19 +7,17 @@ public class BingoTileSplash : BingoTile, IMarkable
     public void Mark()
     {
         BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
-        Vector2 thisTilePos = GetSpace().GetPosition();
         ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
 
         List<IPermeable> permeableList = new List<IPermeable>();
 
-        foreach (BingoSpace bt in bc.AllSpaces())
+        foreach (BingoSpace bt in bc.GetAllSpacesOfType<IPermeable>())
         {
-            if (bt.GetTile() is IPermeable tile)
-                permeableList.Add(tile);
+            permeableList.Add(bt as IPermeable);
         }
 
         permeableList[Random.Range(0, permeableList.Count)].Wet();
 
-        sm.AddScore(value + bc.GetSpaceAt(thisTilePos).GetNumber().value);
+        sm.AddScore(value + GetSpace().GetNumber().value);
     }
 }
