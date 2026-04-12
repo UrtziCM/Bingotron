@@ -6,11 +6,10 @@ public class BingoTileStonks : BingoTile, IMarkable
     public void Mark()
     {
         BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
-        Vector2 thisTilePos = GetSpace().GetPosition();
         ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
 
-        this.value = (int)bc.GetPropertyValue(BingoCard.MONEY_PROPERTY);
+        value = (int)bc.GetPropertyValue(BingoCard.MONEY_PROPERTY);
 
-        sm.AddScore(value + bc.GetSpaceAt(thisTilePos).GetNumber().value);
+        sm.AddScore(value + GetSpace().GetNumber().value);
     }
 }
