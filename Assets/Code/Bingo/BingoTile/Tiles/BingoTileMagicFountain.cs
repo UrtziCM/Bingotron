@@ -8,32 +8,28 @@ public class BingoTileMagicFountain : BingoTile, IMarkable, IPermeable
         BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
         ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
 
-        Vector2 thisTilePos = GetSpace().GetPosition();
-
         foreach (Vector2 direction in Utils.TouchingPositions)
         {
-            Vector2 pos = thisTilePos + direction;
+            Vector2 targetPos = pos + direction;
 
-            if (bc.GetSpaceAt(pos).GetTile() is IPermeable tile)
+            if (bc.GetSpaceAt(targetPos).GetTile() is IPermeable tile)
                 tile.Wet();
         }
 
-        sm.AddScore(value + bc.GetSpaceAt(thisTilePos).GetNumber().value);
+        sm.AddScore(value + bc.GetSpaceAt(pos).GetNumber().value);
     }
 
     public void Wet()
     {
         BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
 
-        Vector2 thisTilePos = GetSpace().GetPosition();
-
         int permebleCount = 0;
 
         foreach (Vector2 direction in Utils.TouchingPositions)
         {
-            Vector2 pos = thisTilePos + direction;
+            Vector2 targetPos = pos + direction;
 
-            if (bc.GetSpaceAt(pos).GetTile() is IPermeable tile)
+            if (bc.GetSpaceAt(targetPos).GetTile() is IPermeable tile)
                 permebleCount++;
         }
 
