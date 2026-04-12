@@ -10,16 +10,15 @@ public class BingoTileGoldenRatio : BingoTile, IMarkable
     public void Mark()
     {
         BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
-        Vector2 thisTilePos = GetSpace().GetPosition();
+        BingoSticker sticker = GetSpace().GetNumber();
         ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
-        foreach (int num in fibonacciNumbers)
+
+        if (!sticker is BingoStickerNumeric) return;
+
+        if(fibonacciNumbers.Contains((sticker as BingoStickerNumeric).Number))
         {
-            //if (bc.GetSpaceAt(thisTilePos).GetNumber() == num) //falta comprobar si el numero de la casilla coincide con los numeros
-            {
-                int AddMoney = (int)bc.GetPropertyValue(BingoCard.MONEY_PROPERTY) + 5;
-                bc.SetPropertyValue(BingoCard.MONEY_PROPERTY, AddMoney);
-                break;
-            }
+            int AddMoney = (int)bc.GetPropertyValue(BingoCard.MONEY_PROPERTY) + 5;
+            bc.SetPropertyValue(BingoCard.MONEY_PROPERTY, AddMoney);
         }
     }
 }

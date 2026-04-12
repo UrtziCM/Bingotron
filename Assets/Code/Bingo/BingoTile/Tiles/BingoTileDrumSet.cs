@@ -11,12 +11,9 @@ public class BingoTileDrumSet : BingoTile, IMarkable, IMusicable
 
         PlayNote();
 
-        foreach (BingoSpace space in bc.GetAllSpacesOfType<BingoSpace>())
+        foreach (BingoSpace space in bc.GetAllSpacesOfType<BingoTileDrum>())
         {
-            if (space.GetTile() is BingoTileDrum drum)
-            {
-                drum.PlayNote();
-            }
+            (space.GetTile() as BingoTileDrum).PlayNote();
         }
 
         sm.AddScore(value + bc.GetSpaceAt(thisTilePos).GetNumber().value + (int)bc.GetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY));
