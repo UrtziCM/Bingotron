@@ -5,6 +5,8 @@ public class BingoStickerBong : BingoSticker
 {
     [SerializeField]
     protected int number;
+    [SerializeField]
+    protected int addedNotes;
     public int Number { get { return number; } }
 
 
@@ -14,7 +16,7 @@ public class BingoStickerBong : BingoSticker
         {
             Utils.BingoCard.SetPropertyValue(
                 BingoCard.MUSIC_ADDEDVALUE_PROPERTY, 
-                Utils.BingoCard.GetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY) + 1);
+                Utils.BingoCard.GetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY) + addedNotes);
             return true;
         }
         else

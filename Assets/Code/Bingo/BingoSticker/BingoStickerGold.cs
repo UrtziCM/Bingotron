@@ -5,6 +5,8 @@ public class BingoStickerGold : BingoSticker
 {
     [SerializeField]
     protected int number;
+    [SerializeField]
+    protected int addedMoney;
     public int Number { get { return number; } }
 
 
@@ -14,7 +16,7 @@ public class BingoStickerGold : BingoSticker
         {
             Utils.BingoCard.SetPropertyValue(
                 BingoCard.MONEY_PROPERTY,
-                Utils.BingoCard.GetPropertyValue(BingoCard.MONEY_PROPERTY) + 1);
+                Utils.BingoCard.GetPropertyValue(BingoCard.MONEY_PROPERTY) + addedMoney);
             return true;
         }
         else
