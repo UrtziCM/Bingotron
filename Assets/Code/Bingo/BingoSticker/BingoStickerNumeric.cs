@@ -3,7 +3,7 @@ using UnityEngine;
 public class BingoStickerNumeric : BingoSticker
 {
     [SerializeField]
-    private int number;
+    protected int number;
     public int Number { get { return number; } }
 
 
