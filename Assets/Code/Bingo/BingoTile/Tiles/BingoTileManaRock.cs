@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "BingoTileManaRock", menuName = "Bingo/Tiles/ManaRock")]
 public class BingoTileManaRock : BingoTile, IMarkable, IRoller
 {
     [SerializeField]
