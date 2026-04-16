@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ScoreManager : Service
+public class ScoreManager : CustomService
 {
 
     private int score;
@@ -9,7 +9,7 @@ public class ScoreManager : Service
 
     private void Start()
     {
-        ServiceLocator.AddService(this);
+        ServiceLocator.AddService<ScoreManager>(this);
     }
 
     public void AddScore(int score = 1)

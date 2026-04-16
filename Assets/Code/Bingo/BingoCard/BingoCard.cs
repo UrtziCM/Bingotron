@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class BingoCard : Service
+public class BingoCard : CustomService
 {
     public static readonly string MONEY_PROPERTY = "money";
     public static readonly string MUSIC_ADDEDVALUE_PROPERTY = "music";
@@ -51,7 +51,7 @@ public class BingoCard : Service
 
     private void Setup()
     {
-        ServiceLocator.AddService(this);
+        ServiceLocator.AddService<BingoCard>(this);
 
         CreateProperties();
 

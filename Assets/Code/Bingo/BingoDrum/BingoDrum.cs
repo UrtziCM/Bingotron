@@ -2,17 +2,26 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class BingoDrum : Service
+public class BingoDrum : CustomService
 {
     private const int TOTAL_NUMBERS = 90;
     public List<BingoBall> balls = new();
     public Queue<BingoBall> drumQueue = new();
     public List<BingoBall> droppedBalls = new();
     public BingoBall currentBingoBall;
+
+
+
+
+    private void Awake()
+    {
+        ServiceLocator.AddService<BingoDrum>(this);
+        
+    }
+
     void Start()
     {
         Init();
-        ServiceLocator.AddService<BingoDrum>(this);
     }
 
     private void Init()

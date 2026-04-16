@@ -5,21 +5,22 @@ using UnityEngine;
 
 public class ServiceLocator : MonoBehaviour 
 {
-    private static List<Service> services = new();
+    private static List<CustomService> services = new();
 
-    public static bool HasService<T>() where T : Service
+    public static bool HasService<T>() where T : CustomService
     {
         return GetService<T>() != null;
     }
 
-    public static T GetService<T>() where T : Service
+    public static T GetService<T>() where T : CustomService
     {
-        foreach (T service in services)
-            if (service is T) return service;
+
+        foreach (CustomService service in services)
+            if (service is T foundService) return foundService;
         return null;
     }
 
-    public static void AddService<T>(T service) where T : Service
+    public static void AddService<T>(T service) where T : CustomService
     {
         if (HasService<T>())
         {
@@ -28,19 +29,7 @@ public class ServiceLocator : MonoBehaviour
         services.Add(service);
     }
 
-    public static Service GetOrAddService<T>() where T : Service
-    {
-        
-        if (!HasService<T>())
-        {
-            var instance = Activator.CreateInstance(typeof(T)) as T;
-            AddService<T>(instance);
-            return instance;
-        }
-        return GetService<T>();
-    }
-
-    public static void RemoveService<T>() where T : Service
+    public static void RemoveService<T>() where T : CustomService
     {
         services.Remove(GetService<T>());
     }
