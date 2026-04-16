@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BingoDrum : CustomService
@@ -16,19 +18,20 @@ public class BingoDrum : CustomService
     private void Awake()
     {
         ServiceLocator.AddService<BingoDrum>(this);
-        
+        Init();
+
+
     }
 
     void Start()
     {
-        Init();
     }
 
     private void Init()
     {
-        for (int i = 0; i < TOTAL_NUMBERS; i++)
+        for (int i = 1; i <= TOTAL_NUMBERS; i++)
         {
-            var ball = new BingoBall();
+            BingoBall ball = new BingoBall();
             ball.number = i;
             balls.Add(ball);
         }
@@ -37,13 +40,12 @@ public class BingoDrum : CustomService
     public void ShuffledListIntoQueue()
     {
         drumQueue.Clear();
-        List<BingoBall> disposableCopy = new(balls);
-        for (int i = Random.Range(0, disposableCopy.Count); disposableCopy.Count > 0; i = Random.Range(0, disposableCopy.Count))
-        {
-            var disposable = disposableCopy[i];
-            drumQueue.Enqueue(disposable);
-            disposableCopy.Remove(disposable);
+        List<BingoBall> disposableCopy = new List<BingoBall>(balls);
+
+        foreach (BingoBall currentBall in disposableCopy.OrderBy(x => UnityEngine.Random.Range(0, 90))) {
+            drumQueue.Enqueue(currentBall);
         }
+        
     }
 
     public BingoBall PeekNextBall()
@@ -58,7 +60,6 @@ public class BingoDrum : CustomService
         Utils.BingoCard.OnBallRolled.Invoke(currentBingoBall);
 
         return currentBingoBall;
-        
     }
 
     private BingoBall GetBallByNumber(int number)
