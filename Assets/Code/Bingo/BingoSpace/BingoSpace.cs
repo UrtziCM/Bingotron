@@ -42,11 +42,15 @@ public class BingoSpace// : ScriptableObject
         return number;
     }
 
-    // TODO: TERMINAR
+    // TODO: TERMINADO?
     public void Mark()
     {
         state = MarkState.Marked;
-
+        if (number is IMarkable markableNumber)
+            markableNumber.Mark();
+        if (tile is IMarkable markableTile)
+            markableTile.Mark();
+        Utils.ScoreManager.AddScore(tile.value + number.value);
     }
 
     public bool IsMarkable()

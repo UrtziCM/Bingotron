@@ -118,6 +118,17 @@ public class BingoCard : Service
 
     public void MarkSpace(Vector2 pos)
     {
+        BingoSpace spaceToMark = GetSpaceAt(pos);
+        if (spaceToMark.GetNumber() is IClickable clickable)
+            if (!clickable.OnClick()) 
+                if (spaceToMark.GetNumber().IsMarkable(ServiceLocator.GetService<BingoDrum>().currentBingoBall))
+                {
+                    spaceToMark.Mark();
+                    OnMark?.Invoke(spaceToMark, pos);
+                }
+
+
+
         if (WillThisBeColumn(pos))
         {
             OnLine?.Invoke(GetColumn((int)pos.x));
@@ -127,7 +138,6 @@ public class BingoCard : Service
             OnLine?.Invoke(GetLine((int)pos.y));
         }
 
-        OnMark?.Invoke(GetSpaceAt(pos), pos);
         if (HasBingo())
         {
             OnBingo?.Invoke(tileList.ToArray());
