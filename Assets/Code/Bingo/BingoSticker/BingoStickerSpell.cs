@@ -1,8 +1,11 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "BingoStickerSpell", menuName = "Bingo/Stickers/Spell")]
-public class BingoStickerSpell : BingoStickerNumeric, IClickable
+public class BingoStickerSpell : BingoSticker, IClickable
 {
+    [SerializeField]
+    protected int number;
+    public int Number { get { return number; } }
     public override bool IsMarkable(BingoBall ball)
     {
         return ball.number == number;
