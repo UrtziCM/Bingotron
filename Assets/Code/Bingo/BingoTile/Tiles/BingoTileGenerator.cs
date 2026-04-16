@@ -5,8 +5,8 @@ public class BingoTileGenerator : BingoTile, IMarkable
 {
     public void Mark()
     {
-        BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
-        ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
+        BingoCard bc = Utils.BingoCard;
+        ScoreManager sm = ServiceLocator.GetService<ScoreManager>();
 
         bc.SetPropertyValue(BingoCard.CHARGE_PROPERTY, bc.GetPropertyValue(BingoCard.CHARGE_PROPERTY) + bc.GetAllSpacesOfType<BingoTileWire>().Length);
 

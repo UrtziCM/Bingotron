@@ -5,7 +5,7 @@ public class BingoTileCanal : BingoTile, IMarkable
 {
     public void Mark()
     {
-        ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
+        ScoreManager sm = Utils.ScoreManager;
 
         Vector2[] directions =
         {

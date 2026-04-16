@@ -5,8 +5,8 @@ public class BingoTileStonks : BingoTile, IMarkable
 {
     public void Mark()
     {
-        BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
-        ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
+        BingoCard bc = Utils.BingoCard as BingoCard;
+        ScoreManager sm = Utils.ScoreManager;
 
         value = (int)bc.GetPropertyValue(BingoCard.MONEY_PROPERTY);
 

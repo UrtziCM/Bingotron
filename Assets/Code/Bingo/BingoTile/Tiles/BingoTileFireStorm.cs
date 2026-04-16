@@ -11,7 +11,7 @@ public class BingoTileFireStorm : BingoTile, IMarkable, ICasteable
     public void Mark()
     {
         BingoCard bc = GetSpace().GetCard();
-        ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
+        ScoreManager sm = Utils.ScoreManager;
 
         Cast((int)bc.GetPropertyValue(BingoCard.MANA_COUNT_PROPERTY));
 

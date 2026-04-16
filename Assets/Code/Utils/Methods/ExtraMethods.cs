@@ -16,14 +16,15 @@ public static class Utils
     public static readonly Vector2[] TouchingPositions = { Top, Bottom, Left, Right };
     public static readonly Vector2[] SurroundingPositions = { Top, Bottom, Left, Right, TopRight, TopLeft, BottomRight, BottomLeft };
 
-    private static BingoCard bingoCard => ServiceLocator.GetService<BingoCard>() as BingoCard;
+    public static BingoCard BingoCard => ServiceLocator.GetService<BingoCard>();
+    public static ScoreManager ScoreManager => ServiceLocator.GetService<ScoreManager>();
 
 
     public static void Spread(BingoTile bingoTile)
     {
         Vector2 thisTilePos = bingoTile.GetSpace().GetPosition();
 
-        float prob = bingoCard.GetPropertyValue(BingoCard.FIRE_PROBABILITY_PROPERTY);
+        float prob = BingoCard.GetPropertyValue(BingoCard.FIRE_PROBABILITY_PROPERTY);
 
         if (Random.Range(0.0f, 1.0f) > prob)
             return;
@@ -32,23 +33,23 @@ public static class Utils
         {
             Vector2 pos = thisTilePos + direction;
 
-            if (!bingoCard.IsMarkable(pos))
+            if (!BingoCard.IsMarkable(pos))
                 continue;
 
-            if (bingoCard.GetSpaceAt(pos).GetTile() is IFlammable tile)
+            if (BingoCard.GetSpaceAt(pos).GetTile() is IFlammable tile)
                 tile.OnFlame();
         }
     }
 
     public static bool Gamble(float baseProb)
     {
-        BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
+        BingoCard bc = Utils.BingoCard as BingoCard;
 
-        float addedProb = bingoCard.GetPropertyValue(BingoCard.GAMBLER_ADDEDPROBABILITY_PROPERTY);
+        float addedProb = BingoCard.GetPropertyValue(BingoCard.GAMBLER_ADDEDPROBABILITY_PROPERTY);
 
         if (Random.Range(0.0f, 1.0f) < baseProb + addedProb)
         {
-            bingoCard.SetPropertyValue(BingoCard.GAMBLER_ADDEDPROBABILITY_PROPERTY, addedProb + 0.01f);
+            BingoCard.SetPropertyValue(BingoCard.GAMBLER_ADDEDPROBABILITY_PROPERTY, addedProb + 0.01f);
             return true;
         }
         else
@@ -58,7 +59,7 @@ public static class Utils
     public static void PlayNote()
     {
 
-        bingoCard.SetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY, bingoCard.GetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY) + 1);
+        BingoCard.SetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY, BingoCard.GetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY) + 1);
     }
 
     public static BingoSpace GetRandomUnmarked()
@@ -67,7 +68,7 @@ public static class Utils
         int search = 0;
         do
         {
-            bs = bingoCard.GetTiles()[Random.Range(0, 25)];
+            bs = BingoCard.GetTiles()[Random.Range(0, 25)];
             search++; // Just in case everything is marked we would not like a crash / hang on a bingo
         } while (bs.IsMarked() || search >= 25);
         if (search == 25)
@@ -77,9 +78,9 @@ public static class Utils
 
     public static BingoSpace GetRandomUnmarkedTyped<T>() 
     {
-        BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
+        BingoCard bc = Utils.BingoCard as BingoCard;
         BingoSpace bs;
-        List<BingoSpace> typedSpaces = new(bingoCard.GetAllSpacesOfType<T>());
+        List<BingoSpace> typedSpaces = new(BingoCard.GetAllSpacesOfType<T>());
         if (!(typedSpaces.Count > 0))
             return null;
         do
@@ -92,7 +93,7 @@ public static class Utils
     public static List<BingoTile> GetTilesOfType<T>() 
     {
         List<BingoTile> tileList = new List<BingoTile>();
-        foreach (BingoSpace bs in bingoCard.GetAllSpacesOfType<T>())
+        foreach (BingoSpace bs in BingoCard.GetAllSpacesOfType<T>())
             tileList.Add(bs.GetTile());
 
         return (tileList.Count > 0) ? tileList : null;
@@ -104,7 +105,7 @@ public static class Utils
         foreach (Vector2 direction in TouchingPositions)
         {
             Vector2 targetPos = pos + direction;
-            BingoSpace touchingSpace = bingoCard.GetSpaceAt(targetPos);
+            BingoSpace touchingSpace = BingoCard.GetSpaceAt(targetPos);
             if (touchingSpace != null)
                 touchingSpaces.Add(touchingSpace);
         }
@@ -117,7 +118,7 @@ public static class Utils
         foreach (Vector2 direction in SurroundingPositions)
         {
             Vector2 targetPos = pos + direction;
-            BingoSpace touchingSpace = bingoCard.GetSpaceAt(targetPos);
+            BingoSpace touchingSpace = BingoCard.GetSpaceAt(targetPos);
             if (touchingSpace != null)
                 touchingSpaces.Add(touchingSpace);
         }

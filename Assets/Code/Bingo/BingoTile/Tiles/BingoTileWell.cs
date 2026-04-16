@@ -9,7 +9,7 @@ public class BingoTileWell : BingoTile, IMarkable, IGamble, IPermeable
 
     public void Mark()
     {
-        ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
+        ScoreManager sm = Utils.ScoreManager;
 
         sm.AddScore(value + GetSpace().GetNumber().value);
     }
@@ -18,7 +18,7 @@ public class BingoTileWell : BingoTile, IMarkable, IGamble, IPermeable
     {
         if (Gamble())
         {
-            BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
+            BingoCard bc = Utils.BingoCard as BingoCard;
 
             List<BingoSpace> permeableSpaces = new List<BingoSpace>(bc.GetAllSpacesOfType<IPermeable>());
 

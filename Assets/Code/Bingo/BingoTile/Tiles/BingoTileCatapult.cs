@@ -6,7 +6,7 @@ public class BingoTileCatapult : BingoTile, IMarkable, IFlammable
     public void Mark()
     {
         BingoCard bc = GetSpace().GetCard();
-        ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
+        ScoreManager sm = Utils.ScoreManager;
 
         if (bc.IsMarkable(pos + 2 * Vector2.right))
         {

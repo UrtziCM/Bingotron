@@ -6,8 +6,8 @@ public class BingoTileSplash : BingoTile, IMarkable
 {
     public void Mark()
     {
-        BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
-        ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
+        BingoCard bc = Utils.BingoCard as BingoCard;
+        ScoreManager sm = Utils.ScoreManager;
 
         List<IPermeable> permeableList = new List<IPermeable>();
 

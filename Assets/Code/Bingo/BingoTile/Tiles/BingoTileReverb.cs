@@ -7,13 +7,13 @@ public class BingoTileReverb : BingoTile, IMarkable, IMusicable
 
     public void Mark()
     {
-        BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
+        BingoCard bc = Utils.BingoCard as BingoCard;
 
         bc.SetPropertyValue(musicProperty, bc.GetPropertyValue(musicProperty) + bc.GetAllSpacesOfType<IMusicable>().Length);
 
         PlayNote();
 
-        ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
+        ScoreManager sm = Utils.ScoreManager;
         sm.AddScore(value + GetSpace().GetNumber().value + (int)bc.GetPropertyValue(musicProperty));
     }
 

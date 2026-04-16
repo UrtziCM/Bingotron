@@ -10,7 +10,7 @@ public class BingoTileATM : BingoTile, IMarkable, IChargeable, IGamble
     public void Mark()
     {
         BingoCard bc = GetSpace().GetCard();
-        ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
+        ScoreManager sm = Utils.ScoreManager;
 
         Discharge((int)bc.GetPropertyValue(BingoCard.CHARGE_PROPERTY));
 

@@ -7,16 +7,16 @@ public class BingoTileFestival : BingoTile, IMarkable, IMusicable
     {
         PlayNote();
 
-        BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
+        BingoCard bc = Utils.BingoCard;
         Vector2 thisTilePos = GetSpace().GetPosition();
-        ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
+        ScoreManager sm = ServiceLocator.GetService<ScoreManager>();
 
         sm.AddScore(value + GetSpace().GetNumber().value + (int)bc.GetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY));
     }
 
     public void PlayNote()
     {
-        BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
+        BingoCard bc = Utils.BingoCard;
 
         bc.SetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY, 
             (bc.GetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY) + 5) * 2);

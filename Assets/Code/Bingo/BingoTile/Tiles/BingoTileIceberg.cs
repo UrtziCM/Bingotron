@@ -5,14 +5,14 @@ public class BingoTileIceberg : BingoTile, IMarkable
 {
     public void Mark()
     {
-        ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
+        ScoreManager sm = Utils.ScoreManager;
         sm.AddScore(value + GetSpace().GetNumber().value);
     }
 
     public void OnFlame()
     {
         Mark();
-        BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
+        BingoCard bc = Utils.BingoCard;
 
         foreach (Vector2 direction in Utils.SurroundingPositions)
         {

@@ -7,7 +7,7 @@ public class BingoTileJackpot : BingoTile, IMarkable, IGamble
 
     public void Mark()
     {
-        ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
+        ScoreManager sm = Utils.ScoreManager;
 
         sm.AddScore(value + GetSpace().GetNumber().value);
 

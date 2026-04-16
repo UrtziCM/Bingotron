@@ -5,8 +5,8 @@ public class BingoTileDrumSet : BingoTile, IMarkable, IMusicable
 {
     public void Mark()
     {
-        BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
-        ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
+        BingoCard bc = Utils.BingoCard;
+        ScoreManager sm = Utils.ScoreManager;
 
         PlayNote();
 

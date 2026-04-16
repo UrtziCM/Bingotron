@@ -5,14 +5,16 @@ public class BingoTileTsunami : BingoTile, IMarkable, IPermeable
 {
     public void Mark()
     {
-        ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
+        BingoCard bc = Utils.BingoCard as BingoCard;
+        Vector2 thisTilePos = GetSpace().GetPosition();
+        ScoreManager sm = Utils.ScoreManager;
 
-        sm.AddScore(value + GetSpace().GetNumber().value);
+        sm.AddScore(value + bc.GetSpaceAt(thisTilePos).GetNumber().value);
     }
 
     public void Wet()
     {
-        BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
+        BingoCard bc = Utils.BingoCard as BingoCard;
 
         bool line = Random.value > 0.5f;
 
@@ -22,9 +24,10 @@ public class BingoTileTsunami : BingoTile, IMarkable, IPermeable
 
         foreach (BingoSpace bingoSpace in spaces)
         {
-            if (bingoSpace.GetTile() is IPermeable tile && !(bingoSpace.GetTile() is BingoTileTsunami))
+            if (bingoSpace.GetTile() is IPermeable tile)
             {
-                tile.Wet();
+                if (bingoSpace.GetTile() is not BingoTileTsunami)
+                    tile.Wet();
             }
         }
     }

@@ -5,8 +5,8 @@ public class BingoTileMagicFountain : BingoTile, IMarkable, IPermeable
 {
     public void Mark()
     {
-        BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
-        ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
+        BingoCard bc = Utils.BingoCard as BingoCard;
+        ScoreManager sm = Utils.ScoreManager;
 
         foreach (Vector2 direction in Utils.TouchingPositions)
         {
@@ -21,7 +21,7 @@ public class BingoTileMagicFountain : BingoTile, IMarkable, IPermeable
 
     public void Wet()
     {
-        BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
+        BingoCard bc = Utils.BingoCard as BingoCard;
 
         int permebleCount = 0;
 

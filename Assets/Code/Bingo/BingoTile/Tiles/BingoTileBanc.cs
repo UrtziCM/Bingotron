@@ -6,7 +6,7 @@ public class BingoTileBank : BingoTile, IMarkable
     public void Mark()
     {
         BingoCard bc = GetSpace().GetCard();
-        ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
+        ScoreManager sm = Utils.ScoreManager;
 
         float moneyValue = bc.GetPropertyValue(BingoCard.MONEY_PROPERTY) /3;
         

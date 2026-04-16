@@ -255,7 +255,7 @@ public class BingoCard : Service
 
     private void BallRolled(BingoBall ball)
     {
-        foreach (BingoSpace bs in tileList)
+        foreach (BingoSpace bs in AllSpaces())
         {
             if (bs is IRoller roller)
             {

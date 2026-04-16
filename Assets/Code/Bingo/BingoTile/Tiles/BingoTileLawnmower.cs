@@ -7,8 +7,8 @@ public class BingoTileLawnmower : BingoTile, IMarkable, IChargeable
 
     public void Mark()
     {
-        BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
-        ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
+        BingoCard bc = Utils.BingoCard as BingoCard;
+        ScoreManager sm = Utils.ScoreManager;
 
         Discharge((int)bc.GetPropertyValue(BingoCard.CHARGE_PROPERTY));
 
@@ -16,7 +16,7 @@ public class BingoTileLawnmower : BingoTile, IMarkable, IChargeable
     }
     public void Discharge(int charge)
     {
-        BingoCard bc = ServiceLocator.GetService<BingoCard>() as BingoCard;
+        BingoCard bc = Utils.BingoCard as BingoCard;
         Vector2 nextTilePos = GetSpace().GetPosition() + direction;
 
         while (bc.GetSpaceAt(nextTilePos) != null)

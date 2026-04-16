@@ -12,9 +12,9 @@ public class ServiceLocator : MonoBehaviour
         return GetService<T>() != null;
     }
 
-    public static Service GetService<T>() where T : Service
+    public static T GetService<T>() where T : Service
     {
-        foreach (Service service in services)
+        foreach (T service in services)
             if (service is T) return service;
         return null;
     }

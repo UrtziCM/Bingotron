@@ -7,7 +7,7 @@ public class BingoTileStrawLoft : BingoTile, IMarkable, IFlammable, IGamble
 
     public void Mark()
     {
-        ScoreManager sm = ServiceLocator.GetService<ScoreManager>() as ScoreManager;
+        ScoreManager sm = Utils.ScoreManager;
 
         if (Gamble())
             sm.AddScore(value + GetSpace().GetNumber().value + 10);
