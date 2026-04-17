@@ -111,7 +111,7 @@ public class BingoCard : CustomService
 
     public bool IsMarkable(Vector2 pos)
     {
-        BingoSticker sticker = GetSpaceAt(pos).GetSticker();
+        BingoStickerNumeric sticker = GetSpaceAt(pos).GetSticker();
         if (IsSpaceMarked(pos) && sticker != null)
             return false;
         BingoDrum bingoDrum = (ServiceLocator.GetService<BingoDrum>() as BingoDrum);

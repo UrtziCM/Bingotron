@@ -1,14 +1,14 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "BingoStickerGold", menuName = "Bingo/Stickers/Gold")]
-public class BingoStickerGold : BingoSticker
+public class BingoStickerGold : BingoStickerNumeric
 {
     [SerializeField]
-    protected int number;
-    [SerializeField]
     protected int addedMoney;
-    public int Number { get { return number; } }
 
+    public BingoStickerGold(int number) : base(number)
+    {
+    }
 
     public override bool IsMarkable(BingoBall ball)
     {
@@ -19,7 +19,6 @@ public class BingoStickerGold : BingoSticker
                 Utils.BingoCard.GetPropertyValue(BingoCard.MONEY_PROPERTY) + addedMoney);
             return true;
         }
-        else
-            return false;
+        return false;
     }
 }

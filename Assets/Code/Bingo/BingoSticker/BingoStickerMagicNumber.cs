@@ -1,14 +1,13 @@
 using UnityEngine;
 
-public class BingoStickerMagicNumber : BingoSticker
+public class BingoStickerMagicNumber : BingoStickerNumeric
 {
     [SerializeField]
-    protected int number;
-    [SerializeField]
     protected int addedMana = 10;
-    public int Number { get { return number; } }
-    
 
+    public BingoStickerMagicNumber(int number) : base(number)
+    {
+    } 
 
     public override bool IsMarkable(BingoBall ball)
     {
@@ -19,7 +18,7 @@ public class BingoStickerMagicNumber : BingoSticker
                 Utils.BingoCard.GetPropertyValue(BingoCard.MANA_COUNT_PROPERTY) + addedMana);
             return true;
         }
-        else
-            return false;
+
+        return false;
     }
 }

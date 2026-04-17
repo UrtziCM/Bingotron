@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class BingoStickerQuestionMark : BingoSticker, IRoller
+public class BingoStickerQuestionMark : BingoStickerNumeric, IRoller
 {
-    [SerializeField]
-    protected int number;
-    public int Number { get { return number; } }
+    public BingoStickerQuestionMark(int number) : base(number)
+    {
+    }
 
     public override bool IsMarkable(BingoBall ball)
     {

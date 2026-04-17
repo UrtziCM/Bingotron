@@ -1,24 +1,28 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "BingoStickerSpell", menuName = "Bingo/Stickers/Spell")]
-public class BingoStickerSpell : BingoSticker, IClickable
+public class BingoStickerSpell : BingoStickerNumeric
 {
     [SerializeField]
-    protected int number;
-    public int Number { get { return number; } }
+    private int manaCost = 100;
+    public BingoStickerSpell(int number) : base(number)
+    {
+    }
     public override bool IsMarkable(BingoBall ball)
     {
-        return ball.number == number;
-    }
-
-    public bool OnClick()
-    {
-        if (Utils.BingoCard.GetPropertyValue(BingoCard.MANA_COUNT_PROPERTY) >= 100)
+        if (ball.number == number)
         {
-            Utils.BingoCard.SetPropertyValue(BingoCard.MANA_COUNT_PROPERTY, Utils.BingoCard.GetPropertyValue(BingoCard.MANA_COUNT_PROPERTY) - 100);
             return true;
         }
-        else
-            return false;
+
+        if (Utils.BingoCard.GetPropertyValue(BingoCard.MANA_COUNT_PROPERTY) >= manaCost)
+        {
+            Utils.BingoCard.SetPropertyValue(
+                BingoCard.MANA_COUNT_PROPERTY, 
+                Utils.BingoCard.GetPropertyValue(BingoCard.MANA_COUNT_PROPERTY) - manaCost);
+            return true;
+        }
+
+        return false;
     }
 }

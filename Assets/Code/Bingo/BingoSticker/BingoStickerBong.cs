@@ -1,14 +1,15 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "BingoStickerBong", menuName = "Bingo/Stickers/Bong")]
-public class BingoStickerBong : BingoSticker
+public class BingoStickerBong : BingoStickerNumeric
 {
-    [SerializeField]
-    protected int number;
+
     [SerializeField]
     protected int addedNotes;
-    public int Number { get { return number; } }
 
+    public BingoStickerBong(int number) : base(number)
+    {
+    }
 
     public override bool IsMarkable(BingoBall ball)
     {
@@ -19,7 +20,6 @@ public class BingoStickerBong : BingoSticker
                 Utils.BingoCard.GetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY) + addedNotes);
             return true;
         }
-        else
-            return false;
+        return false;
     }
 }
