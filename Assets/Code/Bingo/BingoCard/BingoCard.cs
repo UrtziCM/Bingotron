@@ -1,5 +1,6 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
 
 public class BingoCard : CustomService
 {
@@ -20,11 +21,12 @@ public class BingoCard : CustomService
     public int height = 5;
     public int width = 5;
 
-    public System.Action<BingoSpace, Vector2> OnMark;
-    public System.Action<BingoSpace[]> OnLine;
-    public System.Action<BingoSpace[]> OnBingo;
+    public UnityAction<BingoSpace, Vector2> OnMark;
+    public UnityAction<BingoSpace[]> OnLine;
+    public UnityAction<BingoSpace[]> OnBingo;
 
-    public System.Action<BingoBall> OnBallRolled;
+    public UnityAction<BingoBall> OnBallRolled;
+    public UnityAction OnRoundStart;
 
 
 

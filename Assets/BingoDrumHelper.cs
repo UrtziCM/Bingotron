@@ -41,7 +41,7 @@ public class BingoDrumHelper : MonoBehaviour
         drum.ShuffledListIntoQueue();
         active = true;
         activeBallTime = 3;
-        //Utils.BingoCard.OnRoundStart.Invoke();
+        Utils.BingoCard.OnRoundStart.Invoke();
     }
 
     public BingoBall NextBall()
