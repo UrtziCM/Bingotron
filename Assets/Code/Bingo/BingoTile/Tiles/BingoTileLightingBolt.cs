@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "BingoTileLightingBolt", menuName = "Bingo/Tiles/LightingBolt")]
 public class BingoTileLightingBolt : BingoTile, IMarkable, ICasteable
 {
     public int LowManaCost => 10;

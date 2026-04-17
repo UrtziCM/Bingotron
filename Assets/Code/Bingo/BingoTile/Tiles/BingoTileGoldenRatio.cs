@@ -4,6 +4,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "BingoTileGoldenRatio", menuName = "Bingo/Tiles/GoldenRatio")]
 public class BingoTileGoldenRatio : BingoTile, IMarkable
 {
+    [SerializeField]
+    private int addedMoney = 5; 
 
     List<int> fibonacciNumbers = new List<int> { 1, 2, 3, 5, 8, 13, 21, 34, 55, 89 };
 
@@ -17,8 +19,9 @@ public class BingoTileGoldenRatio : BingoTile, IMarkable
 
         if(fibonacciNumbers.Contains((sticker as BingoStickerNumeric).Number))
         {
-            int AddMoney = (int)bc.GetPropertyValue(BingoCard.MONEY_PROPERTY) + 5;
-            bc.SetPropertyValue(BingoCard.MONEY_PROPERTY, AddMoney);
+            bc.SetPropertyValue(BingoCard.MONEY_PROPERTY, (int)bc.GetPropertyValue(BingoCard.MONEY_PROPERTY) + addedMoney);
         }
+
+        sm.AddScore(value + GetSpace().GetSticker().value);
     }
 }
