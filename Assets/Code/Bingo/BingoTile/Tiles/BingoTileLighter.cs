@@ -9,7 +9,7 @@ public class BingoTileLighter : BingoTile, IMarkable, IFlammable
 
         OnFlame();
 
-        sm.AddScore(value + GetSpace().GetNumber().value);
+        sm.AddScore(value + GetSpace().GetSticker().value);
     }
 
     public void OnFlame()

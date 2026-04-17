@@ -19,7 +19,7 @@ public class BingoTileWizard : BingoTile, IMarkable, ICasteable, IGamble
         Cast((int)bc.GetPropertyValue(BingoCard.MANA_COUNT_PROPERTY));
 
         ScoreManager sm = Utils.ScoreManager;
-        sm.AddScore(value + GetSpace().GetNumber().value);
+        sm.AddScore(value + GetSpace().GetSticker().value);
     }
     public void Cast(int mana)
     {

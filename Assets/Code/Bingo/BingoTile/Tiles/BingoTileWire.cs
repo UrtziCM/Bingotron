@@ -10,6 +10,6 @@ public class BingoTileWire : BingoTile, IMarkable
 
         bc.SetPropertyValue(BingoCard.CHARGE_PROPERTY ,bc.GetPropertyValue(BingoCard.CHARGE_PROPERTY) + 1);
 
-        sm.AddScore(value + GetSpace().GetNumber().value);
+        sm.AddScore(value + GetSpace().GetSticker().value);
     }
 }

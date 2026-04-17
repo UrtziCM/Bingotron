@@ -4,8 +4,12 @@ public class BingoStickerNumeric : BingoSticker
 {
     [SerializeField]
     protected int number;
-    public int Number { get { return number; } }
+    public int Number { get { return number; } set { number = value; } }
 
+    public BingoStickerNumeric(int number)
+    {
+        this.number = number;
+    }
 
     public override bool IsMarkable(BingoBall ball)
     {

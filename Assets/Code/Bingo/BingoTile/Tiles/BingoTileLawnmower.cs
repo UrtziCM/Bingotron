@@ -12,7 +12,7 @@ public class BingoTileLawnmower : BingoTile, IMarkable, IChargeable
 
         Discharge((int)bc.GetPropertyValue(BingoCard.CHARGE_PROPERTY));
 
-        sm.AddScore(value + GetSpace().GetNumber().value);
+        sm.AddScore(value + GetSpace().GetSticker().value);
     }
     public void Discharge(int charge)
     {

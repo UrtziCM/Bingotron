@@ -10,6 +10,6 @@ public class BingoTileVolcano : BingoTile, IMarkable
 
         (Utils.GetRandomUnmarkedTyped<IFlammable>().GetTile() as IFlammable)?.OnFlame();
 
-        sm.AddScore(value + GetSpace().GetNumber().value);
+        sm.AddScore(value + GetSpace().GetSticker().value);
     }
 }

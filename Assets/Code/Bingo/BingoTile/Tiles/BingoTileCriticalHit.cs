@@ -9,7 +9,7 @@ public class BingoTileCriticalHit : BingoTile, IMarkable, IGamble
     {
         ScoreManager sm = Utils.ScoreManager;
 
-        sm.AddScore(value + GetSpace().GetNumber().value + (Gamble() ? 100 : 0));
+        sm.AddScore(value + GetSpace().GetSticker().value + (Gamble() ? 100 : 0));
     }
     public bool Gamble()
     {

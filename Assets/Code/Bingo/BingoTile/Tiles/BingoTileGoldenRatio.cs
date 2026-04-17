@@ -10,7 +10,7 @@ public class BingoTileGoldenRatio : BingoTile, IMarkable
     public void Mark()
     {
         BingoCard bc = Utils.BingoCard;
-        BingoSticker sticker = GetSpace().GetNumber();
+        BingoSticker sticker = GetSpace().GetSticker();
         ScoreManager sm = ServiceLocator.GetService<ScoreManager>();
 
         if (!(sticker is BingoStickerNumeric)) return;

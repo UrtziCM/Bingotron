@@ -10,7 +10,7 @@ public class BingoTileStrawLoft : BingoTile, IMarkable, IFlammable, IGamble
         ScoreManager sm = Utils.ScoreManager;
 
         if (Gamble())
-            sm.AddScore(value + GetSpace().GetNumber().value + 10);
+            sm.AddScore(value + GetSpace().GetSticker().value + 10);
     }
 
     public void OnFlame()

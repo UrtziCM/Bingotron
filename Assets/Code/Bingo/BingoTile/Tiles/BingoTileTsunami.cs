@@ -9,7 +9,7 @@ public class BingoTileTsunami : BingoTile, IMarkable, IPermeable
         Vector2 thisTilePos = GetSpace().GetPosition();
         ScoreManager sm = Utils.ScoreManager;
 
-        sm.AddScore(value + bc.GetSpaceAt(thisTilePos).GetNumber().value);
+        sm.AddScore(value + bc.GetSpaceAt(thisTilePos).GetSticker().value);
     }
 
     public void Wet()

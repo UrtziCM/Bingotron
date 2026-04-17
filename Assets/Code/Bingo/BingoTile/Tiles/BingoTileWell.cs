@@ -11,7 +11,7 @@ public class BingoTileWell : BingoTile, IMarkable, IGamble, IPermeable
     {
         ScoreManager sm = Utils.ScoreManager;
 
-        sm.AddScore(value + GetSpace().GetNumber().value);
+        sm.AddScore(value + GetSpace().GetSticker().value);
     }
 
     public void Wet()

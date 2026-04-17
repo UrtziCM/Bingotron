@@ -8,7 +8,7 @@ public class BingoTileWheat : BingoTile, IMarkable, IFlammable, IPermeable
         BingoCard bc = Utils.BingoCard as BingoCard;
         ScoreManager sm = Utils.ScoreManager;
 
-        sm.AddScore(value + GetSpace().GetNumber().value);
+        sm.AddScore(value + GetSpace().GetSticker().value);
     }
 
     public void OnFlame()

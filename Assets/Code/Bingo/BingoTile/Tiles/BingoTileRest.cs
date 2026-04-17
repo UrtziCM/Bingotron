@@ -10,6 +10,6 @@ public class BingoTileRest : BingoTile, IMarkable
 
         bc.SetPropertyValue(BingoCard.MANA_COUNT_PROPERTY, bc.GetPropertyValue(BingoCard.MANA_COUNT_PROPERTY) + 50);
 
-        sm.AddScore(value + GetSpace().GetNumber().value);
+        sm.AddScore(value + GetSpace().GetSticker().value);
     }
 }

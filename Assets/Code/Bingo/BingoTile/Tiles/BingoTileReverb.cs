@@ -14,7 +14,7 @@ public class BingoTileReverb : BingoTile, IMarkable, IMusicable
         PlayNote();
 
         ScoreManager sm = Utils.ScoreManager;
-        sm.AddScore(value + GetSpace().GetNumber().value + (int)bc.GetPropertyValue(musicProperty));
+        sm.AddScore(value + GetSpace().GetSticker().value + (int)bc.GetPropertyValue(musicProperty));
     }
 
     public void PlayNote()

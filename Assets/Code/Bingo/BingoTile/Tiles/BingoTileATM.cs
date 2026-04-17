@@ -14,7 +14,7 @@ public class BingoTileATM : BingoTile, IMarkable, IChargeable, IGamble
 
         Discharge((int)bc.GetPropertyValue(BingoCard.CHARGE_PROPERTY));
 
-        sm.AddScore((Gamble() ? value : specialValue) + GetSpace().GetNumber().value);
+        sm.AddScore((Gamble() ? value : specialValue) + GetSpace().GetSticker().value);
     }
     public void Discharge(int charge)
     {

@@ -18,6 +18,6 @@ public class BingoTileSplash : BingoTile, IMarkable
 
         permeableList[Random.Range(0, permeableList.Count)].Wet();
 
-        sm.AddScore(value + GetSpace().GetNumber().value);
+        sm.AddScore(value + GetSpace().GetSticker().value);
     }
 }

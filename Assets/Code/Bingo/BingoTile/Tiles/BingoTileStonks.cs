@@ -10,6 +10,6 @@ public class BingoTileStonks : BingoTile, IMarkable
 
         value = (int)bc.GetPropertyValue(BingoCard.MONEY_PROPERTY);
 
-        sm.AddScore(value + GetSpace().GetNumber().value);
+        sm.AddScore(value + GetSpace().GetSticker().value);
     }
 }

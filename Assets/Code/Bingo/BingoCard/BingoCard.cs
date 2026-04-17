@@ -111,7 +111,7 @@ public class BingoCard : CustomService
 
     public bool IsMarkable(Vector2 pos)
     {
-        BingoSticker sticker = GetSpaceAt(pos).GetNumber();
+        BingoSticker sticker = GetSpaceAt(pos).GetSticker();
         if (IsSpaceMarked(pos) && sticker != null)
             return false;
         BingoDrum bingoDrum = (ServiceLocator.GetService<BingoDrum>() as BingoDrum);
@@ -121,9 +121,9 @@ public class BingoCard : CustomService
     public void MarkSpace(Vector2 pos)
     {
         BingoSpace spaceToMark = GetSpaceAt(pos);
-        if (spaceToMark.GetNumber() is IClickable clickable)
+        if (spaceToMark.GetSticker() is IClickable clickable)
             if (!clickable.OnClick()) 
-                if (spaceToMark.GetNumber().IsMarkable(ServiceLocator.GetService<BingoDrum>().currentBingoBall))
+                if (spaceToMark.GetSticker().IsMarkable(ServiceLocator.GetService<BingoDrum>().currentBingoBall))
                 {
                     spaceToMark.Mark();
                     OnMark?.Invoke(spaceToMark, pos);
