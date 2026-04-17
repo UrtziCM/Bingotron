@@ -15,6 +15,5 @@ public class BingoStickerQuestionMark : BingoSticker, IRoller
     public void OnRoll(BingoBall ball)
     {
         number = Random.Range(1,90);
-        throw new System.NotImplementedException();
     }
 }
