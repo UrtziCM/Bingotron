@@ -12,15 +12,17 @@ using UnityEngine;
 public class BingoSpace// : ScriptableObject
 {
     private BingoTile tile;
-    private BingoSticker number;
+    private BingoStickerNumeric sticker;
     private Vector2 position;
     private MarkState state;
     private BingoCard card;
     private List<string> tags;
 
-    public BingoSpace(Vector2 position)
+    public BingoSpace(Vector2 position, int number)
     {
         this.position = position;
+        this.sticker = ScriptableObject.CreateInstance<BingoStickerNumeric>();
+        this.sticker.Number = number;
     }
 
     public BingoTile GetTile() 
@@ -37,20 +39,20 @@ public class BingoSpace// : ScriptableObject
         return card;
     }
 
-    public BingoSticker GetNumber()
+    public BingoStickerNumeric GetSticker()
     {
-        return number;
+        return sticker;
     }
 
     // TODO: TERMINADO?
     public void Mark()
     {
         state = MarkState.Marked;
-        if (number is IMarkable markableNumber)
+        if (sticker is IMarkable markableNumber)
             markableNumber.Mark();
         if (tile is IMarkable markableTile)
             markableTile.Mark();
-        Utils.ScoreManager.AddScore(tile.value + number.value);
+        Utils.ScoreManager.AddScore(tile.value + sticker.value);
     }
 
     public bool IsMarkable()
