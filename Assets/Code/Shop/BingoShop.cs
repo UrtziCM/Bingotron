@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class BingoShop
 {
     private List<BingoTile> tiles;
-    private List<BingoStickerNumeric> stickers;
+    private List<BingoSticker> stickers;
     //private List<BingoBall> balls;
 
     public static BingoShop GenerateShop()
@@ -17,7 +17,7 @@ public class BingoShop
         return null;
     }
 
-    public static BingoStickerNumeric[] GenerateStickerPack()
+    public static BingoSticker[] GenerateStickerPack()
     {
         return null;
     }
@@ -32,7 +32,7 @@ public class BingoShop
         return tiles;
     }
 
-    public List<BingoStickerNumeric> GetStickers()
+    public List<BingoSticker> GetStickers()
     {
         return stickers;
     }

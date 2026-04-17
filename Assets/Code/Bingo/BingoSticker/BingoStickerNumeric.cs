@@ -1,6 +1,6 @@
 using UnityEngine;
 [CreateAssetMenu(fileName = "BingoStickerNumeric", menuName = "Bingo/Stickers/Numeric")]
-public class BingoStickerNumeric : BingoStickerNumeric
+public class BingoStickerNumeric : BingoSticker
 {
     [SerializeField]
     protected int number;
