@@ -139,13 +139,14 @@ public class BingoCard : CustomService
     public void MarkSpace(Vector2 pos)
     {
         BingoSpace spaceToMark = GetSpaceAt(pos);
-
+        Debug.Log(CanStickerBeLateMarked(spaceToMark.GetSticker()));
         if (spaceToMark.GetSticker() is IClickable clickable)
             if (!clickable.OnClick()) 
                 if (spaceToMark.GetSticker().IsMarkable(Utils.BingoDrum.currentBingoBall) || CanStickerBeLateMarked(spaceToMark.GetSticker()))
                 {
                     spaceToMark.Mark();
                     OnMark?.Invoke(spaceToMark, pos);
+                    Debug.Log($"Marked>{pos}");
                 }
 
 
