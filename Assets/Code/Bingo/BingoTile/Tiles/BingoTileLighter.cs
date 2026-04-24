@@ -14,7 +14,7 @@ public class BingoTileLighter : BingoTile, IMarkable, IFlammable
 
     public void OnFlame()
     {
-        if(GetSpace().GetCard().IsSpaceMarked(pos))
+        if(!GetSpace().GetCard().IsSpaceMarked(pos))
             Mark();
     }
 
