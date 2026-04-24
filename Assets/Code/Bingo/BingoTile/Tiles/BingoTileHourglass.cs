@@ -4,8 +4,6 @@ using UnityEngine;
 public class BingoTileHourglass : BingoTile, IMarkable, IRoller
 {
     [SerializeField]
-    private int basevalue;
-    [SerializeField]
     private int substractedValue;
     public void Mark()
     {
