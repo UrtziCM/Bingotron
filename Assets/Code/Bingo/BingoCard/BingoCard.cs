@@ -46,6 +46,12 @@ public class BingoCard : CustomService
         return GetSpaceAt(Random.Range(0, width), Random.Range(0, height));
     }
 
+    private void Awake()
+    {
+        ServiceLocator.AddService<BingoCard>(this);
+
+    }
+
     private void Start()
     {
         Setup();
@@ -53,7 +59,6 @@ public class BingoCard : CustomService
 
     private void Setup()
     {
-        ServiceLocator.AddService<BingoCard>(this);
 
         CreateProperties();
 
