@@ -24,10 +24,7 @@ public class BingoSpaceHandler : MonoBehaviour
     // Update is called once per frame
     private void OnMouseDown()
     {
-        if (card.IsMarkable(positionInGrid))
-        {
-            card.MarkSpace(positionInGrid);
-        }
+        card.MarkSpace(positionInGrid);
     }
 
     public BingoSpace GetSpace()
