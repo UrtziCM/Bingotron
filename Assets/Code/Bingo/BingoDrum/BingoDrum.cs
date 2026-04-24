@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BingoDrum : CustomService
 {
@@ -12,7 +13,9 @@ public class BingoDrum : CustomService
     public List<BingoBall> droppedBalls = new();
     public BingoBall currentBingoBall;
 
-
+    public UnityEvent OnRollBall;
+    public UnityEvent<BingoBall> OnBallEffectStart;
+    public UnityEvent<BingoBall> OnBallEffectEnd;
 
 
     private void Awake()
@@ -56,10 +59,14 @@ public class BingoDrum : CustomService
 
     public BingoBall GetNextBall()
     {
+        OnBallEffectEnd?.Invoke(currentBingoBall);
+        
         currentBingoBall = drumQueue.Dequeue();
         droppedBalls.Add(currentBingoBall);
-        Utils.BingoCard.OnBallRolled.Invoke(currentBingoBall);
+        Utils.BingoCard.OnBallRolled?.Invoke(currentBingoBall);
 
+        OnBallEffectStart?.Invoke(currentBingoBall);
+        OnRollBall?.Invoke();
         return currentBingoBall;
     }
 

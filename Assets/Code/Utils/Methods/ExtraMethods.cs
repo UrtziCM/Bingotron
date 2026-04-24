@@ -45,7 +45,7 @@ public static class Utils
 
     public static bool Gamble(float baseProb)
     {
-        BingoCard bc = Utils.BingoCard as BingoCard;
+        BingoCard bc = BingoCard;
 
         float addedProb = BingoCard.GetPropertyValue(BingoCard.GAMBLER_ADDEDPROBABILITY_PROPERTY);
 
@@ -125,5 +125,12 @@ public static class Utils
                 touchingSpaces.Add(touchingSpace);
         }
         return touchingSpaces;
+    }
+
+    public static bool IsRoundOngoing()
+    {
+        BingoDrumHelper drum = ServiceLocator.GetService<BingoDrum>()?.GetComponent<BingoDrumHelper>();
+        if (drum == null) return false;
+        return drum.RoundActive;
     }
 }
