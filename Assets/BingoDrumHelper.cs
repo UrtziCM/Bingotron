@@ -4,7 +4,7 @@ public class BingoDrumHelper : MonoBehaviour
 {
 
     [SerializeField]
-    private bool active = false;
+    public bool RoundActive = false;
     [SerializeField, Tooltip("Time that a ball remains visible as new and applies its effects."), Range(0f, 10f)]
     private float activeBallTime = 3;
     private BingoDrum drum;
@@ -20,7 +20,7 @@ public class BingoDrumHelper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!active)
+        if (!RoundActive)
             return;
 
         accumulatedTime += Time.deltaTime;
@@ -30,7 +30,7 @@ public class BingoDrumHelper : MonoBehaviour
             Debug.Log(NextBall().number);
             if (drum.drumQueue.Count == 0) 
             {
-                active = false;
+                RoundActive = false;
             }
         }
 
@@ -39,9 +39,9 @@ public class BingoDrumHelper : MonoBehaviour
     public void StartRound()
     {
         drum.ShuffledListIntoQueue();
-        active = true;
+        RoundActive = true;
         activeBallTime = 3;
-        Utils.BingoCard.OnRoundStart?.Invoke();
+        Utils.BingoCard?.OnRoundStart?.Invoke();
     }
 
     public BingoBall NextBall()
