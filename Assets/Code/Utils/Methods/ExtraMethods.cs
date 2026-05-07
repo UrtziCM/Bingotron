@@ -20,6 +20,7 @@ public static class Utils
     public static ScoreManager ScoreManager => ServiceLocator.GetService<ScoreManager>();
 
     public static BingoDrum BingoDrum => ServiceLocator.GetService<BingoDrum>();
+    public static Round Round => ServiceLocator.GetService<Round>();
 
 
     public static void Spread(BingoTile bingoTile)

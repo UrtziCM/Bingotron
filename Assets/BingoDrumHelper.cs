@@ -14,7 +14,7 @@ public class BingoDrumHelper : MonoBehaviour
     void Start()
     {
         drum = GetComponent<BingoDrum>();
-        StartRound();
+        Utils.BingoCard.OnRoundStart.AddListener(StartRound());
     }
 
     // Update is called once per frame
@@ -41,7 +41,6 @@ public class BingoDrumHelper : MonoBehaviour
         drum.ShuffledListIntoQueue();
         RoundActive = true;
         activeBallTime = 3;
-        Utils.BingoCard?.OnRoundStart?.Invoke();
     }
 
     public BingoBall NextBall()
