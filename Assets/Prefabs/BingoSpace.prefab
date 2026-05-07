@@ -246,6 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   positionInGrid: {x: 0, y: 0}
   stickerNumberText: {fileID: 236316056107199405}
+  markedColor: {r: 0.31772873, g: 0.7924528, b: 0.37208387, a: 1}
 --- !u!212 &2116420552635170461
 SpriteRenderer:
   m_ObjectHideFlags: 0

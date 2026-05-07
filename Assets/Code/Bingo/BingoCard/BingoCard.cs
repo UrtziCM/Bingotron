@@ -130,7 +130,7 @@ public class BingoCard : CustomService
 
         foreach (BingoBall ball in drum.droppedBalls)
         {
-            if (sticker.IsMarkable(ball))
+            if (sticker.IsMarkable(ball) && !(sticker.GetSpace().State == MarkState.Marked))
                 return true;
         }
         return false;
@@ -139,30 +139,33 @@ public class BingoCard : CustomService
     public void MarkSpace(Vector2 pos)
     {
         BingoSpace spaceToMark = GetSpaceAt(pos);
-        Debug.Log(CanStickerBeLateMarked(spaceToMark.GetSticker()));
-        if (spaceToMark.GetSticker() is IClickable clickable)
-            if (!clickable.OnClick()) 
-                if (spaceToMark.GetSticker().IsMarkable(Utils.BingoDrum.currentBingoBall) || CanStickerBeLateMarked(spaceToMark.GetSticker()))
-                {
-                    spaceToMark.Mark();
-                    OnMark?.Invoke(spaceToMark, pos);
-                    Debug.Log($"Marked>{pos}");
-                }
+
+        if (spaceToMark.GetSticker().IsMarkable(Utils.BingoDrum.currentBingoBall) || CanStickerBeLateMarked(spaceToMark.GetSticker()))
+        {
+            if (spaceToMark.State != MarkState.Unmarked)
+                return;
+            spaceToMark.Mark();
+            OnMark?.Invoke(spaceToMark, pos);
+        }
 
 
 
         if (WillThisBeColumn(pos))
         {
             OnLine?.Invoke(GetColumn((int)pos.x));
+            Debug.Log("Column!");
         }
         if (WillThisBeLine(pos))
         {
             OnLine?.Invoke(GetLine((int)pos.y));
+            Debug.Log("Line!");
+
         }
 
         if (HasBingo())
         {
             OnBingo?.Invoke(tileList.ToArray());
+            Debug.Log("Bingo!");
         }
     }
 
@@ -222,7 +225,7 @@ public class BingoCard : CustomService
                 return false;
             }
         }
-        return !IsSpaceMarked(pos);
+        return true;
     }
 
     public bool WillThisBeColumn(Vector2 pos)
@@ -236,7 +239,7 @@ public class BingoCard : CustomService
                 return false;
             }
         }
-        return !IsSpaceMarked(pos);
+        return true;
     }
 
     public bool HasBingo()

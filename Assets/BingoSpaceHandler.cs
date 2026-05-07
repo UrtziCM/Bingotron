@@ -13,6 +13,10 @@ public class BingoSpaceHandler : MonoBehaviour
     [SerializeField]
     private TMP_Text stickerNumberText;
 
+    [SerializeField]
+    private Color markedColor;
+    private Color unmarkedColor;
+
     void Start()
     {
         bingoSpace = new(positionInGrid, UnityEngine.Random.Range(1,91));
@@ -25,6 +29,17 @@ public class BingoSpaceHandler : MonoBehaviour
     private void OnMouseDown()
     {
         card.MarkSpace(positionInGrid);
+        ChangeLooks(bingoSpace.State);
+    }
+
+    private void ChangeLooks(MarkState state)
+    {
+        switch (state)
+        {
+            case MarkState.Marked:
+                GetComponent<SpriteRenderer>().color = markedColor;
+                break;
+        }
     }
 
     public BingoSpace GetSpace()

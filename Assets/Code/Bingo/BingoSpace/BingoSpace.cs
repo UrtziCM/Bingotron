@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
- enum MarkState
+public enum MarkState
 {
     Unmarked,
     Markable,
@@ -14,7 +14,8 @@ public class BingoSpace// : ScriptableObject
     private BingoTile tile;
     private BingoStickerNumeric sticker;
     private Vector2 position;
-    private MarkState state;
+    private MarkState state = MarkState.Unmarked;
+    public MarkState State { get { return state; } }
     private BingoCard card;
     private List<string> tags;
 
@@ -22,10 +23,12 @@ public class BingoSpace// : ScriptableObject
     {
         this.position = position;
         this.sticker = ScriptableObject.CreateInstance<BingoStickerNumeric>();
+        this.sticker.space = this;
         this.sticker.Number = number;
+        this.tile = ScriptableObject.CreateInstance<BingoTile>();
     }
 
-    public BingoTile GetTile() 
+    public BingoTile GetTile()
     {
         return tile;
     }
