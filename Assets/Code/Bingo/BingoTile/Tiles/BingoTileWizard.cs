@@ -14,12 +14,10 @@ public class BingoTileWizard : BingoTile, IMarkable, ICasteable, IGamble
 
     public void Mark()
     {
-        BingoCard bc = GetSpace().GetCard();
+        BingoCard bc = Utils.BingoCard;
 
         Cast((int)bc.GetPropertyValue(BingoCard.MANA_COUNT_PROPERTY));
 
-        ScoreManager sm = Utils.ScoreManager;
-        sm.AddScore(value + GetSpace().GetSticker().value);
     }
     public void Cast(int mana)
     {

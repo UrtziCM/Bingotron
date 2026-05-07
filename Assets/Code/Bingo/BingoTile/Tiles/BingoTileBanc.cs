@@ -12,6 +12,5 @@ public class BingoTileBank : BingoTile, IMarkable
         
         this.value = (int)moneyValue;
     
-        sm.AddScore(value + GetSpace().GetSticker().value);
     }
 }

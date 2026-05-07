@@ -13,7 +13,6 @@ public class BingoTileLightingBolt : BingoTile, IMarkable, ICasteable
         BingoCard bc = GetSpace().GetCard();
         Cast((int)bc.GetPropertyValue(BingoCard.CHARGE_PROPERTY));
 
-        Utils.ScoreManager.AddScore(value + GetSpace().GetSticker().value);       
     }
     public void Cast(int mana)
     {

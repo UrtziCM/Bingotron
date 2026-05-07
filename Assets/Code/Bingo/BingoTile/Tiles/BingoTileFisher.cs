@@ -5,9 +5,6 @@ public class BingoTileFisher : BingoTile, IMarkable, IPermeable
 {
     public void Mark()
     {
-        ScoreManager sm = Utils.ScoreManager;
-
-        sm.AddScore(value + GetSpace().GetSticker().value);
     }
 
     public void Wet()

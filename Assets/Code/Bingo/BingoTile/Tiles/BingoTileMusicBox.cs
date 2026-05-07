@@ -8,7 +8,7 @@ public class BingoTileMusicBox : BingoTile, IMarkable, IFlammable, IMusicable
         BingoCard bc = Utils.BingoCard as BingoCard;
         ScoreManager sm = Utils.ScoreManager;
 
-        sm.AddScore(value + GetSpace().GetSticker().value + (int)bc.GetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY));
+        sm.AddScore((int)bc.GetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY));
     }
     public void PlayNote()
     {

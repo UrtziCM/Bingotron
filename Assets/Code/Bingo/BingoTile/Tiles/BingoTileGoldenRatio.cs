@@ -22,6 +22,5 @@ public class BingoTileGoldenRatio : BingoTile, IMarkable
             bc.SetPropertyValue(BingoCard.MONEY_PROPERTY, (int)bc.GetPropertyValue(BingoCard.MONEY_PROPERTY) + addedMoney);
         }
 
-        sm.AddScore(value + GetSpace().GetSticker().value);
     }
 }

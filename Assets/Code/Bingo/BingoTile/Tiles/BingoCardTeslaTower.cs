@@ -8,7 +8,6 @@ public class BingoCardTeslaTower : BingoTile, IMarkable
         BingoCard bc = GetSpace().GetCard();
         Dupe((int)bc.GetPropertyValue(BingoCard.CHARGE_PROPERTY));
         ScoreManager sm = Utils.ScoreManager;
-        sm.AddScore(value + GetSpace().GetSticker().value);
     }
 
     public void Dupe(int a)

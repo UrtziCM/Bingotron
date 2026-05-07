@@ -47,7 +47,6 @@ public class BingoSpace// : ScriptableObject
         return sticker;
     }
 
-    // TODO: TERMINADO?
     public void Mark()
     {
         state = MarkState.Marked;

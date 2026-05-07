@@ -11,7 +11,7 @@ public class BingoTileFestival : BingoTile, IMarkable, IMusicable
         Vector2 thisTilePos = GetSpace().GetPosition();
         ScoreManager sm = ServiceLocator.GetService<ScoreManager>();
 
-        sm.AddScore(value + GetSpace().GetSticker().value + (int)bc.GetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY));
+        sm.AddScore((int)bc.GetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY));
     }
 
     public void PlayNote()

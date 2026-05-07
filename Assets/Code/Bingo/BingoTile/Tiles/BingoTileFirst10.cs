@@ -12,7 +12,6 @@ public class BingoTileFirst10 : BingoTile, IMarkable, IRoller
     public void Mark()
     {
         ScoreManager sm = ServiceLocator.GetService<ScoreManager>();
-        sm.AddScore(value + GetSpace().GetSticker().value);
 
         if (turns > 0)
         {

@@ -9,9 +9,6 @@ public class BingoTileWell : BingoTile, IMarkable, IGamble, IPermeable
 
     public void Mark()
     {
-        ScoreManager sm = Utils.ScoreManager;
-
-        sm.AddScore(value + GetSpace().GetSticker().value);
     }
 
     public void Wet()

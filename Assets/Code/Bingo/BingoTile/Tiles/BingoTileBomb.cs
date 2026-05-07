@@ -26,7 +26,6 @@ public class BingoTileBomb : BingoTile, IMarkable, IFlammable
                 bc.MarkSpace(tagetPos);
         }
 
-        sm.AddScore(value + GetSpace().GetSticker().value);
     }
 
     public void OnFlame()

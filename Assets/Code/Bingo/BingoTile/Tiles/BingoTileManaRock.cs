@@ -7,8 +7,6 @@ public class BingoTileManaRock : BingoTile, IMarkable, IRoller
     private int addedMana;
     public void Mark()
     {
-        ScoreManager sm = ServiceLocator.GetService<ScoreManager>();
-        sm.AddScore(value + GetSpace().GetSticker().value);
     }
 
     public void OnRoll(BingoBall ball)

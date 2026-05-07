@@ -23,6 +23,5 @@ public class BingoTileCanal : BingoTile, IMarkable
                 tile.Wet();
         }
 
-        sm.AddScore(value + GetSpace().GetSticker().value);
     }
 }

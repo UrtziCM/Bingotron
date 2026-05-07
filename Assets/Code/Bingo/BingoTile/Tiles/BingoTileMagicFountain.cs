@@ -16,7 +16,6 @@ public class BingoTileMagicFountain : BingoTile, IMarkable, IPermeable
                 tile.Wet();
         }
 
-        sm.AddScore(value + GetSpace().GetSticker().value);
     }
 
     public void Wet()

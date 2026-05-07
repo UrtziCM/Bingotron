@@ -13,7 +13,6 @@ public class BingoTileCatapult : BingoTile, IMarkable, IFlammable
             bc.MarkSpace(pos + 2 * Vector2.right);
         }
         
-        sm.AddScore(value + GetSpace().GetSticker().value);
     }
 
     public void OnFlame()

@@ -5,9 +5,6 @@ public class BingoTileWaterMill : BingoTile, IMarkable, IPermeable
 {
     public void Mark()
     {
-        ScoreManager sm = Utils.ScoreManager;
-
-        sm.AddScore(value + GetSpace().GetSticker().value);
     }
 
     public void Wet()

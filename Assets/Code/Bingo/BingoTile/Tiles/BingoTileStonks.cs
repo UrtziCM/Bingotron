@@ -9,7 +9,5 @@ public class BingoTileStonks : BingoTile, IMarkable
         ScoreManager sm = Utils.ScoreManager;
 
         value = (int)bc.GetPropertyValue(BingoCard.MONEY_PROPERTY);
-
-        sm.AddScore(value + GetSpace().GetSticker().value);
     }
 }

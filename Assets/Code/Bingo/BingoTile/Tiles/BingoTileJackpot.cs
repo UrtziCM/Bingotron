@@ -9,8 +9,6 @@ public class BingoTileJackpot : BingoTile, IMarkable, IGamble
     {
         ScoreManager sm = Utils.ScoreManager;
 
-        sm.AddScore(value + GetSpace().GetSticker().value);
-
         if(Gamble())
             sm.AddScore(sm.Score);
     }

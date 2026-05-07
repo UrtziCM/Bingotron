@@ -5,8 +5,6 @@ public class BingoTileIceberg : BingoTile, IMarkable
 {
     public void Mark()
     {
-        ScoreManager sm = Utils.ScoreManager;
-        sm.AddScore(value + GetSpace().GetSticker().value);
     }
 
     public void OnFlame()

@@ -35,6 +35,5 @@ public class BingoTileQuickMath : BingoTile, IMarkable
                     tile.OnFlame();
         }
 
-        sm.AddScore(value + GetSpace().GetSticker().value);
     }
 }

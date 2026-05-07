@@ -16,7 +16,6 @@ public class BingoTileArcaneMisstile : BingoTile, IMarkable, ICasteable
 
         Cast((int)bc.GetPropertyValue(BingoCard.MANA_COUNT_PROPERTY));
 
-        sm.AddScore(value + GetSpace().GetSticker().value);
     }
     public void Cast(int mana)
     {

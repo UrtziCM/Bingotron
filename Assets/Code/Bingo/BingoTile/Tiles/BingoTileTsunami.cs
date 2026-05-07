@@ -5,11 +5,6 @@ public class BingoTileTsunami : BingoTile, IMarkable, IPermeable
 {
     public void Mark()
     {
-        BingoCard bc = Utils.BingoCard as BingoCard;
-        Vector2 thisTilePos = GetSpace().GetPosition();
-        ScoreManager sm = Utils.ScoreManager;
-
-        sm.AddScore(value + bc.GetSpaceAt(thisTilePos).GetSticker().value);
     }
 
     public void Wet()

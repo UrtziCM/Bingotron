@@ -11,7 +11,7 @@ public class BingoTileDrum : BingoTile, IMarkable, IMusicable
 
         PlayNote();
 
-        sm.AddScore(value + GetSpace().GetSticker().value + (int)bc.GetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY));
+        sm.AddScore((int)bc.GetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY));
     }
 
     public void PlayNote()

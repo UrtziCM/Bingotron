@@ -8,7 +8,6 @@ public class BingoTileHourglass : BingoTile, IMarkable, IRoller
     public void Mark()
     {
         ScoreManager sm = ServiceLocator.GetService<ScoreManager>();
-        sm.AddScore(value + GetSpace().GetSticker().value);
     }
 
     public void OnRoll(BingoBall ball)

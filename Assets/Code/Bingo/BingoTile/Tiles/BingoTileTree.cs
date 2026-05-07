@@ -5,8 +5,6 @@ public class BingoTileTree : BingoTile, IMarkable, IFlammable
 {
     public void Mark()
     {
-        ScoreManager sm = Utils.ScoreManager;
-        sm.AddScore(value + GetSpace().GetSticker().value);
     }
 
     public void OnFlame()
