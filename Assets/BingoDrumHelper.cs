@@ -14,7 +14,7 @@ public class BingoDrumHelper : MonoBehaviour
     void Start()
     {
         drum = GetComponent<BingoDrum>();
-        Utils.BingoCard.OnRoundStart.AddListener(StartRound());
+        Utils.BingoCard.OnRoundStart.AddListener(StartRound);
     }
 
     // Update is called once per frame

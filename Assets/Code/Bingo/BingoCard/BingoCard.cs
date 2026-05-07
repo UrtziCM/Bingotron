@@ -21,12 +21,12 @@ public class BingoCard : CustomService
     public int height = 5;
     public int width = 5;
 
-    public UnityAction<BingoSpace, Vector2> OnMark;
-    public UnityAction<BingoSpace[]> OnLine;
-    public UnityAction<BingoSpace[]> OnBingo;
+    public UnityEvent<BingoSpace, Vector2> OnMark;
+    public UnityEvent<BingoSpace[]> OnLine;
+    public UnityEvent<BingoSpace[]> OnBingo;
 
-    public UnityAction<BingoBall> OnBallRolled;
-    public UnityAction OnRoundStart;
+    public UnityEvent<BingoBall> OnBallRolled;
+    public UnityEvent OnRoundStart;
 
 
 
@@ -62,7 +62,7 @@ public class BingoCard : CustomService
 
         CreateProperties();
 
-        OnBallRolled += ball => BallRolled(ball);
+        OnBallRolled.AddListener(ball => BallRolled(ball));
     }
 
     private void CreateProperties()
