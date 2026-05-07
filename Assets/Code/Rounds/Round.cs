@@ -15,12 +15,12 @@ public class Round : CustomService
     {
         Utils.BingoDrum.OnBallEffectStart.AddListener(_ => BallRoll());
         Utils.BingoDrum.OnBallEffectEnd.AddListener(_ => CheckBallEnd());
+        StartRound();
     }
 
     public void StartRound()
     {
         Utils.ScoreManager.ResetTotalScore();
-
         Utils.BingoCard.OnRoundStart.Invoke();
     }
 

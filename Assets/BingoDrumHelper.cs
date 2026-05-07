@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class BingoDrumHelper : MonoBehaviour
@@ -8,13 +9,22 @@ public class BingoDrumHelper : MonoBehaviour
     [SerializeField, Tooltip("Time that a ball remains visible as new and applies its effects."), Range(0f, 10f)]
     private float activeBallTime = 3;
     private BingoDrum drum;
+    [SerializeField]
+    private TMP_Text currentBallTextMesh;
 
     private float accumulatedTime = 0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    private void Awake()
+    {
+        Utils.BingoCard.OnRoundStart.AddListener(StartRound);
+        drum = GetComponent<BingoDrum>();
+        
+    }
+
+
     void Start()
     {
-        drum = GetComponent<BingoDrum>();
-        Utils.BingoCard.OnRoundStart.AddListener(StartRound);
     }
 
     // Update is called once per frame
@@ -38,9 +48,9 @@ public class BingoDrumHelper : MonoBehaviour
 
     public void StartRound()
     {
+        Debug.Log("Round start");
         drum.ShuffledListIntoQueue();
         RoundActive = true;
-        activeBallTime = 3;
     }
 
     public BingoBall NextBall()
@@ -48,7 +58,7 @@ public class BingoDrumHelper : MonoBehaviour
         AddBallToRolledBoard(drum.currentBingoBall);
         BingoBall b = drum.GetNextBall();
 
-
+        currentBallTextMesh.text = b.number.ToString();
         return b;
     }
 
