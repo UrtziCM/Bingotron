@@ -19,6 +19,7 @@ public static class Utils
     public static BingoCard BingoCard => ServiceLocator.GetService<BingoCard>();
     public static ScoreManager ScoreManager => ServiceLocator.GetService<ScoreManager>();
 
+    public static Rewards Rewards => ServiceLocator.GetService<Rewards>();
     public static BingoDrum BingoDrum => ServiceLocator.GetService<BingoDrum>();
     public static Round Round => ServiceLocator.GetService<Round>();
 
@@ -39,7 +40,7 @@ public static class Utils
             if (!BingoCard.IsMarkable(pos))
                 continue;
 
-            if (BingoCard.GetSpaceAt(pos).GetTile() is IFlammable tile)
+            if (BingoCard.GetSpaceAt(pos).Tile is IFlammable tile)
                 tile.OnFlame();
         }
     }
@@ -97,7 +98,7 @@ public static class Utils
     {
         List<BingoTile> tileList = new List<BingoTile>();
         foreach (BingoSpace bs in BingoCard.GetAllSpacesOfType<T>())
-            tileList.Add(bs.GetTile());
+            tileList.Add(bs.Tile);
 
         return (tileList.Count > 0) ? tileList : null;
     }
