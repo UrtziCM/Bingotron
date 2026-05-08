@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8cc17c4ccca33e43a8507108ffcb0d4, type: 3}
   m_Name: BingoTileElectricGuitar
   m_EditorClassIdentifier: 
+  value: 1
+  Description: "Al marcar suma una cantidad de notas igual a la carga electrica y
+    despu\xE9s punt\xFAa (aplicando el efecto musical)"
+  tags: 

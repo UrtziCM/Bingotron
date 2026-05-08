@@ -12,3 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b7dbe2b90a91e449e35193f517cdf4, type: 3}
   m_Name: BingoTileGoldenRatio
   m_EditorClassIdentifier: 
+  value: 1
+  Description: 'Al marcar si la casilla contiene un numero de Fibonacci: +5$
+
+    (
+    1, 2, 3, 5, 8, 13, 21, 34, 55, 89)'
+  tags: 
+  addedMoney: 5

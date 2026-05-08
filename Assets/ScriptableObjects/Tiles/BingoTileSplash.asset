@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 246c4c7341d176b4aafed4c3f77a501f, type: 3}
   m_Name: BingoTileSplash
   m_EditorClassIdentifier: 
+  value: 1
+  Description: Al marcar, moja una casilla aleatoria.
+  tags: 

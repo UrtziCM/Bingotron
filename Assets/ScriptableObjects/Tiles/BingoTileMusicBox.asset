@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27cb7cc62b472d5458a3f6ba792f3e4c, type: 3}
   m_Name: BingoTileMusicBox
   m_EditorClassIdentifier: 
+  value: 1
+  Description: Al quemarse, +1 a musical y se marca. Si ya estaba marcada +1 a musical.
+  tags: 

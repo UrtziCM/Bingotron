@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fc8c3a74fbc654409485d6076a3b28f, type: 3}
   m_Name: BingoTileCatapult
   m_EditorClassIdentifier: 
+  value: 1
+  Description: "Al marcar esta casilla, la casilla dos posiciones a la derecha es
+    marcada. (Si la casilla no existe o est\xE1 marcada, no hace nada)"
+  tags: 

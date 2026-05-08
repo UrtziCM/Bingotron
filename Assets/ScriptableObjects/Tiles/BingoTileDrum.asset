@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b24930bc1613c734389a6e5b840fd13c, type: 3}
   m_Name: BingoTileDrum
   m_EditorClassIdentifier: 
+  value: 1
+  Description: "Al marcar toca una nota y luego punt\xFAa (aplicando el efecto musical)"
+  tags: 

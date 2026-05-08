@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a266cf6544dfe44c91e1d706016ff59, type: 3}
   m_Name: BingoTileWaterMill
   m_EditorClassIdentifier: 
+  value: 1
+  Description: Al mojarse, +2 de carga electrica.
+  tags: 

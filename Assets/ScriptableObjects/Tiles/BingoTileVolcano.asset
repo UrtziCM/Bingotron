@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f41a5cbfe00ae5f43a96a3ad6cd07813, type: 3}
   m_Name: BingoTileVolcano
   m_EditorClassIdentifier: 
+  value: 1
+  Description: Al marcarse, lanza una bola de fuego que quema una casilla aleatoria
+    inflamable.
+  tags: 

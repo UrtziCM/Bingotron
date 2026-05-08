@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: BingoTileLawnmowerAbajo
   m_EditorClassIdentifier: 
   value: 1
+  Description: 'Al marcar, segun su carga electrica activa una cantidad  de casillas
+    inferiores. '
+  tags: 
   direction: {x: 0, y: -1}

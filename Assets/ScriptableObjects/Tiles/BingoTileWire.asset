@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eef8568db10ea541808a09551eb85b1, type: 3}
   m_Name: BingoTileWire
   m_EditorClassIdentifier: 
+  value: 1
+  Description: Al marcar, +1 de carga electrica.
+  tags: 

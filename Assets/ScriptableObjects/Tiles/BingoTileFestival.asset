@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dcaf2b156eb8a4293cf94b49da46c6, type: 3}
   m_Name: BingoTileFestival
   m_EditorClassIdentifier: 
+  value: 1
+  Description: Al marcar suma 5 notas y duplica el valor de notas.
+  tags: 

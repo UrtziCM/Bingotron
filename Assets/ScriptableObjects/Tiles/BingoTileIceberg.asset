@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 266446cbab2e0a543863e94884caf30d, type: 3}
   m_Name: BingoTileIceberg
   m_EditorClassIdentifier: 
+  value: 1
+  Description: Al quemarse moja las 8 casillas alrededor.
+  tags: 

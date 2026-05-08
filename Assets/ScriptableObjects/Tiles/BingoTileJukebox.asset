@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d77fdb270a387c45bfbd51beba6c51c, type: 3}
   m_Name: BingoTileJukebox
   m_EditorClassIdentifier: 
+  value: 1
+  Description: Al marcar, +1 a musical y un 20% de que este efecto se repita. Una
+    vez falla puntua.
+  tags: 

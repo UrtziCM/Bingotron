@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2cd3c04876a3b48ac9936a08a753a1, type: 3}
   m_Name: BingoTileWheat
   m_EditorClassIdentifier: 
+  value: 1
+  Description: "Al mojarse, aumenta el valor en +1. \nAl marcarse cosecha el valor
+    acumulado y vuelve al valor base. \nAl quemarse, se marca."
+  tags: 

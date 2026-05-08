@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aa3e5d5aa31a704195f323c75f2c37d, type: 3}
   m_Name: BingoTileBank
   m_EditorClassIdentifier: 
+  value: 1
+  Description: +1 al valor de la casilla por cada 3 de oro.
+  tags: 

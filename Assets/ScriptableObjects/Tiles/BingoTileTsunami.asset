@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00900b1dac845584a9f1a833daa34f08, type: 3}
   m_Name: BingoTileTsunami
   m_EditorClassIdentifier: 
+  value: 1
+  Description: Al mojarse, moja una linea o columna entera al azar. (No puede ser
+    mojado por otro Tsunami)
+  tags: 

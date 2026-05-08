@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 586009fbd40e2254e86397d49d3586dd, type: 3}
   m_Name: BingoTileTree
   m_EditorClassIdentifier: 
+  value: 1
+  Description: Se quema y eso, no hace nada mas.
+  tags: 

@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a88ff1dcfd2758f47a177c9fe0e9665a, type: 3}
   m_Name: BingoTileStrawLoft
   m_EditorClassIdentifier: 
+  value: 1
+  Description: Al marcar, tiene un 30% de valer 10, lo demas 0.
+  tags: 

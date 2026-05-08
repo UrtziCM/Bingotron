@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b92335e2bfdd64da6f2f43c29c063f, type: 3}
   m_Name: BingoTileReverb
   m_EditorClassIdentifier: 
+  value: 1
+  Description: Al marcar, por cada casilla musical, +1 a musical
+  tags: 

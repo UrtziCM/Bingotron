@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: BingoTileTeslaTower
   m_EditorClassIdentifier: 
   value: 1
+  Description: Al conseguir carga electrica, +1 de carga electrica extra.
+  tags: 

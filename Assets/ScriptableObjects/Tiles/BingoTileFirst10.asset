@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab37f6a95ebd2794ba15f05ff94fe24f, type: 3}
   m_Name: BingoTileFirst10
   m_EditorClassIdentifier: 
+  value: 1
+  Description: 'Si se marca antes de los primeros 10 turnos: +10 puntos y +3 de dinero.'
+  tags: 
   turns: 10
   addedMoney: 3
   addedPoints: 10
