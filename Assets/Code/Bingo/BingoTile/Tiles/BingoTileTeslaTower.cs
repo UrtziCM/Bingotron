@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "BingoTileTeslaTower", menuName = "Bingo/Tiles/TeslaTower")]
-public class BingoCardTeslaTower : BingoTile, IMarkable
+public class BingoTileTeslaTower : BingoTile, IMarkable
 {
     public void Mark()
     {

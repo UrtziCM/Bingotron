@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34a143495172bf5489187836008061b6, type: 3}
-  m_Name: BingoTileLawnmower 1
+  m_Script: {fileID: 11500000, guid: df506a1bfd4065641b0db21b4ad29631, type: 3}
+  m_Name: BingoTileTeslaTower
   m_EditorClassIdentifier: 
-  direction: {x: 0, y: 0}
+  value: 1
