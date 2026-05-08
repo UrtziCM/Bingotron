@@ -27,14 +27,20 @@ public class BingoSpaceHandler : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (!Utils.BingoCard.ConstructionMode)
+        {
+            card.MarkSpace(positionInGrid);
+            ChangeLooks(bingoSpace.State);
+            return;
+        }
         if (card.ConstructionMode)
+        {
             if (Utils.Rewards.Selected is BingoStickerNumeric sticker)
                 card.ReplaceAt(positionInGrid, sticker);
             else if (Utils.Rewards.Selected is BingoTile tile)
                 card.ReplaceAt(positionInGrid, tile);
-            else
-                card.MarkSpace(positionInGrid);
-        ChangeLooks(bingoSpace.State);
+        }
+
     }
 
     private void ChangeLooks(MarkState state)
