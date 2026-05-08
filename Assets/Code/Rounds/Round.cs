@@ -3,7 +3,7 @@ using UnityEngine;
 public class Round 
 {
     public int pointsToWin;
-    public int ballsCuantity;
+    public int ballsQuantity;
 
     public int playerPoints;
 
@@ -15,7 +15,7 @@ public class Round
         StartRound();
 
         this.pointsToWin = points;
-        this.ballsCuantity = balls;
+        this.ballsQuantity = balls;
     }
 
     public void StartRound()
@@ -26,7 +26,7 @@ public class Round
 
     public void BallRoll()
     {
-        ballsCuantity--;
+        ballsQuantity--;
     }
     public void CheckBallEnd()
     {
@@ -36,7 +36,7 @@ public class Round
             return;
         }
 
-        if (ballsCuantity <= 0)
+        if (ballsQuantity <= 0)
         {
             RoundLost();
         }
@@ -44,7 +44,9 @@ public class Round
 
     private void RoundWin()
     {
-        Debug.Log("Win");
+        Utils.BingoDrum.gameObject.GetComponent<BingoDrumHelper>().RoundActive = false;
+
+        Utils.Rewards.Open();
     }
 
     private void RoundLost()

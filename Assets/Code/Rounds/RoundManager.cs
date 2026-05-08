@@ -6,7 +6,7 @@ public class RoundManager : CustomService
     private int roundNum;
 
     [SerializeField]
-    private int ballCuantity;
+    private int ballQuantity;
 
     [SerializeField]
     private float f = 2;
@@ -46,6 +46,6 @@ public class RoundManager : CustomService
 
     public int CalculateRoundBalls()
     {
-        return ballCuantity;
+        return ballQuantity;
     }
 }
