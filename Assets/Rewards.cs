@@ -39,8 +39,8 @@ public class Rewards : CustomService
     public void Open()
     {
         Debug.Log("Open shop");
-        GenerateRandomShop();
         boughtItems = 0;
+        GenerateRandomShop();
     }
 
     private void GenerateRandomShop()
@@ -63,18 +63,19 @@ public class Rewards : CustomService
     public void Close()
     {
         Debug.Log("Close shop");
-        Utils.RoundManager.StartRound();
+        Utils.RoundManager.NextRound();
     }
 
     public void ToggleHide()
     {
         Debug.Log("Toggle hide");
-        rewardsCanvas.enabled = !rewardsCanvas.enabled;
         if (boughtItems >= MAX_BUYS)
         {
+            rewardsCanvas.enabled = false;
             Close();
             return;
         }
+        rewardsCanvas.enabled = !rewardsCanvas.enabled;
         if (rewardsCanvas.enabled)
         {
             Utils.BingoCard.ConstructionMode = false;

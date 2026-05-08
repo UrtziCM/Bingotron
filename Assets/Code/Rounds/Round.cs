@@ -5,6 +5,7 @@ public class Round
     public int pointsToWin;
     public int ballsQuantity;
 
+
     public int playerPoints;
 
     public Round(int points, int balls)
@@ -12,8 +13,6 @@ public class Round
         Utils.BingoDrum.OnBallEffectStart.AddListener(_ => BallRoll());
         Utils.BingoDrum.OnBallEffectEnd.AddListener(_ => CheckBallEnd());
         Utils.BingoCard.OnBingo.AddListener(_ => { playerPoints += 999999; RoundWin(); });
-        
-        StartRound();
 
         this.pointsToWin = points;
         this.ballsQuantity = balls;
@@ -23,6 +22,8 @@ public class Round
     {
         Utils.ScoreManager.ResetTotalScore();
         Utils.BingoCard.OnRoundStart.Invoke();
+        Utils.BingoCard.ResetCard();
+
     }
 
     public void BallRoll()
@@ -31,8 +32,10 @@ public class Round
     }
     public void CheckBallEnd()
     {
+        Debug.Log($"BallEndPuntosTotales={Utils.ScoreManager.totalScore}/{pointsToWin}");
         if (Utils.ScoreManager.totalScore >= pointsToWin)
         {
+            Debug.Log("Entering round win");
             RoundWin();
             return;
         }
@@ -48,6 +51,7 @@ public class Round
         Utils.BingoDrum.gameObject.GetComponent<BingoDrumHelper>().RoundActive = false;
 
         Utils.Rewards.Open();
+
     }
 
     private void RoundLost()

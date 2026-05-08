@@ -7,7 +7,7 @@ using UnityEngine.Events;
 
 public class BingoDrum : CustomService
 {
-    private const int TOTAL_NUMBERS = 90;
+    private const int TOTAL_NUMBERS = 50;
     public List<BingoBall> balls = new();
     public Queue<BingoBall> drumQueue = new();
     public List<BingoBall> droppedBalls = new();
@@ -46,7 +46,7 @@ public class BingoDrum : CustomService
         drumQueue.Clear();
         List<BingoBall> disposableCopy = new List<BingoBall>(balls);
 
-        foreach (BingoBall currentBall in disposableCopy.OrderBy(x => UnityEngine.Random.Range(0, 90))) {
+        foreach (BingoBall currentBall in disposableCopy.OrderBy(x => UnityEngine.Random.Range(0, TOTAL_NUMBERS))) {
             drumQueue.Enqueue(currentBall);
         }
         

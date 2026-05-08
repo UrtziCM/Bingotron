@@ -25,8 +25,14 @@ public class RoundManager : CustomService
 
     public void StartRound()
     {
-        ActualRound = new Round(CalculateRoundPoints(), CalculateRoundBalls());
-        Utils.BingoCard.ResetCard();
+        Debug.Log($"Round={roundNum}->{CalculateRoundPoints()}");
+        if (ActualRound == null)
+            ActualRound = new Round(0,0);
+        ActualRound.pointsToWin = CalculateRoundPoints();
+        ActualRound.ballsQuantity = 20;
+        ActualRound.StartRound();
+
+        Utils.BingoDrum.gameObject.GetComponent<BingoDrumHelper>().RoundActive = true;
     }
 
     public void NextRound()
@@ -37,7 +43,9 @@ public class RoundManager : CustomService
 
     public int CalculateRoundPoints()
     {
-        return (int)(Mathf.Pow((Mathf.Cos(roundNum * wid) * amp + roundNum), Mathf.Log(roundNum, 250)));
+        float exponent = Mathf.Log(roundNum, 25);
+        float num = Mathf.Cos(roundNum * wid) * amp + roundNum;
+        return 2;
     }
 
     public int CalculateRoundBalls()

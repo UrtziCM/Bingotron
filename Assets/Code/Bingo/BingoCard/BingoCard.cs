@@ -317,9 +317,14 @@ public class BingoCard : CustomService
 
     public void ResetCard()
     {
-        //foreach (BingoSpace bs in AllSpaces())
-        //{
-        //    bs.State = MarkState.Unmarked;
-        //}
+        foreach (BingoSpace bs in AllSpaces())
+        {
+            bs.State = MarkState.Unmarked;
+        }
+        foreach (BingoSpaceHandler bsh in transform.GetComponentsInChildren<BingoSpaceHandler>())
+        {
+            Debug.Log(bsh.gameObject);
+            bsh.ChangeLooks(bsh.GetSpace().State);
+        }
     }
 }

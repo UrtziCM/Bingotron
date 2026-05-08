@@ -20,7 +20,7 @@ public class BingoSpaceHandler : MonoBehaviour
 
     void Start()
     {
-        bingoSpace = new(positionInGrid, UnityEngine.Random.Range(1,91));
+        bingoSpace = new(positionInGrid, UnityEngine.Random.Range(1,51));
         card = transform.GetComponentInParent<BingoCard>();
         card.AddBingoSpace(bingoSpace);
         stickerNumberText.text = bingoSpace.Sticker.Number.ToString();
@@ -29,6 +29,8 @@ public class BingoSpaceHandler : MonoBehaviour
     private void Update()
     {
     }
+
+    
 
     private void OnMouseDown()
     {
@@ -50,12 +52,15 @@ public class BingoSpaceHandler : MonoBehaviour
 
     }
 
-    private void ChangeLooks(MarkState state)
+    public void ChangeLooks(MarkState state)
     {
         switch (state)
         {
             case MarkState.Marked:
                 GetComponent<SpriteRenderer>().color = markedColor;
+                break;
+            case MarkState.Unmarked:
+                GetComponent<SpriteRenderer>().color = Color.white;
                 break;
         }
     }
