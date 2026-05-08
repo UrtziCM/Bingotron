@@ -8,6 +8,9 @@ public class BingoTile : ScriptableObject
     internal BingoSpace space;
     [SerializeField]
     internal int value = 1;
+    [SerializeField, TextArea]
+    private string Description;
+
 
     public BingoSpace GetSpace()
     {
