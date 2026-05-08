@@ -13,8 +13,12 @@ public class BingoTileWizard : BingoTile, IMarkable, ICasteable, IGamble
 
     public int HighManaCost => 0;
 
+    private bool onCast = true;
+
     public void Mark()
     {
+        ServiceLocator.GetService<BingoDrum>().OnBallEffectEnd.AddListener((call) => { onCast = false; });
+
         BingoCard bc = Utils.BingoCard;
 
         Cast((int)bc.GetPropertyValue(BingoCard.MANA_COUNT_PROPERTY));
@@ -31,7 +35,7 @@ public class BingoTileWizard : BingoTile, IMarkable, ICasteable, IGamble
 
     private IEnumerator addMultiply(int mana)
     {
-        while (mana > LowManaCost)
+        while (mana > LowManaCost && onCast)
         {
             Utils.ScoreManager.AddMultiply(0.01f);
 
