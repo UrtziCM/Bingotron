@@ -6,7 +6,7 @@ public enum Tags
     Cargable,
     Musical,
     Permeable,
-    Ludópata,
+    Ludopata,
     Conjurable
 }
 
@@ -17,10 +17,12 @@ public class BingoTile : ScriptableObject
     internal BingoSpace space;
     [SerializeField]
     internal int value = 1;
-    [SerializeField, TextArea]
-    private string Description;
     [SerializeField]
-    private Tags[] tags;
+    public string Name;
+    [SerializeField, TextArea]
+    public string Description;
+    [SerializeField]
+    public Tags[] tags;
 
     public BingoSpace GetSpace()
     {
