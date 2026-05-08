@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 public class BingoSpaceHandler : MonoBehaviour
 {
@@ -33,12 +34,14 @@ public class BingoSpaceHandler : MonoBehaviour
             ChangeLooks(bingoSpace.State);
             return;
         }
-        if (card.ConstructionMode)
+        if (Utils.BingoCard.ConstructionMode)
         {
             if (Utils.Rewards.Selected is BingoStickerNumeric sticker)
                 card.ReplaceAt(positionInGrid, sticker);
             else if (Utils.Rewards.Selected is BingoTile tile)
                 card.ReplaceAt(positionInGrid, tile);
+            Utils.Rewards.ToggleHide();
+            Utils.Rewards.boughtItems++;
         }
 
     }
