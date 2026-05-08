@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: BingoTileTree
   m_EditorClassIdentifier: 
   value: 1
+  Name: Arbol
   Description: Se quema y eso, no hace nada mas.
   tags: 00000000

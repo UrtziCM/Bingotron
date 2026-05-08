@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: BingoTileMusicBox
   m_EditorClassIdentifier: 
   value: 1
+  Name: Caja de Musica
   Description: Al quemarse, +1 a musical y se marca. Si ya estaba marcada +1 a musical.
   tags: 0200000000000000

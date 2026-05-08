@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: BingoTileGenerator
   m_EditorClassIdentifier: 
   value: 1
+  Name: Generador
   Description: Al marcar, +1 de electricidad por cada cable.
   tags: 01000000

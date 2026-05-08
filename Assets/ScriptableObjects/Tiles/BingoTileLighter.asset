@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: BingoTileLighter
   m_EditorClassIdentifier: 
   value: 1
+  Name: Mechero
   Description: Al marcarse se prende fuego.
   tags: 00000000

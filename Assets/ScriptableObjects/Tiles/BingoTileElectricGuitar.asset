@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BingoTileElectricGuitar
   m_EditorClassIdentifier: 
   value: 1
+  Name: Guitarra Electrica
   Description: "Al marcar suma una cantidad de notas igual a la carga electrica y
     despu\xE9s punt\xFAa (aplicando el efecto musical)"
   tags: 0200000001000000

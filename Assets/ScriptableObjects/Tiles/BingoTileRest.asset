@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: BingoTileRest
   m_EditorClassIdentifier: 
   value: 1
+  Name: Descanso
   Description: "Al marcar, +50 de man\xE1."
   tags: 05000000

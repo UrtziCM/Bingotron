@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: BingoTileWire
   m_EditorClassIdentifier: 
   value: 1
+  Name: Cable
   Description: Al marcar, +1 de carga electrica.
   tags: 01000000

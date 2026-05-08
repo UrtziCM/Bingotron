@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: BingoTileDrum
   m_EditorClassIdentifier: 
   value: 1
+  Name: Tambor
   Description: "Al marcar toca una nota y luego punt\xFAa (aplicando el efecto musical)"
   tags: 02000000

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: BingoTileIceberg
   m_EditorClassIdentifier: 
   value: 1
+  Name: Iceberg
   Description: Al quemarse moja las 8 casillas alrededor.
   tags: 0000000003000000

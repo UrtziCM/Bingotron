@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BingoTileWheat
   m_EditorClassIdentifier: 
   value: 1
+  Name: Trigo
   Description: "Al mojarse, aumenta el valor en +1. \nAl marcarse cosecha el valor
     acumulado y vuelve al valor base. \nAl quemarse, se marca."
   tags: 0300000000000000

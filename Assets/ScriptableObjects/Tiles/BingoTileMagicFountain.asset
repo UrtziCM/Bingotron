@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: BingoTileMagicFountain
   m_EditorClassIdentifier: 
   value: 1
+  Name: Fuente Magica
   Description: Al marcar, moja las casillas adyacentes.
   tags: 0500000003000000
