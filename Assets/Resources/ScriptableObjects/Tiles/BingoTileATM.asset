@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4721904df374dc4a85c9752c6aa769e, type: 3}
+  m_Name: BingoTileATM
+  m_EditorClassIdentifier: 
+  value: 1
+  Description: Al marcar esta hay un 20% de probabilidad de salir la recompensa especial.
+    Al conseguir carga electrica +1 recompensa normal y +2 recompensa especial.
+  tags: 

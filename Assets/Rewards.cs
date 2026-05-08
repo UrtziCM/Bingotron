@@ -1,8 +1,4 @@
-using System;
 using System.Collections.Generic;
-using TMPro;
-using UnityEditor;
-using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,7 +13,7 @@ public class Rewards : CustomService
     private Canvas rewardsCanvas;
     [SerializeField]
     private GameObject[] RewardPanels;
-    private List<BingoTile> possibleTiles = new();
+    private List<BingoTile> possibleTiles;
     private const int MAX_BUYS = 2;
     public int boughtItems = 0;
 
@@ -31,9 +27,7 @@ public class Rewards : CustomService
     {
         foreach (var rewardPanel in RewardPanels)
             rewardPanel.GetComponentInChildren<Button>().onClick.AddListener(()=>{ ToggleHide(); rewardPanel.GetComponentInChildren<Button>().interactable = false; });
-        GUID[] guids = AssetDatabase.FindAssetGUIDs("Bingo"); 
-        foreach (var guid in guids)
-            possibleTiles.Add(AssetDatabase.LoadAssetByGUID<BingoTile>(guid));
+        possibleTiles = new(Resources.LoadAll<BingoTile>("ScriptableObjects/Tiles"));
     }
 
     // Update is called once per frame
