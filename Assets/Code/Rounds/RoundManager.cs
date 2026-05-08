@@ -6,16 +6,12 @@ public class RoundManager : CustomService
     private int roundNum;
 
     [SerializeField]
-    private int ballQuantity;
+    private int ballQuantity = 20;
 
     [SerializeField]
-    private float f = 2;
+    private float wid = 0.1f;
     [SerializeField]
-    private float b = 2;
-    [SerializeField]
-    private float a = 2;
-    [SerializeField]
-    private float s = 2;
+    private float amp = 25;
 
     private void Awake()
     {
@@ -40,8 +36,7 @@ public class RoundManager : CustomService
 
     public int CalculateRoundPoints()
     {
-        return 2;
-            //(int)((Mathf.Cos(roundNum * f) / b) + (roundNum / a) + s);
+        return (int)(Mathf.Pow((Mathf.Cos(roundNum * wid) * amp + roundNum), Mathf.Log(roundNum, 250)));
     }
 
     public int CalculateRoundBalls()
