@@ -18,6 +18,10 @@ public class BingoSpaceHandler : MonoBehaviour
     private Color markedColor;
     private Color unmarkedColor;
 
+    [SerializeField]
+    private GameObject descriptionHover;
+    private GameObject activeHover;
+
     void Start()
     {
         bingoSpace = new(positionInGrid, UnityEngine.Random.Range(1,51));
@@ -68,5 +72,20 @@ public class BingoSpaceHandler : MonoBehaviour
     public BingoSpace GetSpace()
     {
         return bingoSpace;
+    }
+
+    private void OnMouseEnter()
+    {
+        if (activeHover) Destroy(activeHover);
+
+
+         activeHover = Instantiate(descriptionHover, transform.position, transform.rotation);
+
+        descriptionHover.GetComponent<DescriptionHover>().ShowHover(tile);
+    }
+
+    private void OnMouseExit()
+    {
+        if (activeHover) Destroy(activeHover);
     }
 }
