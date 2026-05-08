@@ -15,4 +15,4 @@ MonoBehaviour:
   value: 1
   Description: Al mojarse, moja una linea o columna entera al azar. (No puede ser
     mojado por otro Tsunami)
-  tags: 
+  tags: 03000000

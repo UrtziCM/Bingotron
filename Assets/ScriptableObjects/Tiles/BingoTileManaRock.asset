@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 1
   Description: "Por cada bola que sale del bombo +5 de man\xE1."
-  tags: 
+  tags: 05000000
   addedMana: 0

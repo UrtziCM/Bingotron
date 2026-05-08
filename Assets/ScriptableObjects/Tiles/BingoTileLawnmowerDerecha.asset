@@ -15,5 +15,5 @@ MonoBehaviour:
   value: 1
   Description: 'Al marcar, segun su carga electrica activa una cantidad  de casillas
     hacia la derecha. '
-  tags: 
+  tags: 01000000
   direction: {x: 1, y: 0}
