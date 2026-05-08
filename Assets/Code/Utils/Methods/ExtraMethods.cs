@@ -21,7 +21,7 @@ public static class Utils
 
     public static Rewards Rewards => ServiceLocator.GetService<Rewards>();
     public static BingoDrum BingoDrum => ServiceLocator.GetService<BingoDrum>();
-    public static Round Round => ServiceLocator.GetService<Round>();
+    public static RoundManager RoundManager => ServiceLocator.GetService<RoundManager>();
 
 
     public static void Spread(BingoTile bingoTile)

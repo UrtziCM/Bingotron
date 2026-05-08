@@ -37,7 +37,7 @@ public class BingoDrumHelper : MonoBehaviour
         if (accumulatedTime > activeBallTime)
         {
             accumulatedTime = 0;
-            Debug.Log(NextBall().number);
+            NextBall();
             if (drum.drumQueue.Count == 0) 
             {
                 RoundActive = false;

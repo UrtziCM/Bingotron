@@ -4,17 +4,18 @@ public class ScoreManager : CustomService
 {
 
     private int score;
-    private float multiplier;
+    private float multiplier = 1.0f;
     public int Score { get { return score; } }
     public float Multiplier { get { return multiplier; } }
 
     public int totalScore;
 
-
-    private void Start()
+    private void Awake()
     {
         ServiceLocator.AddService<ScoreManager>(this);
-
+    }
+    private void Start()
+    {
         Utils.BingoDrum.OnBallEffectEnd.AddListener(_=>SumScore());
     }
 
@@ -31,6 +32,7 @@ public class ScoreManager : CustomService
     public void SumScore()
     {
         totalScore += (int)(score * multiplier);
+        Debug.Log(totalScore);
 
         ResetMultiplier();
         ResetScore();
@@ -42,7 +44,7 @@ public class ScoreManager : CustomService
     }
     public void ResetMultiplier()
     {
-        multiplier = 0;
+        multiplier = 1;
     }
     public void ResetTotalScore()
     {

@@ -1,21 +1,21 @@
 using UnityEngine;
 
-public class Round : CustomService
+public class Round 
 {
     public int pointsToWin;
     public int ballsCuantity;
 
     public int playerPoints;
 
-    private void Awake()
-    {
-        ServiceLocator.AddService<Round>(this);
-    }
-    private void Start()
+    public Round(int points, int balls)
     {
         Utils.BingoDrum.OnBallEffectStart.AddListener(_ => BallRoll());
         Utils.BingoDrum.OnBallEffectEnd.AddListener(_ => CheckBallEnd());
+        
         StartRound();
+
+        this.pointsToWin = points;
+        this.ballsCuantity = balls;
     }
 
     public void StartRound()
@@ -44,9 +44,11 @@ public class Round : CustomService
 
     private void RoundWin()
     {
+        Debug.Log("Win");
     }
 
     private void RoundLost()
-    { 
+    {
+        Debug.Log("Lose");
     }
 }
