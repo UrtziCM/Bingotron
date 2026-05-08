@@ -25,13 +25,13 @@ public class BingoTileWell : BingoTile, IMarkable, IGamble, IPermeable
             {
                 int i = Random.Range(0, permeableSpaces.Count);
 
-                if (permeableSpaces[i].GetTile() == this)
+                if (permeableSpaces[i].Tile == this)
                 {
                     permeableSpaces.RemoveAt(i);
                     continue;
                 }
 
-                if (permeableSpaces[i].GetTile() is IPermeable tile)
+                if (permeableSpaces[i].Tile is IPermeable tile)
                 { 
                     tile.Wet();
                     wetCount++;

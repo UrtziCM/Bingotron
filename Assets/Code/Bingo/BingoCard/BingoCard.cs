@@ -28,7 +28,7 @@ public class BingoCard : CustomService
     public UnityEvent<BingoBall> OnBallRolled;
     public UnityEvent OnRoundStart;
 
-
+    public bool ConstructionMode = false;
 
     public IEnumerable<BingoSpace> AllSpaces()
     {
@@ -85,7 +85,7 @@ public class BingoCard : CustomService
         List<BingoSpace> spaces = new List<BingoSpace>();
         foreach (BingoSpace space in AllSpaces())
         {
-            if (space.GetTile() is T)
+            if (space.Tile is T)
                 spaces.Add(space);
         }
         return spaces.ToArray();
@@ -116,7 +116,7 @@ public class BingoCard : CustomService
 
     public bool IsMarkable(Vector2 pos)
     {
-        BingoStickerNumeric sticker = GetSpaceAt(pos).GetSticker();
+        BingoStickerNumeric sticker = GetSpaceAt(pos).Sticker;
         if (IsSpaceMarked(pos) && sticker != null)
             return false;
         BingoDrum bingoDrum = Utils.BingoDrum;
@@ -140,7 +140,7 @@ public class BingoCard : CustomService
     {
         BingoSpace spaceToMark = GetSpaceAt(pos);
 
-        if (spaceToMark.GetSticker().IsMarkable(Utils.BingoDrum.currentBingoBall) || CanStickerBeLateMarked(spaceToMark.GetSticker()))
+        if (spaceToMark.Sticker.IsMarkable(Utils.BingoDrum.currentBingoBall) || CanStickerBeLateMarked(spaceToMark.Sticker))
         {
             if (spaceToMark.State != MarkState.Unmarked)
                 return;
@@ -167,6 +167,17 @@ public class BingoCard : CustomService
             OnBingo?.Invoke(tileList.ToArray());
             Debug.Log("Bingo!");
         }
+    }
+
+    public void ReplaceAt(Vector2 pos, BingoTile tile)
+    {
+        var targetSpace = GetSpaceAt(pos);
+        targetSpace.Tile = tile;
+    }
+    public void ReplaceAt(Vector2 pos, BingoStickerNumeric sticker)
+    {
+        var targetSpace = GetSpaceAt(pos);
+        targetSpace.Sticker = sticker;
     }
 
     public BingoSpace[] GetLine(int line)

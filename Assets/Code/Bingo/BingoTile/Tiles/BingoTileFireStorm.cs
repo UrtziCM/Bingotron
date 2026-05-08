@@ -26,7 +26,7 @@ public class BingoTileFireStorm : BingoTile, IMarkable, ICasteable
         {
             int i = Random.Range(0, allSpaces.Count);
 
-            if (allSpaces[i].IsMarkable() && allSpaces[i].GetTile() is IFlammable tile)
+            if (allSpaces[i].IsMarkable() && allSpaces[i].Tile is IFlammable tile)
                 tile.OnFlame(); 
 
             allSpaces.RemoveAt(i);

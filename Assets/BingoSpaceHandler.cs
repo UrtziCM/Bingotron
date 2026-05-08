@@ -7,8 +7,8 @@ public class BingoSpaceHandler : MonoBehaviour
     private BingoSpace bingoSpace;
     public Vector2 positionInGrid;
     private BingoCard card;
-    public BingoStickerNumeric sticker => bingoSpace.GetSticker();
-    public BingoTile tile => bingoSpace.GetTile();
+    public BingoStickerNumeric sticker => bingoSpace.Sticker;
+    public BingoTile tile => bingoSpace.Tile;
 
     [SerializeField]
     private TMP_Text stickerNumberText;
@@ -22,13 +22,18 @@ public class BingoSpaceHandler : MonoBehaviour
         bingoSpace = new(positionInGrid, UnityEngine.Random.Range(1,91));
         card = transform.GetComponentInParent<BingoCard>();
         card.AddBingoSpace(bingoSpace);
-        stickerNumberText.text = bingoSpace.GetSticker().Number.ToString();
+        stickerNumberText.text = bingoSpace.Sticker.Number.ToString();
     }
 
-    // Update is called once per frame
     private void OnMouseDown()
     {
-        card.MarkSpace(positionInGrid);
+        if (card.ConstructionMode)
+            if (Utils.Rewards.Selected is BingoStickerNumeric sticker)
+                card.ReplaceAt(positionInGrid, sticker);
+            else if (Utils.Rewards.Selected is BingoTile tile)
+                card.ReplaceAt(positionInGrid, tile);
+            else
+                card.MarkSpace(positionInGrid);
         ChangeLooks(bingoSpace.State);
     }
 

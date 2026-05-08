@@ -9,8 +9,8 @@ public class BingoTileQuickMath : BingoTile, IMarkable
     private int addedMoney = 3;
     public void Mark()
     {
-        if(!(GetSpace().GetSticker() is BingoStickerNumeric)) return;
-        int num = (GetSpace().GetSticker() as BingoStickerNumeric).Number;
+        if(!(GetSpace().Sticker is BingoStickerNumeric)) return;
+        int num = (GetSpace().Sticker as BingoStickerNumeric).Number;
 
         BingoCard bc = Utils.BingoCard;
         ScoreManager sm = Utils.ScoreManager;
@@ -24,14 +24,14 @@ public class BingoTileQuickMath : BingoTile, IMarkable
         if (num % 5 == 0)
         {
             foreach (BingoSpace space in Utils.GetTouchingSpacesFrom(pos))
-                if (space.GetTile() is IPermeable tile)
+                if (space.Tile is IPermeable tile)
                     tile.Wet();
         }
 
         if (num % 7 == 0)
         { 
             foreach (BingoSpace space in Utils.GetTouchingSpacesFrom(pos))
-                if(space.IsMarkable() && space.GetTile() is IFlammable tile)
+                if(space.IsMarkable() && space.Tile is IFlammable tile)
                     tile.OnFlame();
         }
 

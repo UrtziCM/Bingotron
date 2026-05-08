@@ -10,7 +10,7 @@ public class BingoStickerFlint : BingoStickerNumeric
     {
         if (ball.number == number)
         {
-            if (GetSpace().GetTile() is IFlammable tile)
+            if (GetSpace().Tile is IFlammable tile)
                 tile.OnFlame();
 
             return true;

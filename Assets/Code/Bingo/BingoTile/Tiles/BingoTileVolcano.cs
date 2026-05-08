@@ -8,7 +8,7 @@ public class BingoTileVolcano : BingoTile, IMarkable
     {
         ScoreManager sm = Utils.ScoreManager;
 
-        (Utils.GetRandomUnmarkedTyped<IFlammable>().GetTile() as IFlammable)?.OnFlame();
+        (Utils.GetRandomUnmarkedTyped<IFlammable>().Tile as IFlammable)?.OnFlame();
 
     }
 }

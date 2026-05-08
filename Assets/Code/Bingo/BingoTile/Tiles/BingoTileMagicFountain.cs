@@ -12,7 +12,7 @@ public class BingoTileMagicFountain : BingoTile, IMarkable, IPermeable
         {
             Vector2 targetPos = pos + direction;
 
-            if (bc.GetSpaceAt(targetPos).GetTile() is IPermeable tile)
+            if (bc.GetSpaceAt(targetPos).Tile is IPermeable tile)
                 tile.Wet();
         }
 
@@ -28,7 +28,7 @@ public class BingoTileMagicFountain : BingoTile, IMarkable, IPermeable
         {
             Vector2 targetPos = pos + direction;
 
-            if (bc.GetSpaceAt(targetPos).GetTile() is IPermeable tile)
+            if (bc.GetSpaceAt(targetPos).Tile is IPermeable tile)
                 permebleCount++;
         }
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,7 +13,11 @@ public enum MarkState
 public class BingoSpace// : ScriptableObject
 {
     private BingoTile tile;
-    private BingoStickerNumeric sticker;
+    public BingoTile Tile { get { return tile; } set { tile = value; } }
+
+    public BingoStickerNumeric sticker;
+    public BingoStickerNumeric Sticker { get { return sticker; } set { sticker = value; } }
+
     private Vector2 position;
     private MarkState state = MarkState.Unmarked;
     public MarkState State { get { return state; } }
@@ -28,10 +33,6 @@ public class BingoSpace// : ScriptableObject
         this.tile = ScriptableObject.CreateInstance<BingoTile>();
     }
 
-    public BingoTile GetTile()
-    {
-        return tile;
-    }
     public Vector2 GetPosition()
     {
         return position;
@@ -40,11 +41,6 @@ public class BingoSpace// : ScriptableObject
     public BingoCard GetCard()
     {
         return card;
-    }
-
-    public BingoStickerNumeric GetSticker()
-    {
-        return sticker;
     }
 
     public void Mark()
@@ -67,5 +63,8 @@ public class BingoSpace// : ScriptableObject
         return state == MarkState.Marked;
     }
 
-
+    internal void SetTile(BingoTile tile)
+    {
+        this.tile = tile;
+    }
 }

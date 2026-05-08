@@ -19,7 +19,7 @@ public class BingoTileCanal : BingoTile, IMarkable
         {
             Vector2 targetPos = pos + direction;
 
-            if(GetSpace().GetTile() is IPermeable tile)
+            if(GetSpace().Tile is IPermeable tile)
                 tile.Wet();
         }
 
