@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "BingoTile", menuName = "Bingo/Tiles/BingoTile", order = -1)]
@@ -10,7 +7,8 @@ public class BingoTile : ScriptableObject
     internal BingoSpace space;
     [SerializeField]
     internal int value = 1;
-
+    [SerializeField, TextArea]
+    private string Description;
 
     public BingoSpace GetSpace()
     {
@@ -21,6 +19,4 @@ public class BingoTile : ScriptableObject
     {
         return pos == this.pos;
     }
-
-
 }
