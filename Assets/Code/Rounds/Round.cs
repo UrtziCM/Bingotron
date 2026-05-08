@@ -11,6 +11,7 @@ public class Round
     {
         Utils.BingoDrum.OnBallEffectStart.AddListener(_ => BallRoll());
         Utils.BingoDrum.OnBallEffectEnd.AddListener(_ => CheckBallEnd());
+        Utils.BingoCard.OnBingo.AddListener(_ => { playerPoints += 999999; RoundWin(); });
         
         StartRound();
 
