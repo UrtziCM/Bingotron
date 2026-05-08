@@ -26,6 +26,10 @@ public class BingoSpaceHandler : MonoBehaviour
         stickerNumberText.text = bingoSpace.Sticker.Number.ToString();
     }
 
+    private void Update()
+    {
+    }
+
     private void OnMouseDown()
     {
         if (!Utils.BingoCard.ConstructionMode)

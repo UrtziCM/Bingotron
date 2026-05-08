@@ -26,6 +26,7 @@ public class RoundManager : CustomService
     public void StartRound()
     {
         ActualRound = new Round(CalculateRoundPoints(), CalculateRoundBalls());
+        Utils.BingoCard.ResetCard();
     }
 
     public void NextRound()

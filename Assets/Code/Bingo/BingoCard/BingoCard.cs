@@ -314,4 +314,12 @@ public class BingoCard : CustomService
     {
         return tileList;
     }
+
+    public void ResetCard()
+    {
+        //foreach (BingoSpace bs in AllSpaces())
+        //{
+        //    bs.State = MarkState.Unmarked;
+        //}
+    }
 }

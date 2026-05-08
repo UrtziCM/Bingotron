@@ -20,7 +20,7 @@ public class BingoSpace// : ScriptableObject
 
     private Vector2 position;
     private MarkState state = MarkState.Unmarked;
-    public MarkState State { get { return state; } }
+    public MarkState State { get { return state; } set { state = value; } }
     private BingoCard card;
     private List<string> tags;
 

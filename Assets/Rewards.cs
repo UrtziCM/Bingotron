@@ -54,7 +54,7 @@ public class Rewards : CustomService
         foreach (var rewardPanel in RewardPanels)
         {
             BingoTile generatedTile = GenerateObject();
-            //rewardPanel.GetComponentInChildren<Button>().GetComponentInChildren<TMP_Text>().text = generatedTile.name;
+            //rewardPanel.transform.GetChild(0).GetComponent<TMP_Text>().text = generatedTile.name;
         }
         ToggleHide();
     }
