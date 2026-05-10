@@ -9,10 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfbf23a001d286a4bb4e01764d9877fd, type: 3}
-  m_Name: BingoTileBasic
+  m_Script: {fileID: 11500000, guid: 4cb6495468331de4594233243ddbf31c, type: 3}
+  m_Name: BingoStickerToll
   m_EditorClassIdentifier: 
-  value: 1
-  Name: Base
-  Description: "No tiene ning\xFAn efecto especial."
+  value: 0
+  Name: Peaje
+  Description: Puedes gastar 5 de oro para marcar esta casilla.
   tags: 
+  number: 0
+  cost: 5

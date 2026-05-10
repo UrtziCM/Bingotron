@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "BingoStickerQuestionMark", menuName = "Bingo/Stickers/QuestionMark")]
 public class BingoStickerQuestionMark : BingoStickerNumeric, IRoller
 {
     public BingoStickerQuestionMark(int number) : base(number)

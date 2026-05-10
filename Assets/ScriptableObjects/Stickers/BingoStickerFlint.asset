@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfbf23a001d286a4bb4e01764d9877fd, type: 3}
-  m_Name: BingoTileBasic
+  m_Script: {fileID: 11500000, guid: 41a1cba68b9aa5c478635dca9dd56e49, type: 3}
+  m_Name: BingoStickerFlint
   m_EditorClassIdentifier: 
-  value: 1
-  Name: Base
-  Description: "No tiene ning\xFAn efecto especial."
-  tags: 
+  value: 0
+  Name: Pedernal
+  Description: Al marcar esta, se prende fuego.
+  tags: 00000000
+  number: 0

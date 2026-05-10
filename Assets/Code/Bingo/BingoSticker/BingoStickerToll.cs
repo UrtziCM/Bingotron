@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "BingoStickerToll", menuName = "Bingo/Stickers/Toll")]
 public class BingoStickerToll : BingoStickerNumeric
 {
     [SerializeField]

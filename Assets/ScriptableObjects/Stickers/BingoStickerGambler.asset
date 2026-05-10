@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfbf23a001d286a4bb4e01764d9877fd, type: 3}
-  m_Name: BingoTileBasic
+  m_Script: {fileID: 11500000, guid: 8ea83f8f57573f549b154cf516e59085, type: 3}
+  m_Name: BingoStickerGambler
   m_EditorClassIdentifier: 
-  value: 1
-  Name: Base
-  Description: "No tiene ning\xFAn efecto especial."
-  tags: 
+  value: 0
+  Name: Gambler
+  Description: Por cada bola que sale del bombo, tiene un 1% de marcarse.
+  tags: 04000000
+  number: 0
