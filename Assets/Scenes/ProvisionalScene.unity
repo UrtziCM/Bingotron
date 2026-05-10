@@ -1827,10 +1827,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballQuantity: 90
-  f: 2
-  b: 2
-  a: 2
-  s: 2
+  wid: 0.1
+  amp: 25
 --- !u!1 &775753420
 GameObject:
   m_ObjectHideFlags: 0
@@ -4080,6 +4078,7 @@ MonoBehaviour:
   - {fileID: 1985695478}
   - {fileID: 88740223}
   - {fileID: 1895019050}
+  boughtItems: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -18,9 +18,7 @@ public class BingoSpaceHandler : MonoBehaviour
     private Color markedColor;
     private Color unmarkedColor;
 
-    [SerializeField]
-    private GameObject descriptionHover;
-    private GameObject activeHover;
+    private DescriptionHover descriptionHover;
 
     void Start()
     {
@@ -28,6 +26,7 @@ public class BingoSpaceHandler : MonoBehaviour
         card = transform.GetComponentInParent<BingoCard>();
         card.AddBingoSpace(bingoSpace);
         stickerNumberText.text = bingoSpace.Sticker.Number.ToString();
+        descriptionHover = card.GetComponentInChildren<DescriptionHover>();
     }
 
     private void Update()
@@ -76,16 +75,11 @@ public class BingoSpaceHandler : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if (activeHover) Destroy(activeHover);
-
-
-         activeHover = Instantiate(descriptionHover, transform.position, transform.rotation);
-
-        descriptionHover.GetComponent<DescriptionHover>().ShowHover(tile);
+        descriptionHover.ShowHover(tile);
     }
 
     private void OnMouseExit()
     {
-        if (activeHover) Destroy(activeHover);
+        descriptionHover.UnShowHover();
     }
 }

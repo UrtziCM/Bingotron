@@ -14,4 +14,10 @@ public class DescriptionHover : MonoBehaviour
         tileName.text = tile.Name;
         tileDescription.text = tile.Description;
     }
+
+    public void UnShowHover()
+    {
+        tileName.text = "";
+        tileDescription.text = "";
+    }
 }
