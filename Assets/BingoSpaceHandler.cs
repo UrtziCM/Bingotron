@@ -75,7 +75,7 @@ public class BingoSpaceHandler : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        descriptionHover.ShowHover(tile);
+        descriptionHover.ShowHover(tile, sticker);
     }
 
     private void OnMouseExit()
