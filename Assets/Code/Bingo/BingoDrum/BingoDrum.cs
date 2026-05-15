@@ -42,6 +42,7 @@ public class BingoDrum : CustomService
 
     public void ShuffledListIntoQueue()
     {
+        Debug.Log(balls.Count);
         droppedBalls.Clear();
         drumQueue.Clear();
         List<BingoBall> disposableCopy = new List<BingoBall>(balls);

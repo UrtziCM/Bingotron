@@ -51,6 +51,7 @@ public class Rewards : CustomService
 
     private void GenerateRandomShop()
     {
+        items.Clear();
         foreach (var rewardPanel in RewardPanels)
         {
             BingoTile generatedTile = GenerateObject();
