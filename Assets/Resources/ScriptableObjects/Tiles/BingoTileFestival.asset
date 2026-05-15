@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: BingoTileFestival
   m_EditorClassIdentifier: 
   value: 1
+  Name: Festival
   Description: Al marcar suma 5 notas y duplica el valor de notas.
-  tags: 
+  tags: 02000000

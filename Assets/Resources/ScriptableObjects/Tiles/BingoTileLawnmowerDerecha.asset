@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: BingoTileLawnmowerDerecha
   m_EditorClassIdentifier: 
   value: 1
+  Name: "Cortacesped \u2192"
   Description: 'Al marcar, segun su carga electrica activa una cantidad  de casillas
     hacia la derecha. '
-  tags: 
+  tags: 01000000
   direction: {x: 1, y: 0}

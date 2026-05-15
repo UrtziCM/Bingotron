@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BingoTileCatapult
   m_EditorClassIdentifier: 
   value: 1
+  Name: Catapulta
   Description: "Al marcar esta casilla, la casilla dos posiciones a la derecha es
     marcada. (Si la casilla no existe o est\xE1 marcada, no hace nada)"
-  tags: 
+  tags: 00000000

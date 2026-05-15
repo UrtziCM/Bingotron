@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: BingoTileStrawLoft
   m_EditorClassIdentifier: 
   value: 1
+  Name: Pajar
   Description: Al marcar, tiene un 30% de valer 10, lo demas 0.
-  tags: 
+  tags: 0000000004000000

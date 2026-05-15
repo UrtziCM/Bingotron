@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BingoTileTsunami
   m_EditorClassIdentifier: 
   value: 1
+  Name: Tsunami
   Description: Al mojarse, moja una linea o columna entera al azar. (No puede ser
     mojado por otro Tsunami)
-  tags: 
+  tags: 03000000

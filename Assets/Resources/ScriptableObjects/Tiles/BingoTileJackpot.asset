@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: BingoTileJackpot
   m_EditorClassIdentifier: 
   value: 1
+  Name: Jackpot
   Description: Al marcar, 50% de duplicar la puntuacion total.
-  tags: 
+  tags: 04000000

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BingoTileFirst10
   m_EditorClassIdentifier: 
   value: 1
+  Name: Primeros 10
   Description: 'Si se marca antes de los primeros 10 turnos: +10 puntos y +3 de dinero.'
   tags: 
   turns: 10

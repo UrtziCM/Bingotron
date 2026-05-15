@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: BingoTileSplash
   m_EditorClassIdentifier: 
   value: 1
+  Name: Salpicadura
   Description: Al marcar, moja una casilla aleatoria.
-  tags: 
+  tags: 03000000

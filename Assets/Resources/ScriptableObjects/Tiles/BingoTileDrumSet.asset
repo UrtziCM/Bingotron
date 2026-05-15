@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BingoTileDrumSet
   m_EditorClassIdentifier: 
   value: 1
+  Name: Bateria
   Description: Al marcar toca una nota, luego todos los tambores del tablero tocan
     una nota.
-  tags: 
+  tags: 02000000

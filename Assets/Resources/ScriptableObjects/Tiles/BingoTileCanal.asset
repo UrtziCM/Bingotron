@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: BingoTileCanal
   m_EditorClassIdentifier: 
   value: 1
+  Name: Canal
   Description: "Al marcar las casillas en el eje colocado (\u27F7 y \u2195)"
-  tags: 
+  tags: 03000000

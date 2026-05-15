@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: BingoTileReverb
   m_EditorClassIdentifier: 
   value: 1
+  Name: Reverb
   Description: Al marcar, por cada casilla musical, +1 a musical
-  tags: 
+  tags: 02000000

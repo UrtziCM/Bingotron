@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BingoTileJukebox
   m_EditorClassIdentifier: 
   value: 1
+  Name: Gramola
   Description: Al marcar, +1 a musical y un 20% de que este efecto se repita. Una
     vez falla puntua.
-  tags: 
+  tags: 0200000004000000

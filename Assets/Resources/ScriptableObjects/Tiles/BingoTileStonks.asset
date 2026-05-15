@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: BingoTileStonks
   m_EditorClassIdentifier: 
   value: 1
+  Name: Stonks
   Description: Al marcar, suma fichas igual a la cantidad de dinero del jugador.
   tags: 

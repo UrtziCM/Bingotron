@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BingoTileBomb
   m_EditorClassIdentifier: 
   value: 1
+  Name: Bomba
   Description: "Al marcar o quemarse, esta casilla explota marcando las casillas
     contiguas  (\u27F7 y \u2195)"
-  tags: 
+  tags: 00000000

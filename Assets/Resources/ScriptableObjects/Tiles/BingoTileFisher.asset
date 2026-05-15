@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: BingoTileFisher
   m_EditorClassIdentifier: 
   value: 1
+  Name: Pescador
   Description: Al mojarse, +1 al valor de la casilla.
-  tags: 
+  tags: 03000000

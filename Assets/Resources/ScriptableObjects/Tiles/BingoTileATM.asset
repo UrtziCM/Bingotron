@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BingoTileATM
   m_EditorClassIdentifier: 
   value: 1
+  Name: Cajero Automatico
   Description: Al marcar esta hay un 20% de probabilidad de salir la recompensa especial.
     Al conseguir carga electrica +1 recompensa normal y +2 recompensa especial.
-  tags: 
+  tags: 0100000004000000

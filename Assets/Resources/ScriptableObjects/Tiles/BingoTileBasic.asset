@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfbf23a001d286a4bb4e01764d9877fd, type: 3}
   m_Name: BingoTileBasic
   m_EditorClassIdentifier: 
+  value: 1
+  Name: Base
+  Description: "No tiene ning\xFAn efecto especial."
+  tags: 

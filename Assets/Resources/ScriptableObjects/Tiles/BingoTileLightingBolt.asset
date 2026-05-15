@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BingoTileLightingBolt
   m_EditorClassIdentifier: 
   value: 1
+  Name: Rayo
   Description: "Al marcar, gasta todo el man\xE1, por cada 10 de man\xE1 gastado
     activa 1 casilla afectada por electricidad."
-  tags: 
+  tags: 0500000001000000

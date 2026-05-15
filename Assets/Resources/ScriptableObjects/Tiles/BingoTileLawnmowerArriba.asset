@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: BingoTileLawnmowerArriba
   m_EditorClassIdentifier: 
   value: 1
+  Name: "Cortacesped \u2191"
   Description: 'Al marcar, segun su carga electrica activa una cantidad  de casillas
     superiores. '
-  tags: 
+  tags: 01000000
   direction: {x: 0, y: 1}

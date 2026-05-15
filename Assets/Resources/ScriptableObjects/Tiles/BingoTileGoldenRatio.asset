@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BingoTileGoldenRatio
   m_EditorClassIdentifier: 
   value: 1
+  Name: Numeros Aureos
   Description: 'Al marcar si la casilla contiene un numero de Fibonacci: +5$
 
     (

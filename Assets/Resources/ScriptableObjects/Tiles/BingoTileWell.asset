@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: BingoTileWell
   m_EditorClassIdentifier: 
   value: 1
+  Name: Pozo
   Description: Al mojarse, 20% de mojar dos casillas permeables aleatorias.
-  tags: 
+  tags: 0300000004000000
