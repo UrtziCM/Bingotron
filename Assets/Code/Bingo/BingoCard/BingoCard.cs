@@ -172,11 +172,13 @@ public class BingoCard : CustomService
     public void ReplaceAt(Vector2 pos, BingoTile tile)
     {
         var targetSpace = GetSpaceAt(pos);
+        Debug.Log(tile.Name);
         targetSpace.Tile = tile;
     }
     public void ReplaceAt(Vector2 pos, BingoStickerNumeric sticker)
     {
         var targetSpace = GetSpaceAt(pos);
+        Debug.Log(sticker.Name);
         targetSpace.Sticker = sticker;
     }
 
@@ -323,7 +325,6 @@ public class BingoCard : CustomService
         }
         foreach (BingoSpaceHandler bsh in transform.GetComponentsInChildren<BingoSpaceHandler>())
         {
-            Debug.Log(bsh.gameObject);
             bsh.ChangeLooks(bsh.GetSpace().State);
         }
     }

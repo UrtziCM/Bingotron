@@ -1,13 +1,13 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Rewards : CustomService
 {
-    [HideInInspector]
     public ScriptableObject Selected;
-    private ShopItem[] items = new ShopItem[6];
-    
+    private Dictionary<int, ScriptableObject> items = new();
+
     [Header("Internal references")]
     [SerializeField]
     private Canvas rewardsCanvas;
@@ -26,7 +26,13 @@ public class Rewards : CustomService
     void Start()
     {
         foreach (var rewardPanel in RewardPanels)
-            rewardPanel.GetComponentInChildren<Button>().onClick.AddListener(()=>{ ToggleHide(); rewardPanel.GetComponentInChildren<Button>().interactable = false; });
+            rewardPanel.GetComponentInChildren<Button>().onClick.AddListener(
+                () =>
+                {
+                    ToggleHide();
+                    rewardPanel.GetComponentInChildren<Button>().interactable = false;
+                    Selected = items[rewardPanel.GetComponentInChildren<Button>().GetInstanceID()];
+                });
         possibleTiles = new(Resources.LoadAll<BingoTile>("ScriptableObjects/Tiles"));
     }
 
@@ -48,7 +54,8 @@ public class Rewards : CustomService
         foreach (var rewardPanel in RewardPanels)
         {
             BingoTile generatedTile = GenerateObject();
-            //rewardPanel.transform.GetChild(0).GetComponent<TMP_Text>().text = generatedTile.name;
+            rewardPanel.transform.GetChild(0).GetComponent<TMP_Text>().text = generatedTile.Name;
+            items.Add(rewardPanel.transform.GetChild(1).GetComponent<Button>().GetInstanceID(), generatedTile);
         }
         ToggleHide();
     }

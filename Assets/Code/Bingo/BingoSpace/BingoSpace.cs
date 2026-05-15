@@ -10,7 +10,8 @@ public enum MarkState
 }
 
 //[CreateAssetMenu(fileName = "BaseBingoSpace", menuName = "Bingo/Spaces/BaseSpace")]
-public class BingoSpace// : ScriptableObject
+[Serializable]
+public class BingoSpace
 {
     private BingoTile tile;
     public BingoTile Tile { get { return tile; } set { tile = value; } }
@@ -24,13 +25,15 @@ public class BingoSpace// : ScriptableObject
     private BingoCard card;
     private List<string> tags;
 
-    public BingoSpace(Vector2 position, int number)
+    
+
+    public BingoSpace(Vector2 position, int number, BingoTile initialTile, BingoStickerNumeric initialSticker)
     {
         this.position = position;
-        this.sticker = ScriptableObject.CreateInstance<BingoStickerNumeric>();
+        this.sticker = GameObject.Instantiate(initialSticker);
         this.sticker.space = this;
         this.sticker.Number = number;
-        this.tile = ScriptableObject.CreateInstance<BingoTile>();
+        this.tile = GameObject.Instantiate(initialTile);
     }
 
     public Vector2 GetPosition()

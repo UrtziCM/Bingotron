@@ -247,7 +247,8 @@ MonoBehaviour:
   positionInGrid: {x: 0, y: 0}
   stickerNumberText: {fileID: 236316056107199405}
   markedColor: {r: 0.31772873, g: 0.7924528, b: 0.37208387, a: 1}
-  descriptionHover: {fileID: 2711567092547233287, guid: 59e06c70feea77044b9f9067cacfa831, type: 3}
+  initialTile: {fileID: 11400000, guid: 5ffabb166d097d04e97225d45ee0cb3e, type: 2}
+  initialSticker: {fileID: 11400000, guid: aa73820c719ddc449b51f938b2670ffc, type: 2}
 --- !u!212 &2116420552635170461
 SpriteRenderer:
   m_ObjectHideFlags: 0

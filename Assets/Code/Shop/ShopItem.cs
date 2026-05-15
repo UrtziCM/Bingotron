@@ -8,22 +8,7 @@ public enum ItemRarity
     Legendaria
 }
 
-public class ShopItem
+public interface ShopItem
 {
-    private IBuyable item;
-    private int price;
-    private ItemRarity rarity;
 
-    public IBuyable GetItem()
-    {
-        return item;
-    }
-    public int GetPrice()
-    {
-        return price;
-    }
-    public ItemRarity GetRarity()
-    {
-        return rarity;
-    }
 }

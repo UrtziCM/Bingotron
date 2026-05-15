@@ -5,7 +5,9 @@ using Unity.VisualScripting;
 
 public class BingoSpaceHandler : MonoBehaviour
 {
+    [SerializeField]
     private BingoSpace bingoSpace;
+
     public Vector2 positionInGrid;
     private BingoCard card;
     public BingoStickerNumeric sticker => bingoSpace.Sticker;
@@ -19,10 +21,13 @@ public class BingoSpaceHandler : MonoBehaviour
     private Color unmarkedColor;
 
     private DescriptionHover descriptionHover;
+    [Header("Initial configuration")]
+    public BingoTile initialTile;
+    public BingoStickerNumeric initialSticker;
 
     void Start()
     {
-        bingoSpace = new(positionInGrid, UnityEngine.Random.Range(1,51));
+        bingoSpace = new(positionInGrid, UnityEngine.Random.Range(1,51), initialTile, initialSticker);
         card = transform.GetComponentInParent<BingoCard>();
         card.AddBingoSpace(bingoSpace);
         stickerNumberText.text = bingoSpace.Sticker.Number.ToString();
@@ -33,6 +38,10 @@ public class BingoSpaceHandler : MonoBehaviour
     {
     }
 
+    private void ChangeTile(BingoTile tile)
+    {
+        bingoSpace.Tile = tile;
+    }
     
 
     private void OnMouseDown()
@@ -45,10 +54,16 @@ public class BingoSpaceHandler : MonoBehaviour
         }
         if (Utils.BingoCard.ConstructionMode)
         {
-            if (Utils.Rewards.Selected is BingoStickerNumeric sticker)
-                card.ReplaceAt(positionInGrid, sticker);
-            else if (Utils.Rewards.Selected is BingoTile tile)
-                card.ReplaceAt(positionInGrid, tile);
+            if (Utils.Rewards.Selected is BingoStickerNumeric rewardSticker)
+            {
+                card.ReplaceAt(positionInGrid, rewardSticker);
+                Debug.Log(rewardSticker);
+            }
+            else if (Utils.Rewards.Selected is BingoTile rewardTile)
+            {
+                card.ReplaceAt(positionInGrid, rewardTile);
+                Debug.Log(rewardTile);
+            }
             Utils.Rewards.ToggleHide();
             Utils.Rewards.boughtItems++;
         }
