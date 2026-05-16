@@ -23,6 +23,8 @@ public class BingoTile : ScriptableObject
     public string Description;
     [SerializeField]
     public Tags[] tags;
+    [SerializeField]
+    public Sprite sprite;
 
     public BingoSpace GetSpace()
     {

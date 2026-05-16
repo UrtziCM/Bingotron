@@ -16,3 +16,4 @@ MonoBehaviour:
   Name: Arbol
   Description: Se quema y eso, no hace nada mas.
   tags: 00000000
+  sprite: {fileID: 21300000, guid: f453438b2508a5e48a66ce99918fbcbc, type: 3}

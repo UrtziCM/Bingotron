@@ -17,3 +17,4 @@ MonoBehaviour:
   Description: Al marcar toca una nota, luego todos los tambores del tablero tocan
     una nota.
   tags: 02000000
+  sprite: {fileID: 21300000, guid: f9ff70ceb47605f49a6b87c13bab4b88, type: 3}

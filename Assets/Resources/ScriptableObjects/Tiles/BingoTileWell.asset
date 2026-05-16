@@ -16,3 +16,4 @@ MonoBehaviour:
   Name: Pozo
   Description: Al mojarse, 20% de mojar dos casillas permeables aleatorias.
   tags: 0300000004000000
+  sprite: {fileID: 21300000, guid: 59c9dc392664a794f96b83de2a636fc7, type: 3}

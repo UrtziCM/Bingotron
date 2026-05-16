@@ -16,3 +16,4 @@ MonoBehaviour:
   Name: Reverb
   Description: Al marcar, por cada casilla musical, +1 a musical
   tags: 02000000
+  sprite: {fileID: 21300000, guid: 8821ae57751df5b4e9c756095d504b44, type: 3}

@@ -16,3 +16,4 @@ MonoBehaviour:
   Name: Mechero
   Description: Al marcarse se prende fuego.
   tags: 00000000
+  sprite: {fileID: 21300000, guid: 19f6eef4e8790d040962dbfc57fbe2c2, type: 3}

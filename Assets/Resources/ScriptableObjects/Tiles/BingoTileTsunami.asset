@@ -17,3 +17,4 @@ MonoBehaviour:
   Description: Al mojarse, moja una linea o columna entera al azar. (No puede ser
     mojado por otro Tsunami)
   tags: 03000000
+  sprite: {fileID: 21300000, guid: 8f5522713c0795442869116bd2dbbd04, type: 3}

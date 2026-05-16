@@ -16,3 +16,4 @@ MonoBehaviour:
   Name: Pescador
   Description: Al mojarse, +1 al valor de la casilla.
   tags: 03000000
+  sprite: {fileID: 21300000, guid: 49a27c2bf4595164891831119103b23c, type: 3}

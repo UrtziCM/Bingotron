@@ -17,3 +17,4 @@ MonoBehaviour:
   Description: "Al marcar esta por cada 10 de man\xE1 marca una casilla aleatoria
     gastando man\xE1. Maximo de 3 casillas."
   tags: 05000000
+  sprite: {fileID: 21300000, guid: e33f9463d609e9d45aeec6c52a5d1d5e, type: 3}

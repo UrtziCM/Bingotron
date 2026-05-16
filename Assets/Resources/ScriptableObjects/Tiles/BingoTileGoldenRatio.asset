@@ -19,4 +19,5 @@ MonoBehaviour:
     (
     1, 2, 3, 5, 8, 13, 21, 34, 55, 89)'
   tags: 
+  sprite: {fileID: 21300000, guid: c4388b6466de8854aa0ceb455587c588, type: 3}
   addedMoney: 5

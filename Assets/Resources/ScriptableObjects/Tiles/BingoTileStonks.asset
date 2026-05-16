@@ -16,3 +16,4 @@ MonoBehaviour:
   Name: Stonks
   Description: Al marcar, suma fichas igual a la cantidad de dinero del jugador.
   tags: 
+  sprite: {fileID: 21300000, guid: 82e6ced1b940b4f48b8faad98833d284, type: 3}

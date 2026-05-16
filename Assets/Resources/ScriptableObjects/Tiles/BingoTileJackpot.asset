@@ -16,3 +16,4 @@ MonoBehaviour:
   Name: Jackpot
   Description: Al marcar, 50% de duplicar la puntuacion total.
   tags: 04000000
+  sprite: {fileID: 21300000, guid: b31e3cd696238414ba81e3b64b676ab2, type: 3}

@@ -17,3 +17,4 @@ MonoBehaviour:
   Description: "Al marcar o quemarse, esta casilla explota marcando las casillas
     contiguas  (\u27F7 y \u2195)"
   tags: 00000000
+  sprite: {fileID: 21300000, guid: a9e57f957022449439423398c6acea21, type: 3}
