@@ -172,8 +172,8 @@ public class BingoCard : CustomService
     public void ReplaceAt(Vector2 pos, BingoTile tile)
     {
         var targetSpace = GetSpaceAt(pos);
-        Debug.Log(tile.Name);
         targetSpace.Tile = tile;
+        
     }
     public void ReplaceAt(Vector2 pos, BingoStickerNumeric sticker)
     {

@@ -54,18 +54,17 @@ public class BingoSpaceHandler : MonoBehaviour
         }
         if (Utils.BingoCard.ConstructionMode)
         {
+            Utils.Rewards.boughtItems++;
             if (Utils.Rewards.Selected is BingoStickerNumeric rewardSticker)
             {
                 card.ReplaceAt(positionInGrid, rewardSticker);
-                Debug.Log(rewardSticker);
             }
             else if (Utils.Rewards.Selected is BingoTile rewardTile)
             {
                 card.ReplaceAt(positionInGrid, rewardTile);
-                Debug.Log(rewardTile);
+                GetComponent<SpriteRenderer>().sprite = rewardTile.sprite;
             }
             Utils.Rewards.ToggleHide();
-            Utils.Rewards.boughtItems++;
         }
 
     }
