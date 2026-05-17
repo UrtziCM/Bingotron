@@ -16,3 +16,4 @@ MonoBehaviour:
   Name: Pajar
   Description: Al marcar, tiene un 30% de valer 10, lo demas 0.
   tags: 0000000004000000
+  sprite: {fileID: 21300000, guid: 8357c036ccb723940bff9e09c96a23cc, type: 3}

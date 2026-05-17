@@ -16,3 +16,4 @@ MonoBehaviour:
   Name: Iceberg
   Description: Al quemarse moja las 8 casillas alrededor.
   tags: 0000000003000000
+  sprite: {fileID: 21300000, guid: 1667f27db7752ed42aba8e3f84ca4483, type: 3}

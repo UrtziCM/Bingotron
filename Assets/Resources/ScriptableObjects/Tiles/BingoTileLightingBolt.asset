@@ -17,3 +17,4 @@ MonoBehaviour:
   Description: "Al marcar, gasta todo el man\xE1, por cada 10 de man\xE1 gastado
     activa 1 casilla afectada por electricidad."
   tags: 0500000001000000
+  sprite: {fileID: 21300000, guid: ca2bb1069f42de849ad32debd57af809, type: 3}
