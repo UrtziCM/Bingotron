@@ -16,3 +16,4 @@ MonoBehaviour:
   Name: Festival
   Description: Al marcar suma 5 notas y duplica el valor de notas.
   tags: 02000000
+  sprite: {fileID: 21300000, guid: c8ef2c5bb08becb4383d4ca9c83c6ad6, type: 3}
