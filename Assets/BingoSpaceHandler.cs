@@ -25,6 +25,8 @@ public class BingoSpaceHandler : MonoBehaviour
     public BingoTile initialTile;
     public BingoStickerNumeric initialSticker;
 
+    private Vector3 initialPosition;
+
     void Start()
     {
         bingoSpace = new(positionInGrid, UnityEngine.Random.Range(1,51), initialTile, initialSticker);
@@ -32,6 +34,7 @@ public class BingoSpaceHandler : MonoBehaviour
         card.AddBingoSpace(bingoSpace);
         stickerNumberText.text = bingoSpace.Sticker.Number.ToString();
         descriptionHover = card.GetComponentInChildren<DescriptionHover>();
+        initialPosition = transform.position;
     }
 
     private void Update()
@@ -75,9 +78,11 @@ public class BingoSpaceHandler : MonoBehaviour
         {
             case MarkState.Marked:
                 GetComponent<SpriteRenderer>().color = markedColor;
+                transform.position = initialPosition + Vector3.down * .2f;
                 break;
             case MarkState.Unmarked:
                 GetComponent<SpriteRenderer>().color = Color.white;
+                transform.position = initialPosition;
                 break;
         }
     }
