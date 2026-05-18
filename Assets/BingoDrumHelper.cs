@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -14,7 +15,10 @@ public class BingoDrumHelper : MonoBehaviour
 
     private float accumulatedTime = 0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private bool droppedBall;
 
+    [SerializeField]
+    private Animator drumAnimator;
     private void Awake()
     {
         Utils.BingoCard.OnRoundStart.AddListener(StartRound);
@@ -25,6 +29,23 @@ public class BingoDrumHelper : MonoBehaviour
 
     void Start()
     {
+        StartCoroutine(PlayDrumRoll());
+    }
+
+    public void Drop()
+    {
+        droppedBall = true;
+    }
+
+    private IEnumerator PlayDrumRoll()
+    {
+        Debug.LogWarning("Start new drum roll: " + accumulatedTime);
+        yield return new WaitForSeconds(1f);
+        drumAnimator.SetTrigger("Roll");
+
+        Debug.Log("End new drum roll: " + accumulatedTime);
+
+
     }
 
     // Update is called once per frame
@@ -34,9 +55,11 @@ public class BingoDrumHelper : MonoBehaviour
             return;
 
         accumulatedTime += Time.deltaTime;
-        if (accumulatedTime > activeBallTime)
+        //if (accumulatedTime > activeBallTime)
+        if (droppedBall)
         {
-            accumulatedTime = 0;
+            droppedBall = false;
+            StartCoroutine(PlayDrumRoll());
             NextBall();
             if (drum.drumQueue.Count == 0) 
             {
