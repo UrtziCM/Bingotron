@@ -17,4 +17,5 @@ MonoBehaviour:
   Description: 'Al marcar, segun su carga electrica activa una cantidad  de casillas
     hacia la izquierda. '
   tags: 01000000
+  sprite: {fileID: 21300000, guid: c15d7ca97f79d1444aa774fa6b54c7da, type: 3}
   direction: {x: -1, y: 0}
