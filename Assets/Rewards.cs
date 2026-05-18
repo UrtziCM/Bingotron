@@ -56,7 +56,9 @@ public class Rewards : CustomService
         {
             BingoTile generatedTile = GenerateObject();
             rewardPanel.transform.GetChild(0).GetComponent<TMP_Text>().text = generatedTile.Name;
-            items.Add(rewardPanel.transform.GetChild(1).GetComponent<Button>().GetInstanceID(), generatedTile);
+            Button thisButton = rewardPanel.transform.GetChild(1).GetComponent<Button>();
+            thisButton.interactable = true;
+            items.Add(thisButton.GetInstanceID(), generatedTile);
         }
         ToggleHide();
     }
@@ -70,16 +72,16 @@ public class Rewards : CustomService
 
     public void Close()
     {
-        Debug.Log("Close shop");
         Utils.RoundManager.NextRound();
     }
 
     public void ToggleHide()
     {
-        Debug.Log("Toggle hide");
         if (boughtItems >= MAX_BUYS)
         {
             rewardsCanvas.enabled = false;
+            Utils.BingoCard.ConstructionMode = false;
+            Selected = null;
             Close();
             return;
         }
