@@ -16,3 +16,4 @@ MonoBehaviour:
   Name: Generador
   Description: Al marcar, +1 de electricidad por cada cable.
   tags: 01000000
+  sprite: {fileID: 21300000, guid: 90693358b3dedf34d935eefb19d34cf6, type: 3}

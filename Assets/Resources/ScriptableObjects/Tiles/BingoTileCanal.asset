@@ -16,3 +16,4 @@ MonoBehaviour:
   Name: Canal
   Description: "Al marcar las casillas en el eje colocado (\u27F7 y \u2195)"
   tags: 03000000
+  sprite: {fileID: 21300000, guid: 3d4c3e9d073dd1b438bdf3d9f6702a74, type: 3}
