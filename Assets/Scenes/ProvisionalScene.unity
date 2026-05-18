@@ -231,6 +231,57 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5255351717819768046, guid: 7322351115c96f64dbfd971e70edf0b0, type: 3}
   m_PrefabInstance: {fileID: 1081145691}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &110889673
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 110889675}
+  - component: {fileID: 110889674}
+  m_Layer: 0
+  m_Name: Polish
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &110889674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110889673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70e7875c16e73d041802399b907fa8dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  markParticle: {fileID: 3799886708918595439, guid: cca3361d35489014aa932e22f7c36176, type: 3}
+  waterParticle: {fileID: 0}
+  fireParticle: {fileID: 0}
+  electricParticle: {fileID: 0}
+  gamblingParticle: {fileID: 0}
+  mmusicParticle: {fileID: 0}
+  magicParticle: {fileID: 0}
+--- !u!4 &110889675
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110889673}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.3628309, y: -28.030989, z: 2.7644887}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &299001689 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2497507729546499350, guid: 7322351115c96f64dbfd971e70edf0b0, type: 3}
@@ -2193,3 +2244,4 @@ SceneRoots:
   - {fileID: 2074343469}
   - {fileID: 1306948599}
   - {fileID: 1590683238}
+  - {fileID: 110889675}

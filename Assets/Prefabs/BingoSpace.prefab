@@ -247,6 +247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bingoSpace:
     sticker: {fileID: 0}
+    transform: {fileID: 0}
   positionInGrid: {x: 0, y: 0}
   stickerNumberText: {fileID: 236316056107199405}
   markedColor: {r: 0.31772873, g: 0.7924528, b: 0.37208387, a: 1}
@@ -296,7 +297,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: febb0c504daec004296ee8d411d8a66f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
