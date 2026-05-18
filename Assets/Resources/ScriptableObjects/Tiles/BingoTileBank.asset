@@ -16,3 +16,4 @@ MonoBehaviour:
   Name: Banco
   Description: +1 al valor de la casilla por cada 3 de oro.
   tags: 
+  sprite: {fileID: 21300000, guid: bae396b772a086641b9e661746d7ff4c, type: 3}
