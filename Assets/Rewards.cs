@@ -56,7 +56,8 @@ public class Rewards : CustomService
         {
             BingoTile generatedTile = GenerateObject();
             rewardPanel.transform.GetChild(0).GetComponent<TMP_Text>().text = generatedTile.Name;
-            Button thisButton = rewardPanel.transform.GetChild(1).GetComponent<Button>();
+            rewardPanel.transform.GetChild(1).GetComponent<TMP_Text>().text = generatedTile.Description;
+            Button thisButton = rewardPanel.transform.GetComponentInChildren<Button>(true);
             thisButton.interactable = true;
             items.Add(thisButton.GetInstanceID(), generatedTile);
         }
