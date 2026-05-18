@@ -16,3 +16,4 @@ MonoBehaviour:
   Name: Base
   Description: "No tiene ning\xFAn efecto especial."
   tags: 
+  sprite: {fileID: 21300000, guid: febb0c504daec004296ee8d411d8a66f, type: 3}
