@@ -30,6 +30,7 @@ public class BingoSpaceHandler : MonoBehaviour
     void Start()
     {
         bingoSpace = new(positionInGrid, UnityEngine.Random.Range(1,51), initialTile, initialSticker);
+        bingoSpace.transform = transform;
         card = transform.GetComponentInParent<BingoCard>();
         card.AddBingoSpace(bingoSpace);
         stickerNumberText.text = bingoSpace.Sticker.Number.ToString();

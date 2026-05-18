@@ -25,6 +25,7 @@ public class BingoSpace
     private BingoCard card;
     private List<string> tags;
 
+    public Transform transform;
     
 
     public BingoSpace(Vector2 position, int number, BingoTile initialTile, BingoStickerNumeric initialSticker)
@@ -54,6 +55,7 @@ public class BingoSpace
         if (tile is IMarkable markableTile)
             markableTile.Mark();
         Utils.ScoreManager.AddScore(tile.value + sticker.value);
+        
     }
 
     public bool IsMarkable()
