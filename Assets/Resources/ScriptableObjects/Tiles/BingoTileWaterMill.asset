@@ -16,3 +16,4 @@ MonoBehaviour:
   Name: Molino de Agua
   Description: Al mojarse, +2 de carga electrica.
   tags: 0300000001000000
+  sprite: {fileID: 21300000, guid: 93adf7662d81f194fa72852405b80287, type: 3}
