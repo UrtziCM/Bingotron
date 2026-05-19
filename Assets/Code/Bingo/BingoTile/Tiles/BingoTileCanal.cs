@@ -7,19 +7,11 @@ public class BingoTileCanal : BingoTile, IMarkable
     {
         ScoreManager sm = Utils.ScoreManager;
 
-        Vector2[] directions =
-        {
-            Vector2.up,
-            Vector2.down,
-            Vector2.left,
-            Vector2.right
-        };
-
-        foreach (Vector2 direction in directions)
+        foreach (Vector2 direction in Utils.TouchingPositions)
         {
             Vector2 targetPos = pos + direction;
 
-            if(GetSpace().Tile is IPermeable tile)
+            if(Utils.BingoCard.GetSpaceAt(targetPos).Tile is IPermeable tile)
                 tile.Wet();
         }
 
