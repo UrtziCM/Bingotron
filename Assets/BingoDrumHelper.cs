@@ -39,11 +39,8 @@ public class BingoDrumHelper : MonoBehaviour
 
     private IEnumerator PlayDrumRoll()
     {
-        Debug.LogWarning("Start new drum roll: " + accumulatedTime);
         yield return new WaitForSeconds(1f);
         drumAnimator.SetTrigger("Roll");
-
-        Debug.Log("End new drum roll: " + accumulatedTime);
 
 
     }

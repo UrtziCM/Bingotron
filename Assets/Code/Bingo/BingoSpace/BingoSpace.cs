@@ -35,6 +35,7 @@ public class BingoSpace
         this.sticker.space = this;
         this.sticker.Number = number;
         this.tile = GameObject.Instantiate(initialTile);
+        this.tile.pos = position;
     }
 
     public Vector2 GetPosition()

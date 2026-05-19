@@ -11,8 +11,10 @@ public class BingoTileCanal : BingoTile, IMarkable
         {
             Vector2 targetPos = pos + direction;
 
-            if(Utils.BingoCard.GetSpaceAt(targetPos).Tile is IPermeable tile)
-                tile.Wet();
+            BingoSpace targetSpace = Utils.BingoCard.GetSpaceAt(targetPos);
+
+            if (targetSpace != null && targetSpace.Tile is IPermeable permeableTile)
+                permeableTile.Wet();
         }
 
     }
