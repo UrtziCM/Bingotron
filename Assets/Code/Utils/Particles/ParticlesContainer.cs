@@ -31,12 +31,12 @@ public class ParticlesContainer : CustomService
     }
     private void Update()
     {
-        //DeleteParticles();
+        DeleteParticles();
     }
     public void PlayParticle(GameObject particle, Vector3 spacePos)
     {
-        Instantiate(particle, spacePos, particle.transform.rotation);
-        particles.Add(particle.GetComponent<ParticleSystem>());
+        GameObject part = Instantiate(particle, spacePos, particle.transform.rotation);
+        particles.Add(part.GetComponent<ParticleSystem>());
     }
     private void DeleteParticles()
     {
