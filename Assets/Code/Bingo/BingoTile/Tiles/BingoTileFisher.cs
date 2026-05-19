@@ -10,5 +10,8 @@ public class BingoTileFisher : BingoTile, IMarkable, IPermeable
     public void Wet()
     {
         value++;
+
+        //Particulas
+        Utils.ParticlesContainer.PlayParticle(Utils.ParticlesContainer.waterParticle, space.transform.position);
     }
 }

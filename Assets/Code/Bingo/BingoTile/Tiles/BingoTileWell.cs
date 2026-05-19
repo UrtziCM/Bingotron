@@ -13,6 +13,9 @@ public class BingoTileWell : BingoTile, IMarkable, IGamble, IPermeable
 
     public void Wet()
     {
+        //Particulas
+        Utils.ParticlesContainer.PlayParticle(Utils.ParticlesContainer.waterParticle, space.transform.position);
+
         if (Gamble())
         {
             BingoCard bc = Utils.BingoCard as BingoCard;

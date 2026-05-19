@@ -28,5 +28,8 @@ public class BingoTileWheat : BingoTile, IMarkable, IFlammable, IPermeable
     public void Wet()
     {
         value++;
+
+        //Particulas
+        Utils.ParticlesContainer.PlayParticle(Utils.ParticlesContainer.waterParticle, space.transform.position);
     }
 }

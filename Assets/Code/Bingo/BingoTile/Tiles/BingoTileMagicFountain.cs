@@ -24,6 +24,10 @@ public class BingoTileMagicFountain : BingoTile, IMarkable, IPermeable
 
         int permebleCount = 0;
 
+        //Particulas
+        Utils.ParticlesContainer.PlayParticle(Utils.ParticlesContainer.waterParticle, space.transform.position);
+
+
         foreach (Vector2 direction in Utils.TouchingPositions)
         {
             Vector2 targetPos = pos + direction;
