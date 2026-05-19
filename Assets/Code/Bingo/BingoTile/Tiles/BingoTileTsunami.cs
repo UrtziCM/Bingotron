@@ -18,7 +18,7 @@ public class BingoTileTsunami : BingoTile, IMarkable, IPermeable
             bc.GetColumn(Random.Range(0, bc.height));
 
         //Particulas
-        Utils.ParticlesContainer.PlayParticle(Utils.ParticlesContainer.waterParticle, space.transform.position)
+        Utils.ParticlesContainer.PlayParticle(Utils.ParticlesContainer.waterParticle, space.transform.position);
 
         foreach (BingoSpace bingoSpace in spaces)
         {
