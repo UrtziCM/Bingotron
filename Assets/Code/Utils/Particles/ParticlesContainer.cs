@@ -35,7 +35,7 @@ public class ParticlesContainer : CustomService
     }
     public void PlayParticle(GameObject particle, Vector3 spacePos)
     {
-        GameObject part = Instantiate(particle, spacePos, particle.transform.rotation);
+        GameObject part = Instantiate(particle, spacePos + Vector3.up * 0.2f, particle.transform.rotation);
         particles.Add(part.GetComponent<ParticleSystem>());
     }
     private void DeleteParticles()

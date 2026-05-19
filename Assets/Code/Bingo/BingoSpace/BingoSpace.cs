@@ -56,7 +56,7 @@ public class BingoSpace
             markableTile.Mark();
         Utils.ScoreManager.AddScore(tile.value + sticker.value);
         //Particulas
-        Utils.ParticlesContainer.PlayParticle(Utils.ParticlesContainer.markParticle, transform.position + Vector3.up * 0.2f);
+        Utils.ParticlesContainer.PlayParticle(Utils.ParticlesContainer.markParticle, transform.position);
     }
 
     public bool IsMarkable()
