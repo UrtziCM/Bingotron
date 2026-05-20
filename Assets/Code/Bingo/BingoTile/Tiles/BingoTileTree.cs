@@ -12,6 +12,7 @@ public class BingoTileTree : BingoTile, IMarkable, IFlammable
     public void OnFlame()
     {
         Mark();
+        Utils.BingoCard.ForceMark(space);
 
         burning = true;
 

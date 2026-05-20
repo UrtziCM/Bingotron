@@ -12,6 +12,7 @@ public class BingoTileWheat : BingoTile, IMarkable, IFlammable, IPermeable
     public void OnFlame()
     {
         Mark();
+        Utils.BingoCard.ForceMark(space);
 
         burning = true;
 

@@ -18,6 +18,7 @@ public class BingoTileStrawLoft : BingoTile, IMarkable, IFlammable, IGamble
     public void OnFlame()
     {
         Mark();
+        Utils.BingoCard.ForceMark(space);
 
         burning = true;
 

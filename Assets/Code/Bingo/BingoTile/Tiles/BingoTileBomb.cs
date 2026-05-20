@@ -24,10 +24,11 @@ public class BingoTileBomb : BingoTile, IMarkable, IFlammable
 
         foreach (Vector2 direction in directions)
         {
-            Vector2 tagetPos = pos + direction;
+            Vector2 targetPos = pos + direction;
+            BingoSpace targetSpace = bc.GetSpaceAt(targetPos);
 
-            if (bc.IsMarkable(tagetPos))
-                bc.MarkSpace(tagetPos);
+            if (!targetSpace.IsMarked())
+                bc.ForceMark(targetSpace);
         }
 
     }
@@ -35,6 +36,7 @@ public class BingoTileBomb : BingoTile, IMarkable, IFlammable
     public void OnFlame()
     {
         Mark();
+        Utils.BingoCard.ForceMark(space);
 
         burning = true;
         

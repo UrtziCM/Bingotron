@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using static UnityEditor.PlayerSettings;
 
 public class BingoCard : CustomService
 {
@@ -326,6 +327,33 @@ public class BingoCard : CustomService
         foreach (BingoSpaceHandler bsh in transform.GetComponentsInChildren<BingoSpaceHandler>())
         {
             bsh.ChangeLooks(bsh.GetSpace().State);
+        }
+    }
+
+    public void ForceMark(BingoSpace space)
+    {
+        var pos = space.GetPosition();
+        if (space.State != MarkState.Unmarked)
+            return;
+        space.Mark();
+        OnMark?.Invoke(space, pos);
+
+        if (WillThisBeColumn(pos))
+        {
+            OnLine?.Invoke(GetColumn((int)pos.x));
+            Debug.Log("Column!");
+        }
+        if (WillThisBeLine(pos))
+        {
+            OnLine?.Invoke(GetLine((int)pos.y));
+            Debug.Log("Line!");
+
+        }
+
+        if (HasBingo())
+        {
+            OnBingo?.Invoke(tileList.ToArray());
+            Debug.Log("Bingo!");
         }
     }
 }

@@ -9,10 +9,11 @@ public class BingoTileCatapult : BingoTile, IMarkable, IFlammable
     {
         BingoCard bc = GetSpace().GetCard();
         ScoreManager sm = Utils.ScoreManager;
+        BingoSpace targetSpace = bc.GetSpaceAt(pos + 2 * Vector2.right);
 
-        if (bc.IsMarkable(pos + 2 * Vector2.right))
+        if (!targetSpace.IsMarked())
         {
-            bc.MarkSpace(pos + 2 * Vector2.right);
+            bc.ForceMark(targetSpace);
         }
         
     }
@@ -20,7 +21,7 @@ public class BingoTileCatapult : BingoTile, IMarkable, IFlammable
     public void OnFlame()
     {
         Mark();
-
+        Utils.BingoCard.ForceMark(space);
         burning = true;
 
         //particulas

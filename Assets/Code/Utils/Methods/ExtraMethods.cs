@@ -30,7 +30,7 @@ public static class Utils
         Debug.Log("spreo");
         float prob = BingoCard.GetPropertyValue(BingoCard.FIRE_PROBABILITY_PROPERTY);
 
-        if (Random.Range(0.0f, 1.0f) > prob)
+        if (false && Random.Range(0.0f, 1.0f) > prob)
             return;
 
         Debug.Log("estoy arldiendo");
@@ -38,11 +38,10 @@ public static class Utils
         {
             Vector2 pos = thisTilePos + direction;
             BingoSpace targetSpace = Utils.BingoCard.GetSpaceAt(pos);
-
-            if (!BingoCard.IsMarkable(pos))
+            if (targetSpace == null || targetSpace.IsMarked())
                 continue;
 
-            if (targetSpace != null && targetSpace.Tile is IFlammable tile)
+            if (targetSpace.Tile is IFlammable tile)
                 tile.OnFlame();
         }
     }

@@ -21,7 +21,7 @@ public class BingoTileMusicBox : BingoTile, IMarkable, IFlammable, IMusicable
     {
         PlayNote();
         Mark();
-
+        Utils.BingoCard.ForceMark(space);
         burning = true;
 
         //particulas

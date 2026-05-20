@@ -41,7 +41,17 @@ public class BingoDrumHelper : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         drumAnimator.SetTrigger("Roll");
-
+        BingoSpace[] spaces = Utils.BingoCard.GetAllSpacesOfType<IFlammable>();
+        foreach (BingoSpace space in spaces)
+        {
+            if (space.Tile is IFlammable tile && tile.burning)
+            {
+                Debug.Log("Burn");
+                Utils.Spread(space.GetPosition());
+                tile.burning = false;
+                Utils.BingoCard.ForceMark(space);
+            }
+        }
 
     }
 
