@@ -1,9 +1,13 @@
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 [CreateAssetMenu(fileName = "BingoTileBomb", menuName = "Bingo/Tiles/Bomb")]
 public class BingoTileBomb : BingoTile, IMarkable, IFlammable
 {
+    public bool burning { get; set; }
+
     public void Mark()
     {
         BingoCard bc = Utils.BingoCard;
@@ -32,6 +36,8 @@ public class BingoTileBomb : BingoTile, IMarkable, IFlammable
     {
         Mark();
 
+        burning = true;
+        
         //particulas
         Utils.ParticlesContainer.PlayParticle(Utils.ParticlesContainer.fireParticle, GetSpace().transform.position);
     }

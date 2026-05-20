@@ -3,6 +3,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "BingoTileCatapult", menuName = "Bingo/Tiles/Catapult")]
 public class BingoTileCatapult : BingoTile, IMarkable, IFlammable
 {
+    public bool burning { get; set; }
+
     public void Mark()
     {
         BingoCard bc = GetSpace().GetCard();
@@ -18,6 +20,9 @@ public class BingoTileCatapult : BingoTile, IMarkable, IFlammable
     public void OnFlame()
     {
         Mark();
+
+        burning = true;
+
         //particulas
         Utils.ParticlesContainer.PlayParticle(Utils.ParticlesContainer.fireParticle, GetSpace().transform.position);
     }

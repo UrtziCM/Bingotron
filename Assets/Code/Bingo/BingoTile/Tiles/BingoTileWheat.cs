@@ -3,6 +3,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "BingoTileWheat", menuName = "Bingo/Tiles/Wheat")]
 public class BingoTileWheat : BingoTile, IMarkable, IFlammable, IPermeable
 {
+    public bool burning { get; set; }
+
     public void Mark()
     {
     }
@@ -10,6 +12,8 @@ public class BingoTileWheat : BingoTile, IMarkable, IFlammable, IPermeable
     public void OnFlame()
     {
         Mark();
+
+        burning = true;
 
         //particulas
         Utils.ParticlesContainer.PlayParticle(Utils.ParticlesContainer.fireParticle, GetSpace().transform.position);

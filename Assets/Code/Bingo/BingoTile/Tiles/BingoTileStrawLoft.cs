@@ -3,6 +3,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "BingoTileStrawLoft", menuName = "Bingo/Tiles/StrawLoft")]
 public class BingoTileStrawLoft : BingoTile, IMarkable, IFlammable, IGamble
 {
+    public bool burning { get; set; }
+
     public float BaseProbability => 0.3f;
 
     public void Mark()
@@ -16,6 +18,9 @@ public class BingoTileStrawLoft : BingoTile, IMarkable, IFlammable, IGamble
     public void OnFlame()
     {
         Mark();
+
+        burning = true;
+
         //particulas
         Utils.ParticlesContainer.PlayParticle(Utils.ParticlesContainer.fireParticle, GetSpace().transform.position);
     }

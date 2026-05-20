@@ -3,6 +3,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "BingoTileLighter", menuName = "Bingo/Tiles/Lighter")]
 public class BingoTileLighter : BingoTile, IMarkable, IFlammable
 {
+    public bool burning { get; set; }
+
     public void Mark()
     {
         ScoreManager sm = Utils.ScoreManager;
@@ -15,6 +17,8 @@ public class BingoTileLighter : BingoTile, IMarkable, IFlammable
     {
         if(!Utils.BingoCard.IsSpaceMarked(pos))
             Mark();
+
+        burning = true;
 
         //particulas
         Utils.ParticlesContainer.PlayParticle(Utils.ParticlesContainer.fireParticle, GetSpace().transform.position);

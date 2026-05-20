@@ -3,6 +3,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "BingoTileMusicBox", menuName = "Bingo/Tiles/MusicBox")]
 public class BingoTileMusicBox : BingoTile, IMarkable, IFlammable, IMusicable
 {
+    public bool burning { get; set; }
+
     public void Mark()
     {
         BingoCard bc = Utils.BingoCard as BingoCard;
@@ -19,6 +21,8 @@ public class BingoTileMusicBox : BingoTile, IMarkable, IFlammable, IMusicable
     {
         PlayNote();
         Mark();
+
+        burning = true;
 
         //particulas
         Utils.ParticlesContainer.PlayParticle(Utils.ParticlesContainer.fireParticle, GetSpace().transform.position);
