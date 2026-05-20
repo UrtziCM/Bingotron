@@ -40,6 +40,6 @@ public class BingoTileStrawLoft : BingoTile, IMarkable, IFlammable, IGamble
     }
     public bool Gamble()
     {
-        return Utils.Gamble(BaseProbability);
+        return Utils.Gamble(BaseProbability, GetSpace().transform.position);
     }
 }

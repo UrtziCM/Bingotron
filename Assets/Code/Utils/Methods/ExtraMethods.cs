@@ -46,7 +46,7 @@ public static class Utils
         }
     }
 
-    public static bool Gamble(float baseProb)
+    public static bool Gamble(float baseProb, Vector3 tilepos)
     {
         BingoCard bc = BingoCard;
 
@@ -55,6 +55,7 @@ public static class Utils
         if (Random.Range(0.0f, 1.0f) < baseProb + addedProb)
         {
             BingoCard.SetPropertyValue(BingoCard.GAMBLER_ADDEDPROBABILITY_PROPERTY, addedProb + 0.01f);
+            ParticlesContainer.PlayParticle(ParticlesContainer.gamblingParticle, tilepos);
             return true;
         }
         else

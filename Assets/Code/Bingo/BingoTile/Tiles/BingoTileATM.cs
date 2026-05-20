@@ -22,6 +22,6 @@ public class BingoTileATM : BingoTile, IMarkable, IChargeable, IGamble
     }
     public bool Gamble()
     {
-        return Utils.Gamble(BaseProbability);
+        return Utils.Gamble(BaseProbability, GetSpace().transform.position);
     }
 }

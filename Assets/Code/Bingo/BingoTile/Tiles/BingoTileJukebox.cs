@@ -22,7 +22,7 @@ public class BingoTileJukebox : BingoTile, IMarkable, IGamble, IMusicable
     }
     public bool Gamble()
     {
-        return Utils.Gamble(BaseProbability);
+        return Utils.Gamble(BaseProbability, GetSpace().transform.position);
     }
 
     public void PlayNote()

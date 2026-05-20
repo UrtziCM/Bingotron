@@ -11,7 +11,7 @@ public class BingoStickerGambler : BingoStickerNumeric, IRoller, IGamble
 
     public bool Gamble()
     {
-        return Utils.Gamble(BaseProbability);
+        return Utils.Gamble(BaseProbability, GetSpace().transform.position);
     }
     public void OnRoll(BingoBall ball)
     {

@@ -13,6 +13,6 @@ public class BingoTileCriticalHit : BingoTile, IMarkable, IGamble
     }
     public bool Gamble()
     {
-        return Utils.Gamble(BaseProbability);
+        return Utils.Gamble(BaseProbability, GetSpace().transform.position);
     }
 }

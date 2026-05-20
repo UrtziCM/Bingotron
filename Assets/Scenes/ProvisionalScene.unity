@@ -264,7 +264,7 @@ MonoBehaviour:
   waterParticle: {fileID: 3799886708918595439, guid: 29b175c3fba8a9044917dd94e55685ed, type: 3}
   fireParticle: {fileID: 3799886708918595439, guid: fd3d6f5dc3768e14481e1e22496eac7c, type: 3}
   electricParticle: {fileID: 0}
-  gamblingParticle: {fileID: 0}
+  gamblingParticle: {fileID: 3799886708918595439, guid: f00c6f9a91266ed4e97c478ddcc66610, type: 3}
   mmusicParticle: {fileID: 0}
   magicParticle: {fileID: 0}
 --- !u!4 &110889675

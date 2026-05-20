@@ -30,7 +30,7 @@ public class BingoTileWizard : BingoTile, IMarkable, ICasteable, IGamble
     }
     public bool Gamble()
     {
-        return Utils.Gamble(BaseProbability);
+        return Utils.Gamble(BaseProbability, GetSpace().transform.position);
     }
 
     private IEnumerator addMultiply(int mana)

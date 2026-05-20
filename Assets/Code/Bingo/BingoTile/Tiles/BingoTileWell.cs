@@ -44,6 +44,6 @@ public class BingoTileWell : BingoTile, IMarkable, IGamble, IPermeable
     }
     public bool Gamble()
     {
-        return Utils.Gamble(BaseProbability);
+        return Utils.Gamble(BaseProbability, GetSpace().transform.position);
     }
 }
