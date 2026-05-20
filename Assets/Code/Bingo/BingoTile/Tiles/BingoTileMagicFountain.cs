@@ -12,8 +12,10 @@ public class BingoTileMagicFountain : BingoTile, IMarkable, IPermeable
         {
             Vector2 targetPos = pos + direction;
 
-            if (bc.GetSpaceAt(targetPos).Tile is IPermeable tile)
-                tile.Wet();
+            BingoSpace targetSpace = Utils.BingoCard.GetSpaceAt(targetPos);
+
+            if (targetSpace != null && targetSpace.Tile is IPermeable permeableTile)
+                permeableTile.Wet();
         }
 
     }
@@ -25,14 +27,15 @@ public class BingoTileMagicFountain : BingoTile, IMarkable, IPermeable
         int permebleCount = 0;
 
         //Particulas
-        Utils.ParticlesContainer.PlayParticle(Utils.ParticlesContainer.waterParticle, space.transform.position);
-
+        Utils.ParticlesContainer.PlayParticle(Utils.ParticlesContainer.waterParticle, GetSpace().transform.position);
 
         foreach (Vector2 direction in Utils.TouchingPositions)
         {
             Vector2 targetPos = pos + direction;
 
-            if (bc.GetSpaceAt(targetPos).Tile is IPermeable tile)
+            BingoSpace targetSpace = Utils.BingoCard.GetSpaceAt(targetPos);
+
+            if (targetSpace != null && targetSpace.Tile is IPermeable permeableTile)
                 permebleCount++;
         }
 
