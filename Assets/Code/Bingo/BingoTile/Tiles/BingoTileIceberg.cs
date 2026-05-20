@@ -16,7 +16,9 @@ public class BingoTileIceberg : BingoTile, IMarkable
         {
             Vector2 targetPos = pos + direction;
 
-            if(bc.GetSpaceAt(targetPos).Tile is IPermeable tile)
+            BingoSpace targetSpace = Utils.BingoCard.GetSpaceAt(targetPos);
+
+            if (targetSpace != null && targetSpace.Tile is IPermeable tile)
                 tile.Wet();
         }
     }

@@ -41,7 +41,9 @@ public static class Utils
             if (!BingoCard.IsMarkable(pos))
                 continue;
 
-            if (BingoCard.GetSpaceAt(pos).Tile is IFlammable tile)
+            BingoSpace targetSpace = Utils.BingoCard.GetSpaceAt(pos);
+
+            if (targetSpace != null && targetSpace.Tile is IFlammable tile)
                 tile.OnFlame();
         }
     }
