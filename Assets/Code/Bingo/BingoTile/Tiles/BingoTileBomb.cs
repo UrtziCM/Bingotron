@@ -31,11 +31,14 @@ public class BingoTileBomb : BingoTile, IMarkable, IFlammable
     public void OnFlame()
     {
         Mark();
+
+        //particulas
+        Utils.ParticlesContainer.PlayParticle(Utils.ParticlesContainer.fireParticle, GetSpace().transform.position);
     }
     public void PostFlame(){}
     public void PreFlame(){}
     public void Spread()
     {
-        Utils.Spread(this);
+        Utils.Spread(pos);
     }
 }

@@ -25,23 +25,22 @@ public static class Utils
     public static ParticlesContainer ParticlesContainer => ServiceLocator.GetService<ParticlesContainer>();
 
 
-    public static void Spread(BingoTile bingoTile)
+    public static void Spread(Vector2 thisTilePos)
     {
-        Vector2 thisTilePos = bingoTile.GetSpace().GetPosition();
-
+        Debug.Log("spreo");
         float prob = BingoCard.GetPropertyValue(BingoCard.FIRE_PROBABILITY_PROPERTY);
 
         if (Random.Range(0.0f, 1.0f) > prob)
             return;
 
+        Debug.Log("estoy arldiendo");
         foreach (Vector2 direction in TouchingPositions)
         {
             Vector2 pos = thisTilePos + direction;
+            BingoSpace targetSpace = Utils.BingoCard.GetSpaceAt(pos);
 
             if (!BingoCard.IsMarkable(pos))
                 continue;
-
-            BingoSpace targetSpace = Utils.BingoCard.GetSpaceAt(pos);
 
             if (targetSpace != null && targetSpace.Tile is IFlammable tile)
                 tile.OnFlame();

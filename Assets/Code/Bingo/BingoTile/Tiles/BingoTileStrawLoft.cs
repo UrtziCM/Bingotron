@@ -16,6 +16,8 @@ public class BingoTileStrawLoft : BingoTile, IMarkable, IFlammable, IGamble
     public void OnFlame()
     {
         Mark();
+        //particulas
+        Utils.ParticlesContainer.PlayParticle(Utils.ParticlesContainer.fireParticle, GetSpace().transform.position);
     }
 
     public void PostFlame()
@@ -28,7 +30,7 @@ public class BingoTileStrawLoft : BingoTile, IMarkable, IFlammable, IGamble
 
     public void Spread()
     {
-        Utils.Spread(this);
+        Utils.Spread(pos);
     }
     public bool Gamble()
     {

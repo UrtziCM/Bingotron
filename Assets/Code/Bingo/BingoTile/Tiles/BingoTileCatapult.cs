@@ -18,6 +18,8 @@ public class BingoTileCatapult : BingoTile, IMarkable, IFlammable
     public void OnFlame()
     {
         Mark();
+        //particulas
+        Utils.ParticlesContainer.PlayParticle(Utils.ParticlesContainer.fireParticle, GetSpace().transform.position);
     }
 
     public void PostFlame()
@@ -30,6 +32,6 @@ public class BingoTileCatapult : BingoTile, IMarkable, IFlammable
 
     public void Spread()
     {
-        Utils.Spread(this);
+        Utils.Spread(pos);
     }
 }

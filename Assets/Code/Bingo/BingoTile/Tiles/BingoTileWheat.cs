@@ -10,6 +10,9 @@ public class BingoTileWheat : BingoTile, IMarkable, IFlammable, IPermeable
     public void OnFlame()
     {
         Mark();
+
+        //particulas
+        Utils.ParticlesContainer.PlayParticle(Utils.ParticlesContainer.fireParticle, GetSpace().transform.position);
     }
 
     public void PostFlame()
@@ -22,7 +25,7 @@ public class BingoTileWheat : BingoTile, IMarkable, IFlammable, IPermeable
 
     public void Spread()
     {
-        Utils.Spread(this);
+        Utils.Spread(pos);
     }
 
     public void Wet()

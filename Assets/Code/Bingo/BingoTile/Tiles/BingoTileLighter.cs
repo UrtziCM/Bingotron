@@ -13,8 +13,11 @@ public class BingoTileLighter : BingoTile, IMarkable, IFlammable
 
     public void OnFlame()
     {
-        if(!GetSpace().GetCard().IsSpaceMarked(pos))
+        if(!Utils.BingoCard.IsSpaceMarked(pos))
             Mark();
+
+        //particulas
+        Utils.ParticlesContainer.PlayParticle(Utils.ParticlesContainer.fireParticle, GetSpace().transform.position);
     }
 
     public void PostFlame(){}
@@ -23,6 +26,6 @@ public class BingoTileLighter : BingoTile, IMarkable, IFlammable
 
     public void Spread()
     {
-        Utils.Spread(this);
+        Utils.Spread(pos);
     }
 }

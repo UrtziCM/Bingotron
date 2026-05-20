@@ -262,7 +262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   markParticle: {fileID: 3799886708918595439, guid: cca3361d35489014aa932e22f7c36176, type: 3}
   waterParticle: {fileID: 3799886708918595439, guid: 29b175c3fba8a9044917dd94e55685ed, type: 3}
-  fireParticle: {fileID: 0}
+  fireParticle: {fileID: 3799886708918595439, guid: fd3d6f5dc3768e14481e1e22496eac7c, type: 3}
   electricParticle: {fileID: 0}
   gamblingParticle: {fileID: 0}
   mmusicParticle: {fileID: 0}
