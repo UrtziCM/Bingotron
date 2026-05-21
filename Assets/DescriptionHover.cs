@@ -2,6 +2,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class Hover : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class Hover : MonoBehaviour
     private TextMeshProUGUI tileName;
     [SerializeField]
     private TextMeshProUGUI tileDescription;
+    [SerializeField]
+    private Image tileSprite;
 
     [SerializeField]
     private TextMeshProUGUI stickerName;
@@ -37,6 +40,8 @@ public class Hover : MonoBehaviour
         StatsHover.SetActive(false);
 
         DescriptionHover.SetActive(true);
+
+        tileSprite.sprite = tile.sprite;
 
         tileName.text = tile.Name;
         tileDescription.text = tile.Description;
