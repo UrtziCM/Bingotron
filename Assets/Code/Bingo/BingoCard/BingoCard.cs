@@ -31,6 +31,8 @@ public class BingoCard : CustomService
 
     public bool ConstructionMode = false;
 
+    public Hover hover;
+
     public IEnumerable<BingoSpace> AllSpaces()
     {
         for (int y = 0; y < height; y++)
@@ -64,6 +66,14 @@ public class BingoCard : CustomService
         CreateProperties();
 
         OnBallRolled.AddListener(ball => BallRolled(ball));
+
+        hover = GetComponentInChildren<Hover>();
+        hover.UpdateHoverStats(
+            GetPropertyValue(BingoCard.MONEY_PROPERTY),
+            GetPropertyValue(BingoCard.CHARGE_PROPERTY),
+            GetPropertyValue(BingoCard.MANA_COUNT_PROPERTY),
+            GetPropertyValue(BingoCard.GAMBLER_ADDEDPROBABILITY_PROPERTY),
+            GetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY));
     }
 
     private void CreateProperties()
@@ -295,6 +305,14 @@ public class BingoCard : CustomService
     {
         BingoProperty property = GetProperty(name);
         property.SetValue(value);
+
+        //Actualizar hover
+        hover.UpdateHoverStats(
+            GetPropertyValue(BingoCard.MONEY_PROPERTY),
+            GetPropertyValue(BingoCard.CHARGE_PROPERTY),
+            GetPropertyValue(BingoCard.MANA_COUNT_PROPERTY),
+            GetPropertyValue(BingoCard.GAMBLER_ADDEDPROBABILITY_PROPERTY),
+            GetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY));
     }
 
     public void AddBingoSpace(BingoSpace bs)

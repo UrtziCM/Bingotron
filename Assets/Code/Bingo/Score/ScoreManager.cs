@@ -22,17 +22,26 @@ public class ScoreManager : CustomService
     public void AddScore(int score = 1)
     {
         this.score += score;
+
+        //ActualizarHover
+        Utils.BingoCard.hover.UpdateHoverPointsMult(score, multiplier);
     }
 
     public void AddMultiply(float mult = 0.01f)
     { 
         this.multiplier += mult;
+
+        //ActualizarHover
+        Utils.BingoCard.hover.UpdateHoverPointsMult(score, multiplier);
     }
 
     public void SumScore()
     {
         totalScore += (int)(score * multiplier);
-        Debug.Log(totalScore);
+
+        //ActualizarHover
+        Utils.BingoCard.hover.UpdateHoverTotalPoints(totalScore);
+        Utils.BingoCard.hover.UpdateHoverPointsMult(score, multiplier);
 
         ResetMultiplier();
         ResetScore();

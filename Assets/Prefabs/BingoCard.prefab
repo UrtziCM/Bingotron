@@ -2316,9 +2316,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4662686651146577231, guid: 59e06c70feea77044b9f9067cacfa831, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6336287024307010461, guid: 59e06c70feea77044b9f9067cacfa831, type: 3}
       propertyPath: m_Name
       value: Hover
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450339158559717307, guid: 59e06c70feea77044b9f9067cacfa831, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -20,13 +20,14 @@ public class BingoSpaceHandler : MonoBehaviour
     private Color markedColor;
     private Color unmarkedColor;
 
-    private DescriptionHover descriptionHover;
+    private Hover hover;
     [Header("Initial configuration")]
     public BingoTile initialTile;
     public BingoStickerNumeric initialSticker;
 
     private Vector3 initialPosition;
 
+    private bool mouseEntered;
     void Start()
     {
         bingoSpace = new(positionInGrid, UnityEngine.Random.Range(1,51), initialTile, initialSticker);
@@ -34,12 +35,14 @@ public class BingoSpaceHandler : MonoBehaviour
         card = transform.GetComponentInParent<BingoCard>();
         card.AddBingoSpace(bingoSpace);
         stickerNumberText.text = bingoSpace.Sticker.Number.ToString();
-        descriptionHover = card.GetComponentInChildren<DescriptionHover>();
+        hover = card.GetComponentInChildren<Hover>();
         initialPosition = transform.position;
     }
 
     private void Update()
     {
+        if (mouseEntered)
+            OnShowHover();
     }
 
     private void ChangeTile(BingoTile tile)
@@ -95,11 +98,22 @@ public class BingoSpaceHandler : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        descriptionHover.ShowHover(tile, sticker);
+        mouseEntered = true;
     }
-
     private void OnMouseExit()
     {
-        descriptionHover.UnShowHover();
+        mouseEntered = false;
+    }
+
+    private void OnShowHover()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            hover.ShowDescriptionHover(tile, sticker);
+        }
+        else if(Input.GetMouseButtonUp(1))
+        {
+            hover.UnShowDescriptionHover();
+        }
     }
 }
