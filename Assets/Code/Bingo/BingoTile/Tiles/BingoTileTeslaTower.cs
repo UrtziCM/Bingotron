@@ -14,6 +14,7 @@ public class BingoTileTeslaTower : BingoTile, IMarkable
     {
         BingoCard bc = GetSpace().GetCard();
         bc.SetPropertyValue(BingoCard.CHARGE_PROPERTY, (int)bc.GetPropertyValue(BingoCard.CHARGE_PROPERTY)*2);
-        
+        //particulas
+        Utils.ParticlesContainer.PlayParticle(Utils.ParticlesContainer.electricParticle, space.transform.position);
     }
 }

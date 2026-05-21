@@ -17,6 +17,8 @@ public class BingoStickerMagicNumber : BingoStickerNumeric
             Utils.BingoCard.SetPropertyValue(
                 BingoCard.MANA_COUNT_PROPERTY,
                 Utils.BingoCard.GetPropertyValue(BingoCard.MANA_COUNT_PROPERTY) + addedMana);
+            //particulas
+            Utils.ParticlesContainer.PlayParticle(Utils.ParticlesContainer.magicParticle, GetSpace().transform.position);
             return true;
         }
 

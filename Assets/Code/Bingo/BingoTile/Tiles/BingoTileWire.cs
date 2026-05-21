@@ -9,5 +9,7 @@ public class BingoTileWire : BingoTile, IMarkable
 
         bc.SetPropertyValue(BingoCard.CHARGE_PROPERTY ,bc.GetPropertyValue(BingoCard.CHARGE_PROPERTY) + 1);
 
+        //particulas
+        Utils.ParticlesContainer.PlayParticle(Utils.ParticlesContainer.electricParticle, space.transform.position);
     }
 }

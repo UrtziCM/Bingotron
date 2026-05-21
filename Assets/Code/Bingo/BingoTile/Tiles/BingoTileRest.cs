@@ -8,6 +8,7 @@ public class BingoTileRest : BingoTile, IMarkable
         BingoCard bc = GetSpace().GetCard();
 
         bc.SetPropertyValue(BingoCard.MANA_COUNT_PROPERTY, bc.GetPropertyValue(BingoCard.MANA_COUNT_PROPERTY) + 50);
-
+        //particulas
+        Utils.ParticlesContainer.PlayParticle(Utils.ParticlesContainer.magicParticle, GetSpace().transform.position);
     }
 }

@@ -15,5 +15,8 @@ public class BingoTileWaterMill : BingoTile, IMarkable, IPermeable
 
         //Particulas
         Utils.ParticlesContainer.PlayParticle(Utils.ParticlesContainer.waterParticle, space.transform.position);
+
+        //particulas
+        Utils.ParticlesContainer.PlayParticle(Utils.ParticlesContainer.electricParticle, space.transform.position);
     }
 }

@@ -40,5 +40,7 @@ public class BingoTileMagicFountain : BingoTile, IMarkable, IPermeable
         }
 
         bc.GetProperty(BingoCard.MANA_COUNT_PROPERTY).SetValue(bc.GetPropertyValue(BingoCard.MANA_COUNT_PROPERTY) + (20 * permebleCount));
+        //particulas
+        Utils.ParticlesContainer.PlayParticle(Utils.ParticlesContainer.magicParticle, GetSpace().transform.position);
     }
 }
