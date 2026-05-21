@@ -25,11 +25,14 @@ public class ChangeView : MonoBehaviour
     {
         if (notChanging)
         {
-            if (Input.GetKeyDown(KeyCode.W))
+            float scroll = Input.GetAxis("Mouse ScrollWheel");
+
+
+            if (Input.GetKeyDown(KeyCode.W) || scroll > 0f)
             {
                 lookAt(true);
             }
-            if (Input.GetKeyDown(KeyCode.S))
+            if (Input.GetKeyDown(KeyCode.S) || scroll < 0f)
             {
                 lookAt(false);
             }
