@@ -46,7 +46,6 @@ public class BingoDrumHelper : MonoBehaviour
         {
             if (space.Tile is IFlammable tile && tile.burning)
             {
-                Debug.Log("Burn");
                 Utils.Spread(space.GetPosition());
                 tile.burning = false;
                 Utils.BingoCard.ForceMark(space);
@@ -78,7 +77,6 @@ public class BingoDrumHelper : MonoBehaviour
 
     public void StartRound()
     {
-        Debug.Log("Round start");
         drum.ShuffledListIntoQueue();
         RoundActive = true;
     }

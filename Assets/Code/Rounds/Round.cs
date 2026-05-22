@@ -35,7 +35,6 @@ public class Round
         Debug.Log($"BallEndPuntosTotales={Utils.ScoreManager.totalScore}/{pointsToWin}");
         if (Utils.ScoreManager.totalScore >= pointsToWin)
         {
-            Debug.Log("Entering round win");
             RoundWin();
             return;
         }
@@ -56,7 +55,6 @@ public class Round
 
     private void RoundLost()
     {
-        Debug.Log("Lose");
         Application.Quit();
     }
 }

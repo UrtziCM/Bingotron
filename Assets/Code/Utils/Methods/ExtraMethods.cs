@@ -27,13 +27,11 @@ public static class Utils
 
     public static void Spread(Vector2 thisTilePos)
     {
-        Debug.Log("spreo");
         float prob = BingoCard.GetPropertyValue(BingoCard.FIRE_PROBABILITY_PROPERTY);
 
         if (false && Random.Range(0.0f, 1.0f) > prob)
             return;
 
-        Debug.Log("estoy arldiendo");
         foreach (Vector2 direction in TouchingPositions)
         {
             Vector2 pos = thisTilePos + direction;

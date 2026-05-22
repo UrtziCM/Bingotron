@@ -190,7 +190,6 @@ public class BingoCard : CustomService
     public void ReplaceAt(Vector2 pos, BingoStickerNumeric sticker)
     {
         var targetSpace = GetSpaceAt(pos);
-        Debug.Log(sticker.Name);
         targetSpace.Sticker = sticker;
     }
 
@@ -341,7 +340,6 @@ public class BingoCard : CustomService
     {
         foreach (BingoSpace bs in AllBingoSpaces())
         {
-            Debug.Log($"AM I NULL??={bs == null}");
             bs.State = MarkState.Unmarked;
         }
         foreach (BingoSpaceHandler bsh in transform.GetComponentsInChildren<BingoSpaceHandler>())

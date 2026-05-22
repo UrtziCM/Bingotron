@@ -44,7 +44,6 @@ public class Rewards : CustomService
 
     public void Open()
     {
-        Debug.Log("Open shop");
         boughtItems = 0;
         GenerateRandomShop();
     }

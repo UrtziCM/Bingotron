@@ -54,7 +54,7 @@ public class BingoSpaceHandler : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (!Utils.BingoCard.ConstructionMode)
+        if (!Utils.BingoCard.ConstructionMode && Utils.RoundManager.RoundActive)
         {
             card.MarkSpace(positionInGrid);
             ChangeLooks(bingoSpace.State);

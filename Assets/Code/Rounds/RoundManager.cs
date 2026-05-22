@@ -3,7 +3,7 @@ using UnityEngine;
 public class RoundManager : CustomService
 {
     public Round ActualRound;
-    private int roundNum;
+    private int roundNum = 0;
 
     [SerializeField]
     private int ballQuantity = 20;
@@ -12,6 +12,7 @@ public class RoundManager : CustomService
     private float wid = 0.1f;
     [SerializeField]
     private float amp = 25;
+    public bool RoundActive { get { return Utils.BingoDrum.GetComponent<BingoDrumHelper>().RoundActive;  } }
 
     private void Awake()
     {
@@ -25,9 +26,13 @@ public class RoundManager : CustomService
 
     public void StartRound()
     {
-        Debug.Log($"Round={roundNum}->{CalculateRoundPoints()}");
         if (ActualRound == null)
-            ActualRound = new Round(CalculateRoundPoints(), 20);
+        {
+            ActualRound = new Round(0,0);
+        }
+        ActualRound.pointsToWin = CalculateRoundPoints();
+        ActualRound.ballsQuantity = 20;
+
         ActualRound.StartRound();
 
         Utils.BingoDrum.gameObject.GetComponent<BingoDrumHelper>().RoundActive = true;
@@ -44,9 +49,9 @@ public class RoundManager : CustomService
 
     public int CalculateRoundPoints()
     {
-        float exponent = Mathf.Log(roundNum, 25);
-        float num = Mathf.Cos(roundNum * wid) * amp + roundNum;
-        return 2;
+        //float exponent = Mathf.Log(roundNum, 25);
+        //float num = Mathf.Cos(roundNum * wid) * amp + roundNum;
+        return Mathf.RoundToInt((roundNum + 1) * 1.5f);
     }
 
     public int CalculateRoundBalls()
