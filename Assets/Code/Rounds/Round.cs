@@ -57,5 +57,6 @@ public class Round
     private void RoundLost()
     {
         Debug.Log("Lose");
+        Application.Quit();
     }
 }

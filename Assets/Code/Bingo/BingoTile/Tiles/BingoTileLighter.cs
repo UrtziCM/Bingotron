@@ -16,7 +16,7 @@ public class BingoTileLighter : BingoTile, IMarkable, IFlammable
     public void OnFlame()
     {
         if(!Utils.BingoCard.IsSpaceMarked(pos))
-            Mark();
+            Utils.BingoCard.ForceMark(GetSpace());
 
         burning = true;
 
