@@ -21,6 +21,10 @@ public class BingoTileFirst10 : BingoTile, IMarkable, IRoller
                 BingoCard.MONEY_PROPERTY,
                 bc.GetPropertyValue(BingoCard.MONEY_PROPERTY) + addedMoney);
 
+            //Particles
+            Utils.ParticlesContainer.PlayParticle(Utils.ParticlesContainer.moneyParticle, GetSpace().transform.position);
+
+
             sm.AddScore(addedPoints);
         }
     }

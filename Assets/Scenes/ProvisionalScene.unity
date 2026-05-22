@@ -265,8 +265,9 @@ MonoBehaviour:
   fireParticle: {fileID: 3799886708918595439, guid: fd3d6f5dc3768e14481e1e22496eac7c, type: 3}
   electricParticle: {fileID: 3799886708918595439, guid: 1ea0aba765f929541804a3717935125a, type: 3}
   gamblingParticle: {fileID: 3799886708918595439, guid: f00c6f9a91266ed4e97c478ddcc66610, type: 3}
-  mmusicParticle: {fileID: 0}
+  musicParticle: {fileID: 3799886708918595439, guid: 10f1ac3ec7101d348b71fdce8d89f291, type: 3}
   magicParticle: {fileID: 3799886708918595439, guid: 1864af73b64170548b1f270e710943d0, type: 3}
+  moneyParticle: {fileID: 3799886708918595439, guid: dad9c27ade307a0429c6fb3de73875d1, type: 3}
 --- !u!4 &110889675
 Transform:
   m_ObjectHideFlags: 0

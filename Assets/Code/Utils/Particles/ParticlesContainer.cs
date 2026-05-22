@@ -16,9 +16,11 @@ public class ParticlesContainer : CustomService
     [SerializeField]
     public GameObject gamblingParticle;
     [SerializeField]
-    public GameObject mmusicParticle;
+    public GameObject musicParticle;
     [SerializeField]
     public GameObject magicParticle;
+    [SerializeField]
+    public GameObject moneyParticle;
 
     private List<ParticleSystem> particles;
     private void Awake()

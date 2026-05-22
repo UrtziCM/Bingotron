@@ -19,7 +19,11 @@ public class BingoTileQuickMath : BingoTile, IMarkable
             sm.AddScore(addedScore);
 
         if (num % 3 == 0)
-            bc.SetPropertyValue(BingoCard.MONEY_PROPERTY , bc.GetPropertyValue(BingoCard.MONEY_PROPERTY) + addedMoney);
+        {
+            bc.SetPropertyValue(BingoCard.MONEY_PROPERTY, bc.GetPropertyValue(BingoCard.MONEY_PROPERTY) + addedMoney);
+            //Particles
+            Utils.ParticlesContainer.PlayParticle(Utils.ParticlesContainer.moneyParticle, GetSpace().transform.position);
+        }
 
         if (num % 5 == 0)
         {

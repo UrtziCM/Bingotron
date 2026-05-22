@@ -62,10 +62,13 @@ public static class Utils
             return false;
     }
 
-    public static void PlayNote()
+    public static void PlayNote(Vector3 position)
     {
 
         BingoCard.SetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY, BingoCard.GetPropertyValue(BingoCard.MUSIC_ADDEDVALUE_PROPERTY) + 1);
+        
+        //particulas
+        ParticlesContainer.PlayParticle(ParticlesContainer.musicParticle, position);
     }
 
     public static BingoSpace GetRandomUnmarked()

@@ -16,6 +16,6 @@ public class BingoTileDrum : BingoTile, IMarkable, IMusicable
 
     public void PlayNote()
     {
-        Utils.PlayNote();
+        Utils.PlayNote(GetSpace().transform.position);
     }
 }

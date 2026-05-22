@@ -14,7 +14,7 @@ public class BingoTileMusicBox : BingoTile, IMarkable, IFlammable, IMusicable
     }
     public void PlayNote()
     {
-        Utils.PlayNote();
+        Utils.PlayNote(GetSpace().transform.position);
     }
 
     public void OnFlame()

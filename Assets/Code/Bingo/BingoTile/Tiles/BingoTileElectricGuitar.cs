@@ -20,7 +20,7 @@ public class BingoTileElectricGuitar : BingoTile, IMarkable, IMusicable, ICharge
     }
     public void PlayNote()
     {
-        Utils.PlayNote();
+        Utils.PlayNote(GetSpace().transform.position);
     }
     private void AddPoints()
     {

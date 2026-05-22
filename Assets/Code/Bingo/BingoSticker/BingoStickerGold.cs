@@ -17,6 +17,8 @@ public class BingoStickerGold : BingoStickerNumeric
             Utils.BingoCard.SetPropertyValue(
                 BingoCard.MONEY_PROPERTY,
                 Utils.BingoCard.GetPropertyValue(BingoCard.MONEY_PROPERTY) + addedMoney);
+            //Particles
+            Utils.ParticlesContainer.PlayParticle(Utils.ParticlesContainer.moneyParticle, GetSpace().transform.position);
             return true;
         }
         return false;

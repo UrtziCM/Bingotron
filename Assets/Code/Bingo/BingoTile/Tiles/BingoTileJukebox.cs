@@ -27,7 +27,7 @@ public class BingoTileJukebox : BingoTile, IMarkable, IGamble, IMusicable
 
     public void PlayNote()
     {
-        Utils.PlayNote();
+        Utils.PlayNote(GetSpace().transform.position);
     }
 
     private IEnumerator OnGamble()

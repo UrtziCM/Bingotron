@@ -20,6 +20,8 @@ public class BingoTileGoldenRatio : BingoTile, IMarkable
         if(fibonacciNumbers.Contains((sticker as BingoStickerNumeric).Number))
         {
             bc.SetPropertyValue(BingoCard.MONEY_PROPERTY, (int)bc.GetPropertyValue(BingoCard.MONEY_PROPERTY) + addedMoney);
+            //Particles
+            Utils.ParticlesContainer.PlayParticle(Utils.ParticlesContainer.moneyParticle, GetSpace().transform.position);
         }
 
     }
