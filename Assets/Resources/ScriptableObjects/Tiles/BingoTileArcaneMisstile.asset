@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 1
   Name: Arcane Misstile
-  Description: "Al marcar esta por cada 10 de man\xE1 marca una casilla aleatoria
-    gastando man\xE1. Maximo de 3 casillas."
+  Description: "Al marcar esta, gasta hasta 30 de man\xE1. Por cada 10 de man\xE1
+    gastado marca una casilla aleatoria."
   tags: 05000000
   sprite: {fileID: 21300000, guid: e33f9463d609e9d45aeec6c52a5d1d5e, type: 3}
