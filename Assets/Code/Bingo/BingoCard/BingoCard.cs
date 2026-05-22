@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using static UnityEditor.PlayerSettings;
 
 public class BingoCard : CustomService
 {
@@ -33,15 +32,17 @@ public class BingoCard : CustomService
 
     public Hover hover;
 
-    public IEnumerable<BingoSpace> AllSpaces()
+    public List<BingoSpace> AllBingoSpaces()
     {
+        List<BingoSpace> list = new List<BingoSpace>();
         for (int y = 0; y < height; y++)
         {
             for(int x = 0; x < width; x++)
             {
-                yield return GetSpaceAt(x, y);
+                list.Add(GetSpaceAt(x, y));
             }
         }
+        return list;
     }
 
     public BingoSpace GetRandomBingoSpace()
@@ -94,7 +95,7 @@ public class BingoCard : CustomService
     public BingoSpace[] GetAllSpacesOfType<T>()
     {
         List<BingoSpace> spaces = new List<BingoSpace>();
-        foreach (BingoSpace space in AllSpaces())
+        foreach (BingoSpace space in AllBingoSpaces())
         {
             if (space.Tile is T)
                 spaces.Add(space);
@@ -322,7 +323,7 @@ public class BingoCard : CustomService
 
     private void BallRolled(BingoBall ball)
     {
-        foreach (BingoSpace bs in AllSpaces())
+        foreach (BingoSpace bs in AllBingoSpaces())
         {
             if (bs is IRoller roller)
             {
@@ -338,8 +339,9 @@ public class BingoCard : CustomService
 
     public void ResetCard()
     {
-        foreach (BingoSpace bs in AllSpaces())
+        foreach (BingoSpace bs in AllBingoSpaces())
         {
+            Debug.Log($"AM I NULL??={bs == null}");
             bs.State = MarkState.Unmarked;
         }
         foreach (BingoSpaceHandler bsh in transform.GetComponentsInChildren<BingoSpaceHandler>())
