@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 1
   Name: Quick Math
-  Description: "Al marcar, sii el numero de la casilla es:\n-M\xFAltiplo de 2: +2
+  Description: "Al marcar, si el numero de la casilla es:\n-M\xFAltiplo de 2: +2
     score\n-M\xFAltiplo de 3: + 3$\n-M\xFAltiplo de 5: Moja las casillas adyacentes\n-M\xFAltiplo
     de 7: Quema las casillas adyacentes"
   tags: 

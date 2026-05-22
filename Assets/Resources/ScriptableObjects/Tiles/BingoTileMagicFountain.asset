@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 1
   Name: Fuente Magica
-  Description: Al marcar, moja las casillas adyacentes.
+  Description: "Al marcar esta, moja las casillas adyacentes.\n\nAl mojar esta, a\xF1ade
+    +20 de man\xE1 por cada casilla adyacente."
   tags: 0500000003000000
   sprite: {fileID: 21300000, guid: 2e8a5153baf61374f82dcd38fc5df349, type: 3}
