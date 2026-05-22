@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ea83f8f57573f549b154cf516e59085, type: 3}
   m_Name: BingoStickerGambler
   m_EditorClassIdentifier: 
+  space:
+    sticker: {fileID: 0}
+    transform: {fileID: 0}
   value: 0
   Name: Gambler
   Description: Por cada bola que sale del bombo, tiene un 1% de marcarse.
   tags: 04000000
+  textColor: {r: 0.2901961, g: 0.8117647, b: 0.19607843, a: 0}
   number: 0

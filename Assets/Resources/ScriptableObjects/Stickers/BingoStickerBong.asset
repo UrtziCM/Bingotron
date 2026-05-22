@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8637a673e7396643839b42547578f28, type: 3}
   m_Name: BingoStickerBong
   m_EditorClassIdentifier: 
+  space:
+    sticker: {fileID: 0}
+    transform: {fileID: 0}
   value: 0
   Name: Bong
   Description: Al marcar esta, toca una nota.
   tags: 02000000
+  textColor: {r: 0.96862745, g: 0.3882353, b: 1, a: 0}
   number: 0
   addedNotes: 1

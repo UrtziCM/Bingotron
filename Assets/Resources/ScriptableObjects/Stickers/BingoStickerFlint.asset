@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41a1cba68b9aa5c478635dca9dd56e49, type: 3}
   m_Name: BingoStickerFlint
   m_EditorClassIdentifier: 
+  space:
+    sticker: {fileID: 0}
+    transform: {fileID: 0}
   value: 0
   Name: Pedernal
   Description: Al marcar esta, se prende fuego.
   tags: 00000000
+  textColor: {r: 1, g: 0.5019608, b: 0, a: 0}
   number: 0

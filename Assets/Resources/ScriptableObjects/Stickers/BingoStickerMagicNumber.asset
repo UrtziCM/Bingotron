@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 440dbabfc9a1ac44884dcc8962529ea2, type: 3}
   m_Name: BingoStickerMagicNumber
   m_EditorClassIdentifier: 
+  space:
+    sticker: {fileID: 0}
+    transform: {fileID: 0}
   value: 0
   Name: "N\xFAmero M\xE1gico"
   Description: "Al marcar esta, a\xF1ade 10 de mann\xE1 a tu reserva."
   tags: 05000000
+  textColor: {r: 0.5568628, g: 0.19607843, b: 0.91764706, a: 0}
   number: 0
   addedMana: 10

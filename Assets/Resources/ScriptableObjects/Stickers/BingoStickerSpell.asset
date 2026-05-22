@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8b104352d84eb5468b617807e1eb34c, type: 3}
   m_Name: BingoStickerSpell
   m_EditorClassIdentifier: 
+  space:
+    sticker: {fileID: 0}
+    transform: {fileID: 0}
   value: 0
   Name: Conjuro
   Description: "Puedes gastar 100 de man\xE1 para marcar esta casilla."
   tags: 05000000
+  textColor: {r: 0.22967248, g: 0.025382677, b: 0.4339623, a: 0}
   number: 0
   manaCost: 100

@@ -28,6 +28,7 @@ public class BingoSpaceHandler : MonoBehaviour
     private Vector3 initialPosition;
 
     private bool mouseEntered;
+
     void Start()
     {
         bingoSpace = new(positionInGrid, UnityEngine.Random.Range(1,51), initialTile, initialSticker);
@@ -65,6 +66,7 @@ public class BingoSpaceHandler : MonoBehaviour
             if (Utils.Rewards.Selected is BingoStickerNumeric rewardSticker)
             {
                 card.ReplaceAt(positionInGrid, rewardSticker);
+                stickerNumberText.color = rewardSticker.textColor;
             }
             else if (Utils.Rewards.Selected is BingoTile rewardTile)
             {

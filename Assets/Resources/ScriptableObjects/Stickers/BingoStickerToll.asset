@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cb6495468331de4594233243ddbf31c, type: 3}
   m_Name: BingoStickerToll
   m_EditorClassIdentifier: 
+  space:
+    sticker: {fileID: 0}
+    transform: {fileID: 0}
   value: 0
   Name: Peaje
   Description: Puedes gastar 5 de oro para marcar esta casilla.
   tags: 
+  textColor: {r: 0.4231552, g: 0.4641509, b: 0.00963331, a: 0}
   number: 0
   cost: 5

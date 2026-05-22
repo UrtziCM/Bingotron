@@ -11,7 +11,8 @@ public abstract class BingoSticker : ScriptableObject
     public string Description;
     [SerializeField]
     public Tags[] tags;
-
+    [SerializeField]
+    public Color textColor;
     public virtual bool IsMarkable(BingoBall ball)
     {
         return false;
