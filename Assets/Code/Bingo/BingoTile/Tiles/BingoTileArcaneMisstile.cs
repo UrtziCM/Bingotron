@@ -26,7 +26,7 @@ public class BingoTileArcaneMisstile : BingoTile, IMarkable, ICasteable
         int spacesToBurn = 1;
 
         if (mana > HighManaCost)
-            spacesToBurn = 1;
+            spacesToBurn = 3;
         else if (mana > MidManaCost)
             spacesToBurn = 2;
 
