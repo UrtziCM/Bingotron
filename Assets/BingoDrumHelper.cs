@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -41,16 +42,47 @@ public class BingoDrumHelper : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         drumAnimator.SetTrigger("Roll");
-        BingoSpace[] spaces = Utils.BingoCard.GetAllSpacesOfType<IFlammable>();
+
+        List<BingoSpace> spaces = new(Utils.BingoCard.GetAllSpacesOfType<IFlammable>());
+
+        List<BingoSpace> spaceToSpread = new();
+
+
+        if (Utils.ScoreManager.Score >= Utils.RoundManager.ActualRound.pointsToWin)
+        {
+            Debug.Log("ola");
+            foreach (BingoSpace space in spaces)
+            {
+                if (space.Tile is IFlammable tile)
+                {
+                    tile.burning = false;
+                }
+            }
+
+            spaceToSpread.Clear();
+            spaces.Clear();
+        }
+
         foreach (BingoSpace space in spaces)
         {
             if (space.Tile is IFlammable tile && tile.burning)
             {
+                spaceToSpread.Add(space);
+            }
+        }
+        foreach (BingoSpace space in spaceToSpread)
+        {
+            if (space.Tile is IFlammable tile && tile.burning)
+            {
+                Debug.Log("Burn");
                 Utils.Spread(space.GetPosition());
                 tile.burning = false;
                 Utils.BingoCard.ForceMark(space);
             }
         }
+
+        spaces.Clear();
+        spaceToSpread.Clear();
 
     }
 
