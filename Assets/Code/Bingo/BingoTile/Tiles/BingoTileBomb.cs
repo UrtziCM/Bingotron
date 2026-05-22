@@ -27,7 +27,10 @@ public class BingoTileBomb : BingoTile, IMarkable, IFlammable
             Vector2 targetPos = pos + direction;
             BingoSpace targetSpace = bc.GetSpaceAt(targetPos);
 
-            if (!targetSpace.IsMarked())
+            if (targetSpace == null)
+                continue;
+
+            if (!(targetSpace.IsMarked()))
                 bc.ForceMark(targetSpace);
         }
 
