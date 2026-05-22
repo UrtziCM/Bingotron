@@ -23,8 +23,8 @@ public class BingoTileLawnmower : BingoTile, IMarkable, IChargeable
             if(charge <= 0)
                 break;
 
-            if(bc.IsMarkable(nextTilePos))
-                (bc.GetSpaceAt(nextTilePos) as IMarkable).Mark();
+            if (bc.IsMarkable(nextTilePos))
+                bc.ForceMark(bc.GetSpaceAt(nextTilePos));
 
             charge--;
             nextTilePos += direction;
