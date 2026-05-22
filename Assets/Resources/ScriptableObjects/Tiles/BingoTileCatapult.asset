@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 1
   Name: Catapulta
-  Description: "Al marcar esta casilla, la casilla dos posiciones a la derecha es
-    marcada. (Si la casilla no existe o est\xE1 marcada, no hace nada)"
+  Description: Al marcar esta, marca la casilla dos posiciones a la derecha.
   tags: 00000000
   sprite: {fileID: 21300000, guid: ca0983e112863bd4a917026683cd3f2a, type: 3}
