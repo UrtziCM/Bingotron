@@ -84,7 +84,7 @@ public class BingoCard : CustomService
         properties.Add(new BingoProperty(CHARGE_PROPERTY, 0));
         properties.Add(new BingoProperty(GAMBLER_ADDEDPROBABILITY_PROPERTY, 0));
         properties.Add(new BingoProperty(MANA_COUNT_PROPERTY, 0));
-        properties.Add(new BingoProperty(FIRE_PROBABILITY_PROPERTY, 0, 50));
+        properties.Add(new BingoProperty(FIRE_PROBABILITY_PROPERTY, 50, 50));
     }
 
     public BingoSpace GetSpaceAt(int x, int y)

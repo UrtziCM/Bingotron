@@ -48,7 +48,7 @@ public class BingoDrumHelper : MonoBehaviour
         List<BingoSpace> spaceToSpread = new();
 
 
-        if (Utils.ScoreManager.Score >= Utils.RoundManager.ActualRound.pointsToWin)
+        if (Utils.ScoreManager.totalScore >= Utils.RoundManager.ActualRound.pointsToWin)
         {
             Debug.Log("ola");
             foreach (BingoSpace space in spaces)

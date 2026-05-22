@@ -29,7 +29,7 @@ public static class Utils
     {
         float prob = BingoCard.GetPropertyValue(BingoCard.FIRE_PROBABILITY_PROPERTY);
 
-        if (false && Random.Range(0.0f, 1.0f) > prob)
+        if (Random.Range(0.0f, 1.0f) > prob)
             return;
 
         foreach (Vector2 direction in TouchingPositions)
