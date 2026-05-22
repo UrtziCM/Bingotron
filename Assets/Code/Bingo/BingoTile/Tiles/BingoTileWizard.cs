@@ -37,7 +37,7 @@ public class BingoTileWizard : BingoTile, IMarkable, ICasteable, IGamble
     {
         while (mana > LowManaCost && onCast)
         {
-            Utils.ScoreManager.AddMultiply(0.01f);
+            Utils.ScoreManager.AddMultiply(0.5f);
 
             mana -= LowManaCost;
             Utils.BingoCard.SetPropertyValue(BingoCard.MANA_COUNT_PROPERTY, mana);
