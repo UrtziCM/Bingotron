@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: BingoTileVolcano
   m_EditorClassIdentifier: 
   value: 1
-  Name: Volcan
-  Description: Al marcarse, lanza una bola de fuego que quema una casilla aleatoria
-    inflamable.
+  Name: "Volc\xE1n"
+  Description: Al marcar esta, lanza una bola de fuego que quema una casilla inflamable
+    aleatoria.
   tags: 00000000
   sprite: {fileID: 21300000, guid: c22e487de2ebe7a4b8ec62ab4bddaecd, type: 3}
