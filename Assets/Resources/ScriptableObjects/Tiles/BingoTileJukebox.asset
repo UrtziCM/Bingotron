@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 1
   Name: Gramola
-  Description: Al marcar, +1 a musical y un 20% de que este efecto se repita. Una
-    vez falla puntua.
+  Description: "Al marcar esta, a\xF1ade +1 a notas, 20% de que este efecto se repita
+    hasta que falle."
   tags: 0200000004000000
   sprite: {fileID: 21300000, guid: 476f2e3d8f81a864396d9c857e9bfab8, type: 3}
