@@ -29,7 +29,7 @@ public class BingoSpaceHandler : MonoBehaviour
 
     private bool mouseEntered;
 
-    void Start()
+    void Awake()
     {
         bingoSpace = new(positionInGrid, UnityEngine.Random.Range(1,51), initialTile, initialSticker);
         bingoSpace.transform = transform;

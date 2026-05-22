@@ -27,9 +27,7 @@ public class RoundManager : CustomService
     {
         Debug.Log($"Round={roundNum}->{CalculateRoundPoints()}");
         if (ActualRound == null)
-            ActualRound = new Round(0,0);
-        ActualRound.pointsToWin = CalculateRoundPoints();
-        ActualRound.ballsQuantity = 20;
+            ActualRound = new Round(CalculateRoundPoints(), 20);
         ActualRound.StartRound();
 
         Utils.BingoDrum.gameObject.GetComponent<BingoDrumHelper>().RoundActive = true;
