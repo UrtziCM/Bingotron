@@ -67,7 +67,7 @@ public class Rewards : CustomService
     private BingoTile GenerateObject()
     {
         var generated = possibleTiles[UnityEngine.Random.Range(0, possibleTiles.Count)];
-        possibleTiles.Remove(generated);
+        //possibleTiles.Remove(generated);
         return generated;
     }
 
