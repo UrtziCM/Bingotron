@@ -15,7 +15,7 @@ MonoBehaviour:
   value: 1
   Name: Primeros 10
   Description: Al marcar esta, si estas en los primero 10 turnos de ronda +10 de
-    valor y +3 de dinero.
+    valor y +3$.
   tags: 
   sprite: {fileID: 21300000, guid: 2c873d27e8dcbf84e89acb3d495cf9f4, type: 3}
   turns: 10
