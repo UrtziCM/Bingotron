@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 1
   Name: Mago
-  Description: "Al marcar, castea todo el man\xE1, por cada 1 de man\xE1 hay un 20%
-    de aplicar un +0.1 de multiplicador a los puntos."
+  Description: "Al marcar esta, gasta todo el man\xE1 acumulado, por cada 1 de man\xE1
+    hay un 20% de aplicar un +0.5 de multiplicador a los puntos."
   tags: 0500000004000000
   sprite: {fileID: 21300000, guid: c0b4f43012bb20d41b10d50d2665f071, type: 3}
