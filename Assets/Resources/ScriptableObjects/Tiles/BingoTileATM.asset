@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 1
   Name: Cajero Automatico
-  Description: "Al marcar esta, hay un 20% de probabilidad de salir la recompensa
-    especial. \nAl conseguir carga electrica +1 recompensa normal y +2 recompensa
-    especial."
+  Description: "Al marcar esta, hay un 20% de que puntue doble. \n\nAl conseguir
+    carga electrica, a\xF1ade +1 al valor de la casilla."
   tags: 0100000004000000
   sprite: {fileID: 21300000, guid: d51249b6e1d2a9d46b33560415e46373, type: 3}
