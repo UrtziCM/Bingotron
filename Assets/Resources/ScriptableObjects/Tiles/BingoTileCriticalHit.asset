@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 1
   Name: Critical Hit
-  Description: Al marcar esta casilla hay un 5% de que la puntuacion sume 100 en
-    vez de 1.
+  Description: Al marcar esta, hay un 5% de que la puntuacion sume 100 en vez de
+    1.
   tags: 04000000
   sprite: {fileID: 21300000, guid: 79256a6b26f28c444bcd1f702192e82c, type: 3}
