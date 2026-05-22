@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 1
   Name: "Cortacesped \u2192"
-  Description: 'Al marcar, segun su carga electrica activa una cantidad  de casillas
-    hacia la derecha. '
+  Description: Al marcar esta, marca hacia la derecha una cantidad de casillas igual
+    a tu carga.
   tags: 01000000
   sprite: {fileID: 21300000, guid: 2ba85cfe4fcdaea41bceedba6bc77b97, type: 3}
   direction: {x: 1, y: 0}
