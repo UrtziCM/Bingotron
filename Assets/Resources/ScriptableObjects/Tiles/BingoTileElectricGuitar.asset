@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 1
   Name: Guitarra Electrica
-  Description: "Al marcar suma una cantidad de notas igual a la carga electrica y
-    despu\xE9s punt\xFAa (aplicando el efecto musical)"
+  Description: "Al marcar esta, a\xF1ade una cantidad de notas igual a la carga electrica
+    y despu\xE9s punt\xFAa."
   tags: 0200000001000000
   sprite: {fileID: 21300000, guid: 8af561097486f43479eaab93217ad749, type: 3}
