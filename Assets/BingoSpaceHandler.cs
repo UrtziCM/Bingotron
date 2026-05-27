@@ -67,6 +67,7 @@ public class BingoSpaceHandler : MonoBehaviour
             {
                 card.ReplaceAt(positionInGrid, rewardSticker);
                 stickerNumberText.color = rewardSticker.textColor;
+                stickerNumberText.text = rewardSticker.Number.ToString();
             }
             else if (Utils.Rewards.Selected is BingoTile rewardTile)
             {
