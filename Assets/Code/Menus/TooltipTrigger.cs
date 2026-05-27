@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class TooltipTrigger : MonoBehaviour
 {
+    [TextArea]
     [SerializeField] public string tooltipMessage = "texto aqui";
 
     private void OnMouseEnter()
