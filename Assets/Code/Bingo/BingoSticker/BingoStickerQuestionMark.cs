@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "BingoStickerQuestionMark", menuName = "Bingo/Stickers/QuestionMark")]
@@ -16,5 +17,6 @@ public class BingoStickerQuestionMark : BingoStickerNumeric, IRoller
     public void OnRoll(BingoBall ball)
     {
         number = Random.Range(1,90);
+        GetSpace().transform.GetComponentInChildren<TextMeshProUGUI>().text = number.ToString();
     }
 }
