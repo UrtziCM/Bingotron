@@ -19,5 +19,5 @@ MonoBehaviour:
   Name: Pedernal
   Description: Al marcar esta, se prende fuego.
   tags: 00000000
-  textColor: {r: 1, g: 0.5019608, b: 0, a: 0}
+  textColor: {r: 1, g: 0.5019608, b: 0, a: 1}
   number: 0

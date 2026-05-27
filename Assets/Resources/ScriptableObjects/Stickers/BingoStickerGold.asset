@@ -19,6 +19,6 @@ MonoBehaviour:
   Name: "N\xFAmero de Oro"
   Description: Al marcar esta, recibe 2 de oro.
   tags: 
-  textColor: {r: 0.9098039, g: 1, b: 0, a: 0}
-  number: 0
+  textColor: {r: 0.9098039, g: 1, b: 0, a: 1}
+  number: 13
   addedMoney: 2

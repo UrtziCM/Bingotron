@@ -19,6 +19,6 @@ MonoBehaviour:
   Name: Bong
   Description: Al marcar esta, toca una nota.
   tags: 02000000
-  textColor: {r: 0.96862745, g: 0.3882353, b: 1, a: 0}
-  number: 0
+  textColor: {r: 0.96862745, g: 0.3882353, b: 1, a: 1}
+  number: 42
   addedNotes: 1

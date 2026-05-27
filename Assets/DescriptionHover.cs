@@ -19,6 +19,8 @@ public class Hover : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI stickerName;
     [SerializeField]
+    private TextMeshProUGUI stickerNumber;
+    [SerializeField]
     private TextMeshProUGUI stickerDescription;
 
     [Header("Description hover")]
@@ -47,6 +49,8 @@ public class Hover : MonoBehaviour
         tileDescription.text = tile.Description;
 
         stickerName.text = sticker.Name;
+        stickerNumber.text = (sticker as BingoStickerNumeric).Number.ToString();
+        stickerNumber.color = (sticker as BingoStickerNumeric).textColor;
         stickerDescription.text = sticker.Description;
     }
 
@@ -58,6 +62,7 @@ public class Hover : MonoBehaviour
         tileDescription.text = "";
 
         stickerName.text = "";
+        stickerNumber.text = "";
         stickerDescription.text = "";
 
         StatsHover.SetActive(true);
