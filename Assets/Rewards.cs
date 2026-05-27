@@ -62,8 +62,9 @@ public class Rewards : CustomService
                 rewardPanel.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>().text = generatedTile.Name;
                 rewardPanel.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = generatedTile.sprite;
                 rewardPanel.transform.GetChild(1).GetComponent<TMP_Text>().text = generatedTile.Description;
-            } else if (generatedItem is BingoSticker generatedSticker)
+            } else if (generatedItem is BingoStickerNumeric generatedSticker)
             {
+                generatedSticker.Number = Random.Range(1, 51);
                 rewardPanel.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>().text = generatedSticker.Name;
                 //rewardPanel.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = generatedSticker.sprite;
                 rewardPanel.transform.GetChild(1).GetComponent<TMP_Text>().text = generatedSticker.Description;
