@@ -60,6 +60,7 @@ public class Rewards : CustomService
             if (generatedItem is BingoTile generatedTile)
             {
                 generatedTile = Instantiate(generatedTile);
+                generatedItem = generatedTile;
                 rewardPanel.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>().text = generatedTile.Name;
                 rewardPanel.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = generatedTile.sprite;
                 rewardPanel.transform.GetChild(0).GetChild(1).GetComponentInChildren<TextMeshProUGUI>().text = "";
@@ -67,6 +68,8 @@ public class Rewards : CustomService
             } else if (generatedItem is BingoStickerNumeric generatedSticker)
             {
                 generatedSticker = Instantiate(generatedSticker);
+                generatedItem = generatedSticker;
+
                 generatedSticker.Number = Random.Range(1, 51);
                 rewardPanel.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>().text = generatedSticker.Name;
                 rewardPanel.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = null;
