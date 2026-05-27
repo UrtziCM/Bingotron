@@ -13,7 +13,7 @@ public class Rewards : CustomService
     private Canvas rewardsCanvas;
     [SerializeField]
     private GameObject[] RewardPanels;
-    private List<BingoTile> possibleTiles;
+    private List<ScriptableObject> possibleRewards;
     private const int MAX_BUYS = 2;
     public int boughtItems = 0;
 
@@ -33,7 +33,10 @@ public class Rewards : CustomService
                     rewardPanel.GetComponentInChildren<Button>().interactable = false;
                     Selected = items[rewardPanel.GetComponentInChildren<Button>().GetInstanceID()];
                 });
-        possibleTiles = new(Resources.LoadAll<BingoTile>("ScriptableObjects/Tiles"));
+        possibleRewards = new(Resources.LoadAll<BingoTile>("ScriptableObjects/Tiles"));
+        possibleRewards.AddRange(Resources.LoadAll<BingoSticker>("ScriptableObjects/Stickers"));
+        foreach (var possibility in possibleRewards)
+            Debug.Log(possibility);
     }
 
     // Update is called once per frame
@@ -53,20 +56,29 @@ public class Rewards : CustomService
         items.Clear();
         foreach (var rewardPanel in RewardPanels)
         {
-            BingoTile generatedTile = GenerateObject();
-            rewardPanel.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>().text = generatedTile.Name;
-            rewardPanel.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = generatedTile.sprite;
-            rewardPanel.transform.GetChild(1).GetComponent<TMP_Text>().text = generatedTile.Description;
+            ScriptableObject generatedItem = GenerateObject();
+            if (generatedItem is BingoTile generatedTile)
+            {
+                rewardPanel.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>().text = generatedTile.Name;
+                rewardPanel.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = generatedTile.sprite;
+                rewardPanel.transform.GetChild(1).GetComponent<TMP_Text>().text = generatedTile.Description;
+            } else if (generatedItem is BingoSticker generatedSticker)
+            {
+                rewardPanel.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>().text = generatedSticker.Name;
+                //rewardPanel.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = generatedSticker.sprite;
+                rewardPanel.transform.GetChild(1).GetComponent<TMP_Text>().text = generatedSticker.Description;
+
+            }
             Button thisButton = rewardPanel.transform.GetComponentInChildren<Button>(true);
             thisButton.interactable = true;
-            items.Add(thisButton.GetInstanceID(), generatedTile);
+            items.Add(thisButton.GetInstanceID(), generatedItem);
         }
         ToggleHide();
     }
 
-    private BingoTile GenerateObject()
+    private ScriptableObject GenerateObject()
     {
-        var generated = possibleTiles[UnityEngine.Random.Range(0, possibleTiles.Count)];
+        var generated = possibleRewards[UnityEngine.Random.Range(0, possibleRewards.Count)];
         //possibleTiles.Remove(generated);
         return generated;
     }

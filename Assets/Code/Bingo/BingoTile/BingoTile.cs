@@ -11,7 +11,7 @@ public enum Tags
 }
 
 [CreateAssetMenu(fileName = "BingoTile", menuName = "Bingo/Tiles/BingoTile", order = -1)]
-public class BingoTile : ScriptableObject
+public class BingoTile : ScriptableObject, ShopItem
 {
     internal Vector2 pos;
     internal BingoSpace space;
