@@ -16,7 +16,7 @@ public class BingoStickerQuestionMark : BingoStickerNumeric, IRoller
     //faltaria implementar la parte visual de cuando cambia de valor 
     public void OnRoll(BingoBall ball)
     {
-        number = Random.Range(1,90);
+        number = Random.Range(1,51);
         GetSpace().transform.GetComponentInChildren<TextMeshProUGUI>().text = number.ToString();
     }
 }
