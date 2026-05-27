@@ -1,9 +1,9 @@
 using UnityEngine;
 using TMPro;
 
-public class TooltipManager : MonoBehaviour
+public class TooltipController : MonoBehaviour
 {
-    public static TooltipManager Instance;
+    public static TooltipController Instance;
 
     [SerializeField] private GameObject tooltipPanel;
     [SerializeField] private TextMeshProUGUI tooltipText;
