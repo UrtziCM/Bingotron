@@ -35,7 +35,8 @@ public class BallHolder : MonoBehaviour
     {
         foreach (Transform Ballspace in ballSpaces)
         {
-            Destroy(transform.GetChild(0).gameObject);            
+            if(Ballspace.childCount > 0)
+                Destroy(Ballspace.GetChild(0).gameObject);            
         }
     }
 

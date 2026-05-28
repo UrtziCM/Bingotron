@@ -117,6 +117,7 @@ public class BingoDrumHelper : MonoBehaviour
     public void StartRound()
     {
         drum.ShuffledListIntoQueue();
+        ballHolder.ClearHolder();
         RoundActive = true;
     }
 
