@@ -13,6 +13,8 @@ public class BingoStickerBong : BingoStickerNumeric
 
     public override bool IsMarkable(BingoBall ball)
     {
+        if (GetSpace().IsMarked()) return false;
+
         if (ball.number == number)
         {
             Utils.BingoCard.SetPropertyValue(

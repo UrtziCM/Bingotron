@@ -13,12 +13,13 @@ public class BingoStickerToll : BingoStickerNumeric
 
     public override bool IsMarkable(BingoBall ball)
     {
+        if (GetSpace().IsMarked()) return false;
+
         if (ball.number == number)
         {
             return true;
         }
-
-        if (Utils.BingoCard.GetPropertyValue(BingoCard.MONEY_PROPERTY) >= cost)
+        else if (Utils.BingoCard.GetPropertyValue(BingoCard.MONEY_PROPERTY) >= cost)
         {
             Utils.BingoCard.SetPropertyValue(
                 BingoCard.MONEY_PROPERTY,

@@ -13,6 +13,8 @@ public class BingoStickerNumeric : BingoSticker
 
     public override bool IsMarkable(BingoBall ball)
     {
+        if (GetSpace().IsMarked()) return false;
+
         if (ball == null) return false;
 
         return ball.number == number;

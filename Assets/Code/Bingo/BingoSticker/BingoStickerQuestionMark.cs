@@ -10,13 +10,17 @@ public class BingoStickerQuestionMark : BingoStickerNumeric, IRoller
 
     public override bool IsMarkable(BingoBall ball)
     {
+        if (GetSpace().IsMarked()) return false;
+
         return ball.number == number;
     }
 
     //faltaria implementar la parte visual de cuando cambia de valor 
     public void OnRoll(BingoBall ball)
     {
+        if (GetSpace().IsMarked()) return;
+
         number = Random.Range(1,51);
-        GetSpace().transform.GetComponentInChildren<TextMeshProUGUI>().text = number.ToString();
+        GetSpace().transform.GetComponentInChildren<TMP_Text>().text = number.ToString();
     }
 }

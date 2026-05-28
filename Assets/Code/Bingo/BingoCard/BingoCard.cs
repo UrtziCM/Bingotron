@@ -324,9 +324,13 @@ public class BingoCard : CustomService
     {
         foreach (BingoSpace bs in AllBingoSpaces())
         {
-            if (bs is IRoller roller)
+            if (bs.sticker is IRoller stickerRoller)
             {
-                roller.OnRoll(ball);
+                stickerRoller.OnRoll(ball);
+            }
+            if (bs.Tile is IRoller tileRoller)
+            {
+                tileRoller.OnRoll(ball);
             }
         }
     }

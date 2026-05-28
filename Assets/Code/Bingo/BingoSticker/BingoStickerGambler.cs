@@ -15,6 +15,8 @@ public class BingoStickerGambler : BingoStickerNumeric, IRoller, IGamble
     }
     public void OnRoll(BingoBall ball)
     {
+        if (GetSpace().IsMarked()) return;
+
         if (GetSpace().IsMarkable())
             if (Gamble())
                 GetSpace().Mark();

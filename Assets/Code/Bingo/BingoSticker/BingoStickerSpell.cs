@@ -10,12 +10,13 @@ public class BingoStickerSpell : BingoStickerNumeric
     }
     public override bool IsMarkable(BingoBall ball)
     {
+        if (GetSpace().IsMarked()) return false;
+
         if (ball.number == number)
         {
             return true;
         }
-
-        if (Utils.BingoCard.GetPropertyValue(BingoCard.MANA_COUNT_PROPERTY) >= manaCost)
+        else if (Utils.BingoCard.GetPropertyValue(BingoCard.MANA_COUNT_PROPERTY) >= manaCost)
         {
             Utils.BingoCard.SetPropertyValue(
                 BingoCard.MANA_COUNT_PROPERTY, 
