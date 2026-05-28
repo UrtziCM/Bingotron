@@ -12,7 +12,13 @@ public class BingoDrumHelper : MonoBehaviour
     private float activeBallTime = 3;
     private BingoDrum drum;
     [SerializeField]
-    private TMP_Text currentBallTextMesh;
+    private GameObject ball;
+    [SerializeField]
+    private Transform ballSpawnpos;
+    [SerializeField]
+    private Transform ballTargetPos;
+
+    private BallHolder ballHolder;
 
     private float accumulatedTime = 0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -24,6 +30,7 @@ public class BingoDrumHelper : MonoBehaviour
     {
         Utils.BingoCard.OnRoundStart.AddListener(StartRound);
         drum = GetComponent<BingoDrum>();
+        ballHolder = GetComponentInChildren<BallHolder>();
         
     }
 
@@ -118,12 +125,33 @@ public class BingoDrumHelper : MonoBehaviour
         AddBallToRolledBoard(drum.currentBingoBall);
         BingoBall b = drum.GetNextBall();
 
-        currentBallTextMesh.text = b.number.ToString();
+        GameObject spawnedBall = Instantiate(ball, ballSpawnpos);
+        spawnedBall.GetComponentInChildren<TMP_Text>().text = b.number.ToString();
+        StartCoroutine(MoveBallTowards(spawnedBall.transform, b.number));
         return b;
     }
 
     private void AddBallToRolledBoard(BingoBall ball)
     {
 
+    }
+
+
+    private IEnumerator MoveBallTowards(Transform ball, int ballNum)
+    {
+        while (Vector3.Distance(ball.position, ballTargetPos.position) > 0.01f)
+        {
+            ball.position = Vector3.MoveTowards(
+                ball.position,
+                ballTargetPos.position,
+                3 * Time.deltaTime
+            );
+
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(0.5f);
+
+        ballHolder.PlaceBall(ball, ballNum);
     }
 }
