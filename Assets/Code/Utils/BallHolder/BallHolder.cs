@@ -41,7 +41,7 @@ public class BallHolder : MonoBehaviour
 
     public void PlaceBall(Transform ball, int ballNum)
     {
-        if (ballNum < 0 || ballNum >= ballSpaces.Length)
+        if (ballNum < 0 || ballNum >= ballSpaces.Length + 1)
         {
             Debug.LogError("Número de bola fuera de rango");
             return;
