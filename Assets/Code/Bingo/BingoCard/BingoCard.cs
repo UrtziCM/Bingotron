@@ -185,12 +185,14 @@ public class BingoCard : CustomService
     {
         var targetSpace = GetSpaceAt(pos);
         targetSpace.Tile = tile;
-        
+        targetSpace.Tile.space = targetSpace;
+        targetSpace.Tile.pos = pos;
     }
     public void ReplaceAt(Vector2 pos, BingoStickerNumeric sticker)
     {
         var targetSpace = GetSpaceAt(pos);
         targetSpace.Sticker = sticker;
+        targetSpace.Sticker.space = targetSpace;
     }
 
     public BingoSpace[] GetLine(int line)
