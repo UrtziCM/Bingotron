@@ -17,7 +17,7 @@ public class BingoDrum : CustomService
     public UnityEvent<BingoBall> OnBallEffectStart;
     public UnityEvent<BingoBall> OnBallEffectEnd;
 
-
+    public BallHolderHover BallHolderHover;
     private void Awake()
     {
         ServiceLocator.AddService<BingoDrum>(this);
@@ -28,6 +28,7 @@ public class BingoDrum : CustomService
 
     void Start()
     {
+        BallHolderHover = GetComponentInChildren<BallHolderHover>();
     }
 
     private void Init()

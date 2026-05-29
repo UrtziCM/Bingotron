@@ -38,7 +38,8 @@ public class RoundManager : CustomService
         Utils.BingoDrum.gameObject.GetComponent<BingoDrumHelper>().RoundActive = true;
 
         //ActualizarHover
-        Utils.BingoCard.hover.UpdateHoverRound(roundNum, ActualRound.pointsToWin);
+        Utils.BingoCard.hover.UpdateHoverObjetive(ActualRound.pointsToWin);
+        Utils.BingoDrum.BallHolderHover.UpdateHoverRound(roundNum);
     }
 
     public void NextRound()

@@ -24,11 +24,16 @@ public class Round
         Utils.BingoCard.OnRoundStart.Invoke();
         Utils.BingoCard.ResetCard();
 
+        //ActualizarHover del drum
+        Utils.BingoDrum.BallHolderHover.UpdateHoverBalls(ballsQuantity);
     }
 
     public void BallRoll()
     {
         ballsQuantity--;
+
+        //ActualizarHover del drum
+        Utils.BingoDrum.BallHolderHover.UpdateHoverBalls(ballsQuantity);
     }
     public void CheckBallEnd()
     {

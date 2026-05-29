@@ -68,9 +68,9 @@ public class Hover : MonoBehaviour
         StatsHover.SetActive(true);
     }
 
-    public void UpdateHoverRound(float roundNum, float objetive)
+    public void UpdateHoverObjetive(float objetive)
     {
-        roundNumbers.text = (roundNum + 1).ToString() + "\n" + objetive.ToString();
+        roundNumbers.text = objetive.ToString();
     }
     public void UpdateHoverTotalPoints(float points)
     {
