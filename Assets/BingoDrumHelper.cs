@@ -47,7 +47,7 @@ public class BingoDrumHelper : MonoBehaviour
 
     private IEnumerator PlayDrumRoll()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         drumAnimator.SetTrigger("Roll");
 
         List<BingoSpace> spaces = new(Utils.BingoCard.GetAllSpacesOfType<IFlammable>());
@@ -57,7 +57,6 @@ public class BingoDrumHelper : MonoBehaviour
 
         if (Utils.ScoreManager.totalScore >= Utils.RoundManager.ActualRound.pointsToWin)
         {
-            Debug.Log("ola");
             foreach (BingoSpace space in spaces)
             {
                 if (space.Tile is IFlammable tile)

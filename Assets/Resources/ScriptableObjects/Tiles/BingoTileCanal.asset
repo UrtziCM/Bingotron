@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 1
   Name: Canal
-  Description: "Al marcar esta, moja las casillas en el eje colocado (\u27F7 y \u2195)"
+  Description: Al marcar esta, moja las casillas en el eje colocado.
   tags: 03000000
   sprite: {fileID: 21300000, guid: 3d4c3e9d073dd1b438bdf3d9f6702a74, type: 3}
