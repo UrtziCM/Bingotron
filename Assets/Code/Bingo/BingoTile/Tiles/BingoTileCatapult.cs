@@ -7,7 +7,7 @@ public class BingoTileCatapult : BingoTile, IMarkable, IFlammable
 
     public void Mark()
     {
-        BingoCard bc = GetSpace().GetCard();
+        BingoCard bc = Utils.BingoCard;
         ScoreManager sm = Utils.ScoreManager;
         BingoSpace targetSpace = bc.GetSpaceAt(pos + 2 * Vector2.right);
 
