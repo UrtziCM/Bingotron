@@ -31,7 +31,9 @@ public class BingoSpaceHandler : MonoBehaviour
 
     void Awake()
     {
-        bingoSpace = new(positionInGrid, UnityEngine.Random.Range(1,51), initialTile, initialSticker);
+        int number = UnityEngine.Random.Range((int)positionInGrid.x * 10 + 1, ((int)positionInGrid.x + 1) * 10);
+
+        bingoSpace = new(positionInGrid, number, initialTile, initialSticker);
         bingoSpace.transform = transform;
         card = transform.GetComponentInParent<BingoCard>();
         card.AddBingoSpace(bingoSpace);
