@@ -13,6 +13,7 @@ public enum Tags
 [CreateAssetMenu(fileName = "BingoTile", menuName = "Bingo/Tiles/BingoTile", order = -1)]
 public class BingoTile : ScriptableObject, ShopItem
 {
+    public static readonly string[] TAGS = { "Inflamable", "Cargable", "Musical", "Permeable", "Ludópata", "Conjurable" };
     internal Vector2 pos;
     internal BingoSpace space;
     [SerializeField]

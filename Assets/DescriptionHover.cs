@@ -63,12 +63,12 @@ public class Hover : MonoBehaviour
 
         if (tile.tags.Length > 0)
         {
-            tileTag1.text = tile.tags[0].ToString();
+            tileTag1.text = BingoTile.TAGS[(int)tile.tags[0]];
             tagImage1.color = Utils.GetTagColor(tile.tags[0]).WithAlpha(150);
 
             if (tile.tags.Length > 1)
             {
-                tileTag2.text = tile.tags[1].ToString();
+                tileTag2.text = BingoTile.TAGS[(int)tile.tags[1]];
                 tagImage2.color = Utils.GetTagColor(tile.tags[1]).WithAlpha(150);
             }
             else
