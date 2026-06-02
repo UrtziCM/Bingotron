@@ -138,4 +138,23 @@ public static class Utils
         if (drum == null) return false;
         return drum.RoundActive;
     }
+
+    public static Color GetTagColor(this Tags tag)
+    {
+        ColorUtility.TryParseHtmlString(
+            tag switch
+            {
+                Tags.Inflamable => "#FF8000",
+                Tags.Cargable => "#FAE14D",
+                Tags.Musical => "#F763FF",
+                Tags.Permeable => "#1672E4",
+                Tags.Ludopata => "#4ACF32",
+                Tags.Conjurable => "#8E32EA",
+                _ => "#FFFFFF"
+            },
+            out Color color
+        );
+
+        return color;
+    }
 }

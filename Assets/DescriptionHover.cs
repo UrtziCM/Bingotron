@@ -15,6 +15,14 @@ public class Hover : MonoBehaviour
     private TextMeshProUGUI tileDescription;
     [SerializeField]
     private Image tileSprite;
+    [SerializeField]
+    private TextMeshProUGUI tileTag1;
+    [SerializeField]
+    private Image tagImage1;
+    [SerializeField]
+    private TextMeshProUGUI tileTag2;
+    [SerializeField]
+    private Image tagImage2;
 
     [SerializeField]
     private TextMeshProUGUI stickerName;
@@ -23,7 +31,7 @@ public class Hover : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI stickerDescription;
 
-    [Header("Description hover")]
+    [Header("Stats hover")]
     [SerializeField]
     private GameObject StatsHover;
     [SerializeField]
@@ -52,6 +60,30 @@ public class Hover : MonoBehaviour
         stickerNumber.text = (sticker as BingoStickerNumeric).Number.ToString();
         stickerNumber.color = (sticker as BingoStickerNumeric).textColor;
         stickerDescription.text = sticker.Description;
+
+        if (tile.tags.Length > 0)
+        {
+            tileTag1.text = tile.tags[0].ToString();
+            tagImage1.color = Utils.GetTagColor(tile.tags[0]).WithAlpha(150);
+
+            if (tile.tags.Length > 1)
+            {
+                tileTag2.text = tile.tags[1].ToString();
+                tagImage2.color = Utils.GetTagColor(tile.tags[1]).WithAlpha(150);
+            }
+            else
+            {
+                tileTag2.text = "";
+                tagImage2.color = tagImage2.color.WithAlpha(0);
+            }
+        }
+        else
+        {
+            tileTag1.text = "";
+            tagImage1.color = tagImage1.color.WithAlpha(0);
+            tileTag2.text = "";
+            tagImage2.color = tagImage2.color.WithAlpha(0);
+        }
     }
 
     public void UnShowDescriptionHover()
