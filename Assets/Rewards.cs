@@ -72,21 +72,23 @@ public class Rewards : CustomService
 
                     TextMeshProUGUI tagText1 = rewardPanel.transform.GetChild(0).GetChild(1).GetChild(0).GetComponentInChildren<TextMeshProUGUI>();
                     Image tagImage1 = rewardPanel.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<Image>();
-                    TextMeshProUGUI tagText2 = rewardPanel.transform.GetChild(0).GetChild(1).GetChild(1).GetComponentInChildren<TextMeshProUGUI>();
-                    Image tagImage2 = rewardPanel.transform.GetChild(0).GetChild(1).GetChild(1).GetComponent<Image>();
 
                     tagText1.text = BingoTile.TAGS[(int)generatedTile.tags[0]];
                     tagImage1.color = Utils.GetTagColor(generatedTile.tags[0]).WithAlpha(150);
 
                     if (generatedTile.tags.Length > 1)
                     {
+                        rewardPanel.transform.GetChild(0).GetChild(1).GetChild(1).gameObject.SetActive(true);
+
+                        TextMeshProUGUI tagText2 = rewardPanel.transform.GetChild(0).GetChild(1).GetChild(1).GetComponentInChildren<TextMeshProUGUI>();
+                        Image tagImage2 = rewardPanel.transform.GetChild(0).GetChild(1).GetChild(1).GetComponent<Image>();
+
                         tagText2.text = BingoTile.TAGS[(int)generatedTile.tags[1]];
                         tagImage2.color = Utils.GetTagColor(generatedTile.tags[1]).WithAlpha(150);
                     }
                     else
                     {
-                        tagText2.text = "";
-                        tagImage2.color = tagImage2.color.WithAlpha(0);
+                        rewardPanel.transform.GetChild(0).GetChild(1).GetChild(1).gameObject.SetActive(false);
                     }
                 }
                 else
