@@ -34,12 +34,28 @@ public class BingoSpaceHandler : MonoBehaviour
         int number = UnityEngine.Random.Range((int)positionInGrid.x * 10 + 1, ((int)positionInGrid.x + 1) * 10);
 
         bingoSpace = new(positionInGrid, number, initialTile, initialSticker);
+
         bingoSpace.transform = transform;
         card = transform.GetComponentInParent<BingoCard>();
         card.AddBingoSpace(bingoSpace);
         stickerNumberText.text = bingoSpace.Sticker.Number.ToString();
         hover = card.GetComponentInChildren<Hover>();
         initialPosition = transform.position;
+    }
+
+    private void Start()
+    {
+        int number = sticker.Number;
+        if (Utils.BingoCard.AllBingoSpaces().Find(space => space.sticker.Number == number) != null)
+        {
+            // Find unique value for sticker number
+            do
+            {
+                number = UnityEngine.Random.Range((int)positionInGrid.x * 10 + 1, ((int)positionInGrid.x + 1) * 10);
+            } while (Utils.BingoCard.AllBingoSpaces().Find(space => space.sticker.Number == number) != null);
+            bingoSpace.sticker.Number = number;
+            stickerNumberText.text = bingoSpace.Sticker.Number.ToString();
+        }
     }
 
     private void Update()
