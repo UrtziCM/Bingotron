@@ -14,8 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 1
   Name: Trigo
-  Description: "Al mojar esta, aumenta el valor de esta casilla en +1. \n\nAl marcar
-    esta, suma el valor acumulado y vuelve al valor base. \n\nAl quemar esta, se
-    marca."
+  Description: 'Al mojar esta, aumenta el valor de esta casilla en +1. '
   tags: 0300000000000000
   sprite: {fileID: 21300000, guid: f913a52149fee6841909b43181dfa613, type: 3}

@@ -15,5 +15,5 @@ MonoBehaviour:
   value: 1
   Name: Generador
   Description: Al marcar esta, +1 de carga por cada casilla de cable.
-  tags: 01000000
+  tags: 
   sprite: {fileID: 21300000, guid: 90693358b3dedf34d935eefb19d34cf6, type: 3}

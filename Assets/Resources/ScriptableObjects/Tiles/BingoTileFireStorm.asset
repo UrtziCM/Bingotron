@@ -16,5 +16,5 @@ MonoBehaviour:
   Name: Tormenta de Fuego
   Description: "Al marcar esta, gasta todo tu man\xE1, por cada 10 de man\xE1 gastado
     quema una casilla aleatoria."
-  tags: 0500000000000000
+  tags: 05000000
   sprite: {fileID: 21300000, guid: 93fb32362fca1bb428118846c872e7cc, type: 3}

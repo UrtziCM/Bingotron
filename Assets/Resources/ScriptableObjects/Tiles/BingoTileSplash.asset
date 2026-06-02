@@ -15,5 +15,5 @@ MonoBehaviour:
   value: 1
   Name: Salpicadura
   Description: Al marcar esta, moja una casilla aleatoria.
-  tags: 03000000
+  tags: 
   sprite: {fileID: 21300000, guid: e12d1f1fd5ca6f948b1df377ac99c462, type: 3}

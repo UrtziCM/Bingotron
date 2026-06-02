@@ -15,6 +15,6 @@ MonoBehaviour:
   value: 1
   Name: Pedra de Mana
   Description: "Cada vez que salga una bola del bombo a\xF1ade +10 de man\xE1."
-  tags: 05000000
+  tags: 
   sprite: {fileID: 21300000, guid: c7fe7eb1d05ff674eb778f4064d70adc, type: 3}
   addedMana: 10
