@@ -17,4 +17,14 @@ public class MainMenuController : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void TutorialButton()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }
+
+    public void CloseTutorial()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
