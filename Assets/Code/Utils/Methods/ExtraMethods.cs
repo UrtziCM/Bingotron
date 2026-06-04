@@ -23,6 +23,7 @@ public static class Utils
     public static BingoDrum BingoDrum => ServiceLocator.GetService<BingoDrum>();
     public static RoundManager RoundManager => ServiceLocator.GetService<RoundManager>();
     public static ParticlesContainer ParticlesContainer => ServiceLocator.GetService<ParticlesContainer>();
+    public static AudioManager AudioManager => ServiceLocator.GetService<AudioManager>();
 
 
     public static void Spread(Vector2 thisTilePos)

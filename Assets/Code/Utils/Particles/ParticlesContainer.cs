@@ -39,6 +39,8 @@ public class ParticlesContainer : CustomService
     {
         GameObject part = Instantiate(particle, spacePos + Vector3.up * 0.2f, particle.transform.rotation);
         particles.Add(part.GetComponent<ParticleSystem>());
+
+        Utils.AudioManager.PlaySFX(Utils.AudioManager.GetParticleSound(particle));
     }
     private void DeleteParticles()
     {

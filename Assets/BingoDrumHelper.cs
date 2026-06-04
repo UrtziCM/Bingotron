@@ -48,6 +48,14 @@ public class BingoDrumHelper : MonoBehaviour
     private IEnumerator PlayDrumRoll()
     {
         yield return new WaitForSeconds(2f);
+
+        if (!RoundActive)
+        {
+            droppedBall = true;
+            yield break; 
+        }
+
+
         drumAnimator.SetTrigger("Roll");
 
         List<BingoSpace> spaces = new(Utils.BingoCard.GetAllSpacesOfType<IFlammable>());
@@ -89,6 +97,11 @@ public class BingoDrumHelper : MonoBehaviour
 
         spaces.Clear();
         spaceToSpread.Clear();
+        
+
+        yield return new WaitForSeconds(1f);
+        //Sonido de roll
+        Utils.AudioManager.PlayDrumRoll();
 
     }
 
@@ -139,6 +152,10 @@ public class BingoDrumHelper : MonoBehaviour
 
     private IEnumerator MoveBallTowards(Transform ball, int ballNum)
     {
+        //Sonido de roll
+        Utils.AudioManager.StopDrumRoll();
+        Utils.AudioManager.PlaySFX(Utils.AudioManager.ballSound);
+
         while (Vector3.Distance(ball.position, ballTargetPos.position) > 0.01f)
         {
             ball.position = Vector3.MoveTowards(
