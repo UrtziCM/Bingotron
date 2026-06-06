@@ -24,7 +24,7 @@ public class ScoreManager : CustomService
         this.score += score;
 
         //ActualizarHover
-        Utils.BingoCard.hover.UpdateHoverPointsMult(score, multiplier);
+        Utils.BingoCard.hover.UpdateHoverPointsMult(this.score, multiplier);
     }
 
     public void AddMultiply(float mult = 0.01f)
