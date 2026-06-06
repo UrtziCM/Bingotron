@@ -10,7 +10,7 @@ public class MainMenuController : MonoBehaviour
 
     public void SettingsButton()
     {
-        SceneManager.LoadScene("Settings", LoadSceneMode.Additive);
+        SceneManager.LoadScene("Settings");
     }
 
     public void ExitButton()

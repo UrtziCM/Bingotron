@@ -309,7 +309,6 @@ GameObject:
   m_Component:
   - component: {fileID: 110889675}
   - component: {fileID: 110889674}
-  - component: {fileID: 110889676}
   m_Layer: 0
   m_Name: Polish
   m_TagString: Untagged
@@ -352,36 +351,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &110889676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 110889673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8bec52c5ba27b7459438c241e5f14eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  markSound: {fileID: 8300000, guid: 5ad318c44c812074eb30b22914d1ddb9, type: 3}
-  waterSound:
-  - {fileID: 8300000, guid: 98700a40b31d71649b9f7a3e2ec57af1, type: 3}
-  - {fileID: 8300000, guid: 5acf537022f74e64a8da3974facd7d9c, type: 3}
-  - {fileID: 8300000, guid: 2e3ce7c1b4900934d9ced9dbad23d11e, type: 3}
-  fireSound: {fileID: 8300000, guid: a9897849b8707f143b0f7b4f23b55527, type: 3}
-  electricSound: {fileID: 8300000, guid: 8f3f2c0d38009e34ab54024760ec870f, type: 3}
-  gamblingSound: {fileID: 8300000, guid: b17b94f8809a94f4ea4bdda8266602bf, type: 3}
-  musicSound:
-  - {fileID: 8300000, guid: c0bdcd3d74a648f4fbb0d356a0f07d64, type: 3}
-  - {fileID: 8300000, guid: c425c5daebb9abb42959fce84b6ca99d, type: 3}
-  - {fileID: 8300000, guid: bfee0842066339242bcbd85b51f64121, type: 3}
-  - {fileID: 8300000, guid: 7b5f2422c830e1141920f25e5ab45855, type: 3}
-  - {fileID: 8300000, guid: c5386897ef41a62469329865ad74755b, type: 3}
-  magicSound: {fileID: 8300000, guid: e1e6382d7cd30ae4eaab1f1bb87ab690, type: 3}
-  moneySound: {fileID: 8300000, guid: 60a8e724decd42546a76865c7e052588, type: 3}
-  bomboRollSound: {fileID: 8300000, guid: 279ff3030416ccc4ab5c35167dd8edea, type: 3}
-  ballSound: {fileID: 8300000, guid: 979bdc4d0ac9c6641835536ad9cb6012, type: 3}
 --- !u!1 &124975548
 GameObject:
   m_ObjectHideFlags: 0

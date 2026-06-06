@@ -1,7 +1,10 @@
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.UIElements;
 
 public class AudioManager : CustomService
 {
+    public AudioMixer audioMixer;
     [Header("Particle Sounds")]
     [SerializeField]
     private AudioClip markSound;
@@ -25,12 +28,34 @@ public class AudioManager : CustomService
     private AudioClip bomboRollSound;
     [SerializeField]
     public AudioClip ballSound;
-
     private AudioSource drumRollLoop;
+
+    [Header("Music")]
+    [SerializeField]
+    private AudioClip music;
+    [SerializeField]
+    private AudioSource musicSource; 
+
+    [SerializeField]
+    private AudioMixerGroup SFX;
+
     private void Awake()
     {
+        if (ServiceLocator.HasService<AudioManager>())
+        {
+            Destroy(gameObject);
+            return;
+        }
         ServiceLocator.AddService(this);
+        musicSource.clip = music;
+        musicSource.Play();
     }
+
+    private void Start()
+    {  
+        DontDestroyOnLoad(this);           
+    }
+
     public void PlaySFX(AudioClip clip)
     {
         GameObject go = new GameObject("SpatialAudio");
@@ -39,6 +64,8 @@ public class AudioManager : CustomService
         source.clip = clip;
         source.pitch = Random.Range(0.8f, 1.2f);
         source.volume *= 10;
+        SFX = audioMixer.FindMatchingGroups("SFX")[0];
+        go.GetComponent<AudioSource>().outputAudioMixerGroup = SFX;
         source.Play();
 
         Destroy(go, clip.length);
@@ -53,6 +80,14 @@ public class AudioManager : CustomService
         drumRollLoop.pitch = Random.Range(0.8f, 1.2f);
         drumRollLoop.volume *= 10;
         drumRollLoop.loop = true;
+
+        // Temporary debug — paste the output here
+        var allGroups = audioMixer.FindMatchingGroups("");
+        foreach (var g in allGroups)
+            Debug.Log($"Mixer group: '{g.name}'");
+
+        SFX = audioMixer.FindMatchingGroups("Drum")[0];
+        go.GetComponent<AudioSource>().outputAudioMixerGroup = SFX;
         drumRollLoop.Play();
     }
 
