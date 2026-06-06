@@ -7,14 +7,14 @@ public class BingoTileATM : BingoTile, IMarkable, IChargeable, IGamble
 
     public void Mark()
     {
-        BingoCard bc = GetSpace().GetCard();
+        BingoCard bc = Utils.BingoCard;
         ScoreManager sm = Utils.ScoreManager;
 
         Discharge((int)bc.GetPropertyValue(BingoCard.CHARGE_PROPERTY));
     }
     public void Discharge(int charge)
     {
-        value = charge;
+        value = charge + 1;
 
         if (Gamble())
             Utils.ScoreManager.AddScore(value);

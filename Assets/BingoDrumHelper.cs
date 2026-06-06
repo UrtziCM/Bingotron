@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using static UnityEditor.VersionControl.Asset;
 
 public class BingoDrumHelper : MonoBehaviour
 {
@@ -34,12 +35,6 @@ public class BingoDrumHelper : MonoBehaviour
         
     }
 
-
-    void Start()
-    {
-        StartCoroutine(PlayDrumRoll());
-    }
-
     public void Drop()
     {
         droppedBall = true;
@@ -47,21 +42,37 @@ public class BingoDrumHelper : MonoBehaviour
 
     private IEnumerator PlayDrumRoll()
     {
+        if (!RoundActive) yield break;
+
         yield return new WaitForSeconds(2f);
 
-        if (!RoundActive)
-        {
-            droppedBall = true;
-            yield break; 
-        }
-
-
         drumAnimator.SetTrigger("Roll");
+        
+        yield return new WaitForSeconds(1f);
+        //Sonido de roll
+        Utils.AudioManager.PlayDrumRoll();
 
-        List<BingoSpace> spaces = new(Utils.BingoCard.GetAllSpacesOfType<IFlammable>());
+        droppedBall = false;
+        yield return new WaitUntil(() => droppedBall);
+        droppedBall = false;
 
-        List<BingoSpace> spaceToSpread = new();
+        NextBall();
 
+        HandleFireSpread();
+
+
+        if (drum.drumQueue.Count == 0)
+            RoundActive = false;
+        else
+            StartCoroutine(PlayDrumRoll());
+    }
+
+    private static void HandleFireSpread()
+    {
+        List<BingoSpace> spaces, spaceToSpread;
+
+        spaces = new(Utils.BingoCard.GetAllSpacesOfType<IFlammable>());
+        spaceToSpread = new();
 
         if (Utils.ScoreManager.totalScore >= Utils.RoundManager.ActualRound.pointsToWin)
         {
@@ -97,40 +108,17 @@ public class BingoDrumHelper : MonoBehaviour
 
         spaces.Clear();
         spaceToSpread.Clear();
-        
-
-        yield return new WaitForSeconds(1f);
-        //Sonido de roll
-        Utils.AudioManager.PlayDrumRoll();
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (!RoundActive)
-            return;
-
-        accumulatedTime += Time.deltaTime;
-        //if (accumulatedTime > activeBallTime)
-        if (droppedBall)
-        {
-            droppedBall = false;
-            StartCoroutine(PlayDrumRoll());
-            NextBall();
-            if (drum.drumQueue.Count == 0) 
-            {
-                RoundActive = false;
-            }
-        }
-
     }
 
     public void StartRound()
     {
         drum.ShuffledListIntoQueue();
         ballHolder.ClearHolder();
+
+        droppedBall = false;
         RoundActive = true;
+
+        StartCoroutine(PlayDrumRoll());
     }
 
     public BingoBall NextBall()
