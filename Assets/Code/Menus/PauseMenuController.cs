@@ -5,8 +5,7 @@ public class PauseMenuController : MonoBehaviour
 {
    public void ContinueButton()
     {
-        Scene pause = SceneManager.GetActiveScene();
-        SceneManager.UnloadSceneAsync(pause);
+        PauseManager.instance.ResumeGame();
     }
     public void SettingsButton()
     {
