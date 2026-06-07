@@ -22,7 +22,8 @@ public class Round
     public void StartRound()
     {
         Utils.ScoreManager.ResetTotalScore();
-        Utils.BingoCard.OnRoundStart.Invoke();
+
+        Utils.BingoCard.OnRoundStart?.Invoke();
         Utils.BingoCard.ResetCard();
 
         //ActualizarHover del drum

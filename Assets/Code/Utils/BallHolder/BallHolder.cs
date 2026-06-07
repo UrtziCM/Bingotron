@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class BallHolder : MonoBehaviour
 {
@@ -15,9 +16,14 @@ public class BallHolder : MonoBehaviour
     [SerializeField]
     private float velocidadCaida = 5f;
 
-    private void Start()
+    private void Awake()
     {
         ballSpaces = new Transform[filas.Length * 10];
+
+    }
+
+    private void Start()
+    {
 
         int index = 0;
 
@@ -35,7 +41,7 @@ public class BallHolder : MonoBehaviour
     {
         foreach (Transform Ballspace in ballSpaces)
         {
-            if(Ballspace.childCount > 0)
+            if (Ballspace != null && Ballspace.childCount > 0)
                 Destroy(Ballspace.GetChild(0).gameObject);            
         }
     }

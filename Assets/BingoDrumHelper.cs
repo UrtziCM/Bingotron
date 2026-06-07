@@ -18,6 +18,7 @@ public class BingoDrumHelper : MonoBehaviour
     [SerializeField]
     private Transform ballTargetPos;
 
+    [SerializeField]
     private BallHolder ballHolder;
 
     private float accumulatedTime = 0f;
@@ -49,7 +50,7 @@ public class BingoDrumHelper : MonoBehaviour
         
         yield return new WaitForSeconds(1f);
         //Sonido de roll
-        Utils.AudioManager.PlayDrumRoll();
+        //Utils.AudioManager.PlayDrumRoll();
 
         droppedBall = false;
         yield return new WaitUntil(() => droppedBall);
@@ -112,6 +113,8 @@ public class BingoDrumHelper : MonoBehaviour
     public void StartRound()
     {
         drum.ShuffledListIntoQueue();
+        Debug.Log("I'M NULL=" + (ballHolder == null));
+
         ballHolder.ClearHolder();
 
         droppedBall = false;
@@ -140,8 +143,8 @@ public class BingoDrumHelper : MonoBehaviour
     private IEnumerator MoveBallTowards(Transform ball, int ballNum)
     {
         //Sonido de roll
-        Utils.AudioManager.StopDrumRoll();
-        Utils.AudioManager.PlaySFX(Utils.AudioManager.ballSound);
+        //Utils.AudioManager.StopDrumRoll();
+        //Utils.AudioManager.PlaySFX(Utils.AudioManager.ballSound);
 
         while (Vector3.Distance(ball.position, ballTargetPos.position) > 0.01f)
         {
