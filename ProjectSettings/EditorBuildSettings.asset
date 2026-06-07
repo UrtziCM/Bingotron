@@ -23,6 +23,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ProvisionalScene.unity
     guid: 10f5a203d8f7cf64e9397f5ab65f4a2e
+  - enabled: 1
+    path: Assets/Scenes/LoseMenu.unity
+    guid: a6388beafc668174b8e4fed7eac1ffad
+  - enabled: 1
+    path: Assets/Scenes/WinMenu.unity
+    guid: 90e28250d69bb004898e0331f1a73e83
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
