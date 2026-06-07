@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RoundManager : CustomService
 {
@@ -45,7 +46,14 @@ public class RoundManager : CustomService
     public void NextRound()
     {
         roundNum++;
-        StartRound();
+        if(roundNum <= 20)
+        {
+            StartRound();
+
+        }else
+        {
+            SceneManager.LoadScene("WinMenu");
+        }
     }
 
     public int CalculateRoundPoints()

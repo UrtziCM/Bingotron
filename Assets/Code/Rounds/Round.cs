@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Round 
 {
@@ -60,6 +61,6 @@ public class Round
 
     private void RoundLost()
     {
-        Application.Quit();
+        SceneManager.LoadScene("LoseMenu");
     }
 }
