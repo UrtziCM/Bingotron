@@ -1,8 +1,7 @@
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 
 public class Hover : MonoBehaviour
 {
@@ -48,7 +47,6 @@ public class Hover : MonoBehaviour
     public void ShowDescriptionHover(BingoTile tile, BingoSticker sticker)
     {
         StatsHover.SetActive(false);
-
         DescriptionHover.SetActive(true);
 
         tileSprite.sprite = tile.sprite;
@@ -57,35 +55,60 @@ public class Hover : MonoBehaviour
         tileDescription.text = tile.Description;
 
         stickerName.text = sticker.Name;
-        stickerNumber.text = (sticker as BingoStickerNumeric).Number.ToString();
-        stickerNumber.color = (sticker as BingoStickerNumeric).textColor;
+
+        BingoStickerNumeric numericSticker = sticker as BingoStickerNumeric;
+        if (numericSticker != null)
+        {
+            stickerNumber.text = numericSticker.Number.ToString();
+            stickerNumber.color = numericSticker.textColor;
+        }
+        else
+        {
+            stickerNumber.text = "";
+        }
+
         stickerDescription.text = sticker.Description;
 
         if (tile.tags.Length > 0)
         {
             tileTag1.text = BingoTile.TAGS[(int)tile.tags[0]];
-            tagImage1.color = Utils.GetTagColor(tile.tags[0]).WithAlpha(150);
+
+            Color c1 = Utils.GetTagColor(tile.tags[0]);
+            c1.a = 150f / 255f;
+            tagImage1.color = c1;
 
             if (tile.tags.Length > 1)
             {
                 tileTag2.text = BingoTile.TAGS[(int)tile.tags[1]];
-                tagImage2.color = Utils.GetTagColor(tile.tags[1]).WithAlpha(150);
+
+                Color c2 = Utils.GetTagColor(tile.tags[1]);
+                c2.a = 150f / 255f;
+                tagImage2.color = c2;
             }
             else
             {
                 tileTag2.text = "";
-                tagImage2.color = tagImage2.color.WithAlpha(0);
+
+                Color c = tagImage2.color;
+                c.a = 0f;
+                tagImage2.color = c;
             }
         }
         else
         {
             tileTag1.text = "";
-            tagImage1.color = tagImage1.color.WithAlpha(0);
+
+            Color c1 = tagImage1.color;
+            c1.a = 0f;
+            tagImage1.color = c1;
+
             tileTag2.text = "";
-            tagImage2.color = tagImage2.color.WithAlpha(0);
+
+            Color c2 = tagImage2.color;
+            c2.a = 0f;
+            tagImage2.color = c2;
         }
     }
-
     public void UnShowDescriptionHover()
     {
         DescriptionHover.SetActive(false);

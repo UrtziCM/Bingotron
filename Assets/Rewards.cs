@@ -74,7 +74,10 @@ public class Rewards : CustomService
                     Image tagImage1 = rewardPanel.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<Image>();
 
                     tagText1.text = BingoTile.TAGS[(int)generatedTile.tags[0]];
-                    tagImage1.color = Utils.GetTagColor(generatedTile.tags[0]).WithAlpha(150);
+
+                    Color tagColor1 = Utils.GetTagColor(generatedTile.tags[0]);
+                    tagColor1.a = 150f / 255f;
+                    tagImage1.color = tagColor1;
 
                     if (generatedTile.tags.Length > 1)
                     {
@@ -84,7 +87,10 @@ public class Rewards : CustomService
                         Image tagImage2 = rewardPanel.transform.GetChild(0).GetChild(1).GetChild(1).GetComponent<Image>();
 
                         tagText2.text = BingoTile.TAGS[(int)generatedTile.tags[1]];
-                        tagImage2.color = Utils.GetTagColor(generatedTile.tags[1]).WithAlpha(150);
+
+                        Color tagColor2 = Utils.GetTagColor(generatedTile.tags[1]);
+                        tagColor2.a = 150f / 255f;
+                        tagImage1.color = tagColor2;
                     }
                     else
                     {
