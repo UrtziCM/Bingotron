@@ -266,6 +266,7 @@ MonoBehaviour:
   ball: {fileID: 7810088708884947878, guid: e338968d9efe2474f8aad1f358094b21, type: 3}
   ballSpawnpos: {fileID: 5291647658873561220}
   ballTargetPos: {fileID: 5636505005248332211}
+  ballHolder: {fileID: 0}
   drumAnimator: {fileID: 3371782936632773659}
 --- !u!1 &4115969379006583413
 GameObject:
@@ -363,7 +364,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 12
+  m_text: 20
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
